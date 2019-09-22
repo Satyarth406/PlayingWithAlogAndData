@@ -62,7 +62,7 @@ namespace LinkedList
             linkedListSM.AddNodeAtLastSM(2);
             linkedListSM.AddNodeAtLastSM(3);
             linkedListSM.AddNodeAtLastSM(4);
-            
+            linkedListSM.DeleteNodeAtAGivenPosition(2);
             //Print The linked List
             linkedListSM.PrintLinkedListSM();
 

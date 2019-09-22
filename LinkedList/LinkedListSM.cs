@@ -85,7 +85,7 @@ namespace LinkedList
             
         }
 
-        public void DeleNodeAtAGivenData(int data)
+        public void DeleteNodeAtAGivenPosition(int position) //starting position is 0
         {
             LinkedListNodeSM dummy = head;
             LinkedListNodeSM dummyBefore = head; //node before the node to be deleted.
@@ -96,20 +96,21 @@ namespace LinkedList
                 return;
             }
 
-            if (dummy.Data == data)
+            if (position==0)
             {
                 head = head.Next;
                 return;
             }
-
-            while (dummy != null && dummy.Data != data)
+            int count = 0;
+            while (dummy != null && count!=position)
             {
+                count++;
                 dummyBefore = dummy;
                 dummy = dummy.Next;
             }
-            if (dummy == null)
+            if (dummy == null )
             {
-                Console.WriteLine("The given item is not present");
+                Console.WriteLine("There position is outside the length of the linked list");
                 return;
             }
             dummyBefore.Next = dummy.Next;
