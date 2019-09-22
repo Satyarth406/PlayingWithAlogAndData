@@ -56,15 +56,36 @@ namespace LinkedList
 
 
 
-            //Delete a node at a given position
+            ////Delete a node at a given position
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //linkedListSM.DeleteNodeAtAGivenPosition(2);
+            ////Print The linked List
+            //linkedListSM.PrintLinkedListSM();
+
+
+            ////Length of a linked list
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //Console.WriteLine(linkedListSM.LengthOfLinkedListSM());
+
+
+
+            //SwapNodesWithSwappingData
             LinkedListSM linkedListSM = new LinkedListSM();
             linkedListSM.AddNodeAtLastSM(1);
             linkedListSM.AddNodeAtLastSM(2);
             linkedListSM.AddNodeAtLastSM(3);
             linkedListSM.AddNodeAtLastSM(4);
-            linkedListSM.DeleteNodeAtAGivenPosition(2);
-            //Print The linked List
+            linkedListSM.SwapNodesWithSwappingDataSM(1,2);
             linkedListSM.PrintLinkedListSM();
+
 
 
 

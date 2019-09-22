@@ -117,6 +117,65 @@ namespace LinkedList
 
         }
 
+        public void SwapNodesWithSwappingDataSM(int x, int y)
+        {
+            if (x == y) return;
+            LinkedListNodeSM dummyX =head;
+            LinkedListNodeSM dummyBeforeX=null;
+            LinkedListNodeSM dummyY=head;
+            LinkedListNodeSM dummyBeforeY = null;
+
+            while (dummyX!=null && dummyX.Data!=x)
+            {
+                dummyBeforeX = dummyX;
+                dummyX = dummyX.Next;
+            }
+            
+            while (dummyY != null && dummyY.Data !=y)
+            {
+                dummyBeforeY = dummyY;
+                dummyY = dummyY.Next;
+            }
+            if(dummyX==null || dummyY == null)
+            {
+                Console.WriteLine("either one or both of the data aren't in the linked list");
+                return;
+            }
+
+            if (dummyBeforeX == null)
+            {
+                head = dummyY;
+            }
+            else
+            {
+                dummyBeforeX.Next = dummyY;
+            }
+            if (dummyBeforeY == null)
+            {
+                head  = dummyX ;
+            }
+            else
+            {
+                dummyBeforeY.Next = dummyX;
+            }
+            LinkedListNodeSM dummyXNext = dummyX.Next;
+            
+            dummyX.Next = dummyY.Next;
+            dummyY.Next = dummyXNext;
+
+        }
+
+        public int LengthOfLinkedListSM()
+        {
+            int count = 0;
+            LinkedListNodeSM dummy = head;
+            while (dummy != null)
+            {
+                count++;
+                dummy = dummy.Next;
+            }
+            return count;
+        }
 
         public void AddNodeAfterAGivenNodeSM(LinkedListNodeSM nodeToInsertAfter, int dataToInsert)
         {
