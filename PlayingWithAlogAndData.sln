@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayingWithAlogAndData", "PlayingWithAlogAndData\PlayingWithAlogAndData.csproj", "{D456C257-B489-4698-9681-C02343B06AB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{6E2B271F-0843-4E78-A053-D058666726E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D456C257-B489-4698-9681-C02343B06AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D456C257-B489-4698-9681-C02343B06AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D456C257-B489-4698-9681-C02343B06AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D456C257-B489-4698-9681-C02343B06AB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E2B271F-0843-4E78-A053-D058666726E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E2B271F-0843-4E78-A053-D058666726E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E2B271F-0843-4E78-A053-D058666726E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E2B271F-0843-4E78-A053-D058666726E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E9D2E31-BFA9-4CFF-8A06-3B4F24050C05}
+	EndGlobalSection
+EndGlobal
