@@ -77,15 +77,46 @@ namespace LinkedList
 
 
 
-            //SwapNodesWithSwappingData
+            ////SwapNodesWithSwappingData
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //linkedListSM.SwapNodesWithSwappingDataSM(1,2);
+            //linkedListSM.PrintLinkedListSM();
+
+
+            ////Search an element in a Linked List
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //bool found = linkedListSM.FindNodeWithData(3);
+            //Console.WriteLine(found);
+
+
+
+            ////Search an element in a Linked List recursively
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //bool found = linkedListSM.FindNodeWithDataRecursively(5,linkedListSM.head);
+            //Console.WriteLine(found);
+
+
+
+            //Write a function to get Nth node in a Linked List
             LinkedListSM linkedListSM = new LinkedListSM();
             linkedListSM.AddNodeAtLastSM(1);
             linkedListSM.AddNodeAtLastSM(2);
             linkedListSM.AddNodeAtLastSM(3);
             linkedListSM.AddNodeAtLastSM(4);
-            linkedListSM.SwapNodesWithSwappingDataSM(1,2);
-            linkedListSM.PrintLinkedListSM();
-
+            int found = linkedListSM.FindNthNodeInLinkedList(2);
+            Console.WriteLine(found);
 
 
 

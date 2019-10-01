@@ -165,6 +165,48 @@ namespace LinkedList
 
         }
 
+        public int FindNthNodeInLinkedList(int v)
+        {
+            int count = 0;
+            LinkedListNodeSM linkedListNodeSM = head;
+            while (linkedListNodeSM!=null &&  count != v)
+            {
+                linkedListNodeSM = linkedListNodeSM.Next;
+            }
+            if (linkedListNodeSM == null)
+                return int.MinValue;
+            else
+                return linkedListNodeSM.Data;
+        }
+
+        public bool FindNodeWithDataRecursively(int v, LinkedListNodeSM head)
+        {
+            if (head == null)
+                return false;
+            if (head.Data == v)
+                return true;
+            else
+                return FindNodeWithDataRecursively(v, head.Next);
+        }
+
+        public bool FindNodeWithData(int v)
+        {
+            LinkedListNodeSM linkedListNodeSM = head;
+            bool a = false;
+            
+            while (linkedListNodeSM != null)
+            {
+                if (linkedListNodeSM.Data == v)
+                {
+                    a = true;
+                    break;
+                }
+                linkedListNodeSM = linkedListNodeSM.Next;
+            }
+
+            return a;
+        }
+
         public int LengthOfLinkedListSM()
         {
             int count = 0;
