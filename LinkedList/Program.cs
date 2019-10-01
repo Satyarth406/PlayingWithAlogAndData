@@ -77,7 +77,7 @@ namespace LinkedList
 
 
 
-            ////SwapNodesWithSwappingData
+            ////SwapNodesWithoutSwappingData
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -86,6 +86,94 @@ namespace LinkedList
             //linkedListSM.SwapNodesWithSwappingDataSM(1,2);
             //linkedListSM.PrintLinkedListSM();
 
+
+
+            ////Reversing the linked list
+            //// Time Complexity: O(n)
+            ////Space Complexity: O(1)
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //linkedListSM.ReverseLinkedListSM();
+            //linkedListSM.PrintLinkedListSM();
+
+
+            ////Reversing the linked list using Recursion
+            //// Time Complexity: O(n)
+            ////Space Complexity: O(1)
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //LinkedListNodeSM linkedListUsingRecursionSm = linkedListSM.ReverseLinkedListUsingRecursionSM(linkedListSM.head);
+            //while (linkedListUsingRecursionSm != null)
+            //{
+            //    Console.WriteLine(linkedListUsingRecursionSm.Data);
+            //    linkedListUsingRecursionSm = linkedListUsingRecursionSm.Next;
+            //}
+
+
+
+            ////Merge two sorted linked lists
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //linkedListSM.AddNodeAtLastSM(6);
+            //LinkedListSM linkedListSM2 = new LinkedListSM();
+            //linkedListSM2.AddNodeAtLastSM(3);
+            //linkedListSM2.AddNodeAtLastSM(5);
+            //linkedListSM2.AddNodeAtLastSM(7);
+            //linkedListSM2.AddNodeAtLastSM(8);
+            //LinkedListNodeSM mergeTwoSortedLinkedList = linkedListSM.MergeTwoSortedLinkedList(linkedListSM,linkedListSM2);
+            //while (mergeTwoSortedLinkedList != null)
+            //{
+            //    Console.WriteLine(mergeTwoSortedLinkedList.Data);
+            //    mergeTwoSortedLinkedList = mergeTwoSortedLinkedList.Next;
+            //}
+
+
+
+            ////Merge two sorted linked lists using recursion
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //linkedListSM.AddNodeAtLastSM(6);
+            //LinkedListSM linkedListSM2 = new LinkedListSM();
+            //linkedListSM2.AddNodeAtLastSM(3);
+            //linkedListSM2.AddNodeAtLastSM(5);
+            //linkedListSM2.AddNodeAtLastSM(7);
+            //linkedListSM2.AddNodeAtLastSM(8);
+            //LinkedListNodeSM mergeTwoSortedLinkedListUsingRecursion = linkedListSM.MergeTwoSortedLinkedListUsingRecursion(linkedListSM.head, linkedListSM2.head);
+            //while (mergeTwoSortedLinkedListUsingRecursion != null)
+            //{
+            //    Console.WriteLine(mergeTwoSortedLinkedListUsingRecursion.Data);
+            //    mergeTwoSortedLinkedListUsingRecursion = mergeTwoSortedLinkedListUsingRecursion.Next;
+            //}
+
+
+
+            //Reverse a LinkedList in groups of given size
+            LinkedListSM linkedListSM = new LinkedListSM();
+            linkedListSM.AddNodeAtLastSM(1);
+            linkedListSM.AddNodeAtLastSM(2);
+            linkedListSM.AddNodeAtLastSM(3);
+            linkedListSM.AddNodeAtLastSM(4);
+            linkedListSM.AddNodeAtLastSM(5);
+            linkedListSM.AddNodeAtLastSM(6);
+            linkedListSM.AddNodeAtLastSM(7);
+            linkedListSM.AddNodeAtLastSM(8);
+            int gpSize = 3;
+            LinkedListNodeSM node = linkedListSM.ReverseLinkedListInGroupsOfGivenSize(linkedListSM.head, gpSize);
+            while (node != null)
+            {
+                Console.WriteLine(node.Data);
+                node = node.Next;
+            }
 
             ////Search an element in a Linked List
             //LinkedListSM linkedListSM = new LinkedListSM();
@@ -117,9 +205,6 @@ namespace LinkedList
             linkedListSM.AddNodeAtLastSM(4);
             int found = linkedListSM.FindNthNodeInLinkedList(2);
             Console.WriteLine(found);
-
-
-
             Console.ReadLine();
         }
     }

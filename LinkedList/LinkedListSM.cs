@@ -240,6 +240,120 @@ namespace LinkedList
                 nodeIterator = nodeIterator.Next;
             }
         }
+
+        public void ReverseLinkedListSM()
+        {
+            LinkedListNodeSM curr = head;
+            LinkedListNodeSM prev = null;
+            LinkedListNodeSM next =null;
+            while (curr != null)
+            {
+                next = curr.Next;
+                curr.Next = prev;
+                prev = curr;
+                curr = next;
+            }
+
+            head = prev;
+        }
+
+        public LinkedListNodeSM ReverseLinkedListUsingRecursionSM(LinkedListNodeSM head)
+        {
+            if (head == null || head.Next == null)
+            {
+                return head;
+            }
+
+            LinkedListNodeSM rest = ReverseLinkedListUsingRecursionSM(head.Next);
+            head.Next.Next = head;
+            head.Next = null;
+            return rest;
+        }
+
+        public LinkedListNodeSM MergeTwoSortedLinkedList(LinkedListSM linkedListSm, LinkedListSM linkedListSm2)
+        {
+            LinkedListNodeSM headFirst = linkedListSm.head;
+            LinkedListNodeSM headSecond = linkedListSm2.head;
+            LinkedListNodeSM dummy = new LinkedListNodeSM(-1);
+            LinkedListNodeSM dummyHead = dummy;
+
+            while (headFirst!=null && headSecond != null)
+            {
+                if (headFirst.Data < headSecond.Data)
+                {
+                    dummy.Next = headFirst;
+                    headFirst = headFirst.Next;
+                    
+                }
+                else
+                {
+                    dummy.Next = headSecond;
+                    headSecond = headSecond.Next;
+                }
+                dummy = dummy.Next;
+            }
+
+            while (headFirst != null)
+            {
+                dummy.Next = headFirst;
+                headFirst = headFirst.Next;
+                dummy = dummy.Next;
+            }
+
+            while (headSecond != null)
+            {
+                dummy.Next = headSecond;
+                headSecond = headSecond.Next;
+                dummy = dummy.Next;
+            }
+
+            return dummyHead.Next;
+        }
+
+        public LinkedListNodeSM MergeTwoSortedLinkedListUsingRecursion(LinkedListNodeSM linkedListSm, LinkedListNodeSM linkedListSm2)
+        {
+            LinkedListNodeSM result = null;
+            if (linkedListSm == null) return linkedListSm2;
+            if (linkedListSm2 == null) return linkedListSm;
+
+            if (linkedListSm.Data < linkedListSm2.Data)
+            {
+                result = linkedListSm;
+                result.Next = MergeTwoSortedLinkedListUsingRecursion(linkedListSm.Next, linkedListSm2);
+            }
+            else
+            {
+                result = linkedListSm2;
+                result.Next = MergeTwoSortedLinkedListUsingRecursion(linkedListSm, linkedListSm2.Next);
+            }
+
+            return result;
+        }
+
+        public LinkedListNodeSM ReverseLinkedListInGroupsOfGivenSize(LinkedListNodeSM linkedListSm,int size)
+        {
+            int count = 0;
+            LinkedListNodeSM prev = null;
+            LinkedListNodeSM curr= linkedListSm;
+            LinkedListNodeSM next;
+            LinkedListNodeSM head =curr;
+
+            while (count < size && curr != null)
+            {
+                next = curr.Next;
+                curr.Next = prev;
+                prev = curr;
+                curr = next;
+                count++;
+            }
+            
+            if (curr != null)
+            {
+                head.Next = ReverseLinkedListInGroupsOfGivenSize(curr, 3);
+            }
+
+            return prev;
+        }
     }
     public class LinkedListNodeSM
     {
