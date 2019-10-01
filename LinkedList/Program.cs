@@ -157,23 +157,23 @@ namespace LinkedList
 
 
 
-            //Reverse a LinkedList in groups of given size
-            LinkedListSM linkedListSM = new LinkedListSM();
-            linkedListSM.AddNodeAtLastSM(1);
-            linkedListSM.AddNodeAtLastSM(2);
-            linkedListSM.AddNodeAtLastSM(3);
-            linkedListSM.AddNodeAtLastSM(4);
-            linkedListSM.AddNodeAtLastSM(5);
-            linkedListSM.AddNodeAtLastSM(6);
-            linkedListSM.AddNodeAtLastSM(7);
-            linkedListSM.AddNodeAtLastSM(8);
-            int gpSize = 3;
-            LinkedListNodeSM node = linkedListSM.ReverseLinkedListInGroupsOfGivenSize(linkedListSM.head, gpSize);
-            while (node != null)
-            {
-                Console.WriteLine(node.Data);
-                node = node.Next;
-            }
+            ////Reverse a LinkedList in groups of given size
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //linkedListSM.AddNodeAtLastSM(5);
+            //linkedListSM.AddNodeAtLastSM(6);
+            //linkedListSM.AddNodeAtLastSM(7);
+            //linkedListSM.AddNodeAtLastSM(8);
+            //int gpSize = 3;
+            //LinkedListNodeSM node = linkedListSM.ReverseLinkedListInGroupsOfGivenSize(linkedListSM.head, gpSize);
+            //while (node != null)
+            //{
+            //    Console.WriteLine(node.Data);
+            //    node = node.Next;
+            //}
 
             ////Search an element in a Linked List
             //LinkedListSM linkedListSM = new LinkedListSM();
@@ -198,13 +198,40 @@ namespace LinkedList
 
 
             //Write a function to get Nth node in a Linked List
-            LinkedListSM linkedListSM = new LinkedListSM();
-            linkedListSM.AddNodeAtLastSM(1);
-            linkedListSM.AddNodeAtLastSM(2);
-            linkedListSM.AddNodeAtLastSM(3);
-            linkedListSM.AddNodeAtLastSM(4);
-            int found = linkedListSM.FindNthNodeInLinkedList(2);
-            Console.WriteLine(found);
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //int found = linkedListSM.FindNthNodeInLinkedList(2);
+            //Console.WriteLine(found);
+
+
+
+            ////Write a function to get Nth node in a Linked List
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //int found = linkedListSM.FindNthNodeInLinkedList(2);
+            //Console.WriteLine(found);
+
+
+
+            ////Write a function to get Nth node in a Linked List
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(3);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //int found = linkedListSM.FindNthNodeInLinkedListRecursively(2,linkedListSM.head);
+            //Console.WriteLine(found);
+
+
+
+
+
             Console.ReadLine();
         }
     }

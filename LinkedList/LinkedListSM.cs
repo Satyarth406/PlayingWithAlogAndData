@@ -330,6 +330,19 @@ namespace LinkedList
             return result;
         }
 
+        public int FindNthNodeInLinkedListRecursively(int v, LinkedListNodeSM node)
+        {
+            if (v == 0)
+            {
+                return node.Data;
+            }
+            if (node == null)
+                return int.MinValue;
+            else
+                return FindNthNodeInLinkedListRecursively(--v, node.Next);
+            
+        }
+
         public LinkedListNodeSM ReverseLinkedListInGroupsOfGivenSize(LinkedListNodeSM linkedListSm,int size)
         {
             int count = 0;
