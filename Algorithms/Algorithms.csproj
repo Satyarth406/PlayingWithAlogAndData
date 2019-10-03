@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Algorithms.SelectionSort</StartupObject>
+    <StartupObject>Algorithms.QuickSort</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,8 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearch.cs" />
+    <Compile Include="BubbleSort.cs" />
+    <Compile Include="InsertionSort.cs" />
+    <Compile Include="MergeSort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickSort.cs" />
     <Compile Include="SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>
