@@ -65,6 +65,7 @@ namespace StackSM
 
 
 
+
             ////Check for balanced parentheses in an expression
             //string s = Console.ReadLine();
             //char[] c = s.ToCharArray();
@@ -92,28 +93,32 @@ namespace StackSM
 
 
 
-            //Next Greater Element
-            string s = Console.ReadLine();
-            int[] c = Array.ConvertAll(s.Split(' ').ToArray(), int.Parse);
-            StackSM stackSM = new StackSM(c.Length);
-            for (int i = 0; i < c.Length; i++)
-            {
-                int elementToPush = c[i];
-                if (stackSM.PeekSM() == int.MinValue)
-                {
-                    stackSM.PushSM(elementToPush);
-                    continue;
-                }
-                while(stackSM.PeekSM() < elementToPush && stackSM.PeekSM()!=int.MinValue)
-                {
-                    Console.WriteLine(stackSM.PopSM() + " -> " + elementToPush);
-                }
-                stackSM.PushSM(elementToPush);
-            }
-            while (stackSM.PeekSM() != int.MinValue)
-            {
-                Console.WriteLine(stackSM.PopSM() + " -> -1");
-            }   
+            ////Next Greater Element
+            //string s = Console.ReadLine();
+            //int[] c = Array.ConvertAll(s.Split(' ').ToArray(), int.Parse);
+            //StackSM stackSM = new StackSM(c.Length);
+            //for (int i = 0; i < c.Length; i++)
+            //{
+            //    int elementToPush = c[i];
+            //    if (stackSM.PeekSM() == int.MinValue)
+            //    {
+            //        stackSM.PushSM(elementToPush);
+            //        continue;
+            //    }
+            //    while(stackSM.PeekSM() < elementToPush && stackSM.PeekSM()!=int.MinValue)
+            //    {
+            //        Console.WriteLine(stackSM.PopSM() + " -> " + elementToPush);
+            //    }
+            //    stackSM.PushSM(elementToPush);
+            //}
+            //while (stackSM.PeekSM() != int.MinValue)
+            //{
+            //    Console.WriteLine(stackSM.PopSM() + " -> -1");
+            //}   
+
+
+
+
 
             Console.ReadLine();
 
