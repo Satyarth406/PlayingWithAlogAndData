@@ -118,6 +118,29 @@ namespace StackSM
 
 
 
+            ////Reverse a stack using recursion
+            //StackSM stackSM = new StackSM(5);
+            //stackSM.PushSM(1);
+            //stackSM.PushSM(2);
+            //stackSM.PushSM(3);
+            //stackSM.PushSM(4);
+            //stackSM.PushSM(5);
+            //stackSM.ReverseAStackUsingRecursion();
+            //stackSM.PrintStackSM();
+
+
+
+            ////Sort a stack using recursion
+            StackSM stackSM = new StackSM(5);
+            stackSM.PushSM(1);
+            stackSM.PushSM(4);
+            stackSM.PushSM(2);
+            stackSM.PushSM(3);
+            stackSM.PushSM(5);
+            stackSM.SortAStackUsingRecursion();
+            stackSM.PrintStackSM();
+
+
 
 
             Console.ReadLine();

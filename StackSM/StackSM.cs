@@ -62,6 +62,51 @@ namespace StackSM
                 top = top - 1;
             }
         }
+
+        public void ReverseAStackUsingRecursion()
+        {
+            if (PeekSM() == int.MinValue) return;
+            int t = PopSM();
+            ReverseAStackUsingRecursion();
+            InsertAtBottomOfStack(t);
+        }
+
+        private void InsertAtBottomOfStack(int t)
+        {
+            if (PeekSM() == int.MinValue)
+            {
+                PushSM(t);
+                return;
+            }
+            int z = PopSM();
+            InsertAtBottomOfStack(t);
+            PushSM(z);
+        }
+
+        public void SortAStackUsingRecursion()
+        {
+            if (PeekSM() == int.MinValue) return;
+            int t = PopSM();
+            SortAStackUsingRecursion();
+            InsertSortedInTheStack(t);
+        }
+
+        private void InsertSortedInTheStack(int t)
+        {
+            if (PeekSM() == int.MinValue)
+            {
+                PushSM(t);
+                return;
+            }
+            if (PeekSM() < t)
+            {
+                PushSM(t);
+                return;
+            }
+            int z = PopSM();
+            InsertSortedInTheStack(t);
+            PushSM(z);
+        }
     }
 
     public class TwoStackSM
