@@ -230,6 +230,44 @@ namespace LinkedList
 
 
 
+            ////Detect and Remove Loop in a Linked List
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(50);
+            //linkedListSM.AddNodeAtLastSM(20);
+            //linkedListSM.AddNodeAtLastSM(15);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //linkedListSM.AddNodeAtLastSM(10);
+            //linkedListSM.head.Next.Next.Next.Next.Next = linkedListSM.head.Next.Next;
+            //bool t = linkedListSM.DetectAndRemoveNode(linkedListSM);
+            //if (t == true)
+            //{
+            //    Console.WriteLine("Loop deteched and is removed");
+            //    linkedListSM.PrintLinkedListSM();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No loop present");
+            //}
+
+
+
+            ////Add two numbers represented by linked lists
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSM(1);
+            //linkedListSM.AddNodeAtLastSM(2);
+            //linkedListSM.AddNodeAtLastSM(4);
+            //linkedListSM.AddNodeAtLastSM(6);
+            //LinkedListSM linkedListSM2 = new LinkedListSM();
+            //linkedListSM2.AddNodeAtLastSM(3);
+            //linkedListSM2.AddNodeAtLastSM(5);
+            //linkedListSM2.AddNodeAtLastSM(7);
+            //linkedListSM2.AddNodeAtLastSM(8);
+            //LinkedListNodeSM result = linkedListSM.AddTwoLinkedListTogetherSM(linkedListSM, linkedListSM2);
+            //while (result != null)
+            //{
+            //    Console.WriteLine(result.Data);
+            //    result = result.Next;
+            //}
 
 
             Console.ReadLine();

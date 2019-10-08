@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -20,7 +16,7 @@ namespace LinkedList
             last = null;
         }
 
-        
+
         /// <summary>
         /// returns the created node
         /// </summary>
@@ -65,13 +61,13 @@ namespace LinkedList
                 return;
             }
 
-            if(dummy.Data == data)
+            if (dummy.Data == data)
             {
                 head = head.Next;
                 return;
             }
 
-            while(dummy!=null && dummy.Data != data)
+            while (dummy != null && dummy.Data != data)
             {
                 dummyBefore = dummy;
                 dummy = dummy.Next;
@@ -82,7 +78,7 @@ namespace LinkedList
                 return;
             }
             dummyBefore.Next = dummy.Next;
-            
+
         }
 
         public void DeleteNodeAtAGivenPosition(int position) //starting position is 0
@@ -96,19 +92,19 @@ namespace LinkedList
                 return;
             }
 
-            if (position==0)
+            if (position == 0)
             {
                 head = head.Next;
                 return;
             }
             int count = 0;
-            while (dummy != null && count!=position)
+            while (dummy != null && count != position)
             {
                 count++;
                 dummyBefore = dummy;
                 dummy = dummy.Next;
             }
-            if (dummy == null )
+            if (dummy == null)
             {
                 Console.WriteLine("There position is outside the length of the linked list");
                 return;
@@ -120,23 +116,23 @@ namespace LinkedList
         public void SwapNodesWithSwappingDataSM(int x, int y)
         {
             if (x == y) return;
-            LinkedListNodeSM dummyX =head;
-            LinkedListNodeSM dummyBeforeX=null;
-            LinkedListNodeSM dummyY=head;
+            LinkedListNodeSM dummyX = head;
+            LinkedListNodeSM dummyBeforeX = null;
+            LinkedListNodeSM dummyY = head;
             LinkedListNodeSM dummyBeforeY = null;
 
-            while (dummyX!=null && dummyX.Data!=x)
+            while (dummyX != null && dummyX.Data != x)
             {
                 dummyBeforeX = dummyX;
                 dummyX = dummyX.Next;
             }
-            
-            while (dummyY != null && dummyY.Data !=y)
+
+            while (dummyY != null && dummyY.Data != y)
             {
                 dummyBeforeY = dummyY;
                 dummyY = dummyY.Next;
             }
-            if(dummyX==null || dummyY == null)
+            if (dummyX == null || dummyY == null)
             {
                 Console.WriteLine("either one or both of the data aren't in the linked list");
                 return;
@@ -152,14 +148,14 @@ namespace LinkedList
             }
             if (dummyBeforeY == null)
             {
-                head  = dummyX ;
+                head = dummyX;
             }
             else
             {
                 dummyBeforeY.Next = dummyX;
             }
             LinkedListNodeSM dummyXNext = dummyX.Next;
-            
+
             dummyX.Next = dummyY.Next;
             dummyY.Next = dummyXNext;
 
@@ -169,7 +165,7 @@ namespace LinkedList
         {
             int count = 0;
             LinkedListNodeSM linkedListNodeSM = head;
-            while (linkedListNodeSM!=null &&  count != v)
+            while (linkedListNodeSM != null && count != v)
             {
                 linkedListNodeSM = linkedListNodeSM.Next;
             }
@@ -193,7 +189,7 @@ namespace LinkedList
         {
             LinkedListNodeSM linkedListNodeSM = head;
             bool a = false;
-            
+
             while (linkedListNodeSM != null)
             {
                 if (linkedListNodeSM.Data == v)
@@ -245,7 +241,7 @@ namespace LinkedList
         {
             LinkedListNodeSM curr = head;
             LinkedListNodeSM prev = null;
-            LinkedListNodeSM next =null;
+            LinkedListNodeSM next = null;
             while (curr != null)
             {
                 next = curr.Next;
@@ -277,13 +273,13 @@ namespace LinkedList
             LinkedListNodeSM dummy = new LinkedListNodeSM(-1);
             LinkedListNodeSM dummyHead = dummy;
 
-            while (headFirst!=null && headSecond != null)
+            while (headFirst != null && headSecond != null)
             {
                 if (headFirst.Data < headSecond.Data)
                 {
                     dummy.Next = headFirst;
                     headFirst = headFirst.Next;
-                    
+
                 }
                 else
                 {
@@ -340,16 +336,82 @@ namespace LinkedList
                 return int.MinValue;
             else
                 return FindNthNodeInLinkedListRecursively(--v, node.Next);
-            
+
         }
 
-        public LinkedListNodeSM ReverseLinkedListInGroupsOfGivenSize(LinkedListNodeSM linkedListSm,int size)
+        public bool DetectAndRemoveNode(LinkedListSM linkedListSM)
+        {
+            LinkedListNodeSM slow = linkedListSM.head;
+            LinkedListNodeSM fast = linkedListSM.head;
+            while (slow != null && fast != null && fast.Next != null)
+            {
+                slow = slow.Next;
+                fast = fast.Next.Next;
+                if (slow == fast)
+                {
+                    removeLoop(slow, linkedListSM.head);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void removeLoop(LinkedListNodeSM nodeInLoop, LinkedListNodeSM head)
+        {
+            LinkedListNodeSM trialhead = head;
+            LinkedListNodeSM trialNode;
+
+            while (1 == 1)
+            {
+                trialNode = nodeInLoop;
+                while (trialNode.Next != nodeInLoop && trialNode.Next != trialhead)
+                {
+                    trialNode = trialNode.Next;
+                }
+                if (trialNode.Next == trialhead)
+                {
+                    break;
+                }
+                trialhead = trialhead.Next;
+            }
+            trialNode.Next = null;
+
+
+        }
+
+        public LinkedListNodeSM AddTwoLinkedListTogetherSM(LinkedListSM linkedListSM, LinkedListSM linkedListSM2)
+        {
+            LinkedListNodeSM result = new LinkedListNodeSM(-1);
+            LinkedListNodeSM resulthead = result;
+
+            int carryOver = 0;
+
+            while (linkedListSM.head != null || linkedListSM2.head != null)
+            {
+                int sum = (linkedListSM.head == null ? 0 : linkedListSM.head.Data) + (linkedListSM2.head == null ? 0 : linkedListSM2.head.Data) + carryOver;
+                int d = sum % 10;
+                carryOver = sum / 10;
+                result.Next = new LinkedListNodeSM(d);
+                if (linkedListSM.head != null)
+                    linkedListSM.head = linkedListSM.head.Next;
+                if (linkedListSM2.head != null)
+                    linkedListSM2.head = linkedListSM2.head.Next;
+                result = result.Next;
+            }
+            if (carryOver > 0)
+            {
+                result.Next = new LinkedListNodeSM(carryOver);
+            }
+            return resulthead.Next;
+        }
+
+        public LinkedListNodeSM ReverseLinkedListInGroupsOfGivenSize(LinkedListNodeSM linkedListSm, int size)
         {
             int count = 0;
             LinkedListNodeSM prev = null;
-            LinkedListNodeSM curr= linkedListSm;
+            LinkedListNodeSM curr = linkedListSm;
             LinkedListNodeSM next;
-            LinkedListNodeSM head =curr;
+            LinkedListNodeSM head = curr;
 
             while (count < size && curr != null)
             {
@@ -359,7 +421,7 @@ namespace LinkedList
                 curr = next;
                 count++;
             }
-            
+
             if (curr != null)
             {
                 head.Next = ReverseLinkedListInGroupsOfGivenSize(curr, 3);
