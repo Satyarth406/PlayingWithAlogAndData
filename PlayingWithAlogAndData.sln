@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackSM", "StackSM\StackSM.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{F4DE6718-8D61-41D0-9FE4-4BB6B2415FC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoublyLinkedList", "DoublyLinkedList\DoublyLinkedList.csproj", "{81AD0836-AA23-40C7-AAED-0F3B70E02D88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F4DE6718-8D61-41D0-9FE4-4BB6B2415FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4DE6718-8D61-41D0-9FE4-4BB6B2415FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4DE6718-8D61-41D0-9FE4-4BB6B2415FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81AD0836-AA23-40C7-AAED-0F3B70E02D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81AD0836-AA23-40C7-AAED-0F3B70E02D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81AD0836-AA23-40C7-AAED-0F3B70E02D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81AD0836-AA23-40C7-AAED-0F3B70E02D88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
