@@ -79,6 +79,23 @@ namespace DoublyLinkedList
 
         }
 
+        public DoublyLinkedListNodeSM ReverseTheDoublyLinkedListSM()
+        {
+            DoublyLinkedListNodeSM prev = null;
+            DoublyLinkedListNodeSM current = Head;
+            DoublyLinkedListNodeSM next = null;
+            while (current != null)
+            {
+                next = current.Next;
+                current.Next = prev;
+                if(next!=null)
+                next.Prev = current;
+                prev = current;
+                current = next;
+            }
+            return prev;    
+        }
+
         public void DeleteANode(int d)
         {
             DoublyLinkedListNodeSM nodeToDelete = Head;

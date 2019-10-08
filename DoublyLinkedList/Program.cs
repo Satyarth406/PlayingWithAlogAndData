@@ -34,16 +34,30 @@ namespace DoublyLinkedList
 
 
             ////Delete a node in a Doubly Linked List
+            //DoublyLinkedListSM doublyLinkedListSM = new DoublyLinkedListSM();
+            //doublyLinkedListSM.AddANodeInTheEnd(10);
+            //doublyLinkedListSM.AddANodeInTheEnd(20);
+            //doublyLinkedListSM.AddANodeInTheEnd(30);
+            //doublyLinkedListSM.AddANodeInTheEnd(40);
+            //doublyLinkedListSM.AddANodeInTheEnd(50);
+            //doublyLinkedListSM.DeleteANode(30);
+            //doublyLinkedListSM.PrintDoublyLinkedList();
+
+
+
+            ////Reverse a Doubly Linked List
             DoublyLinkedListSM doublyLinkedListSM = new DoublyLinkedListSM();
             doublyLinkedListSM.AddANodeInTheEnd(10);
             doublyLinkedListSM.AddANodeInTheEnd(20);
             doublyLinkedListSM.AddANodeInTheEnd(30);
             doublyLinkedListSM.AddANodeInTheEnd(40);
             doublyLinkedListSM.AddANodeInTheEnd(50);
-            doublyLinkedListSM.DeleteANode(30);
-            doublyLinkedListSM.PrintDoublyLinkedList();
-
-
+            DoublyLinkedListNodeSM node = doublyLinkedListSM.ReverseTheDoublyLinkedListSM();
+            while (node != null)
+            {
+                Console.WriteLine(node.Data);
+                node = node.Next;
+            }
 
             Console.ReadLine();
         }
