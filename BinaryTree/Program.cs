@@ -139,6 +139,17 @@ namespace BinaryTree
 
 
 
+            ////Print Ancestors of a given node in Binary Tree
+            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            binaryTreeSM.root.leftChild.leftChild.leftChild = new BinaryTreeNodeSM(7);
+            binaryTreeSM.PrintAncestorsofGivenNode(binaryTreeSM.root, 7);
+
+
 
             Console.ReadLine();
         }

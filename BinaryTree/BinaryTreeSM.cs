@@ -190,6 +190,19 @@ namespace BinaryTree
             }
             return result;
         }
+
+        public bool PrintAncestorsofGivenNode(BinaryTreeNodeSM root, int pa)
+        {
+            if (root == null) return false;
+            if (root.data == pa) return true;
+            bool z = PrintAncestorsofGivenNode(root.leftChild, pa) || PrintAncestorsofGivenNode(root.rightChild, pa);
+            if (z)
+            {
+                Console.WriteLine(root.data);
+                return true;
+            }
+            return false;
+        }
     }
 
     public class BinaryTreeNodeSM
