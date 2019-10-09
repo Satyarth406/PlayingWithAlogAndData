@@ -13,9 +13,8 @@ namespace BinaryTree
 
         public void InOrderTransversal(BinaryTreeNodeSM node)
         {
-            if (node.leftChild == null && node.rightChild == null)
+            if (node == null)
             {
-                Console.WriteLine(node.data);
                 return;
             }
             InOrderTransversal(node.leftChild);
@@ -72,11 +71,11 @@ namespace BinaryTree
             int height = HeightSM(node);
             for (int i = 1; i <= height; i++)
             {
-                PrintLevel(i,node);
+                PrintLevel(i, node);
             }
         }
 
-        private void PrintLevel(int level,BinaryTreeNodeSM node)
+        private void PrintLevel(int level, BinaryTreeNodeSM node)
         {
             if (node == null) return;
             if (level == 1)
@@ -90,18 +89,106 @@ namespace BinaryTree
                 PrintLevel(level, node.leftChild);
                 PrintLevel(level, node.rightChild);
             }
-            
-
-
         }
 
         public int HeightSM(BinaryTreeNodeSM node)
         {
             if (node == null) return 0;
-            int leftHeight = 1 + HeightSM(node.leftChild);
-            int rightHeight = 1 + HeightSM(node.rightChild);
+            int leftHeight = HeightSM(node.leftChild);
+            int rightHeight = HeightSM(node.rightChild);
 
-            return Math.Max(leftHeight, rightHeight);
+            if (leftHeight > rightHeight)
+                return 1 + leftHeight;
+            else
+                return 1 + rightHeight;
+        }
+
+        public int DiameterOfBinaryTree(BinaryTreeNodeSM node)
+        {
+            if (node == null) return 0;
+            int lheight = HeightSM(node.leftChild);
+            int rheight = HeightSM(node.rightChild);
+            int ldiameter = DiameterOfBinaryTree(node.leftChild);
+            int rDiameter = DiameterOfBinaryTree(node.rightChild);
+            return Math.Max(1 + lheight + rheight, Math.Max(ldiameter, rDiameter));
+        }
+
+        public void InOrderTreeTransversalWithRecursion(BinaryTreeNodeSM root)
+        {
+            Stack<BinaryTreeNodeSM> s = new Stack<BinaryTreeNodeSM>();
+            while (root != null || s.Count > 0)
+            {
+                while (root != null)
+                {
+                    s.Push(root);
+                    root = root.leftChild;
+                }
+                root = s.Pop();
+                Console.WriteLine(root.data);
+                root = root.rightChild;
+            }
+        }
+
+        public void PrintNodeAtKDistance(int k, BinaryTreeNodeSM root)
+        {
+            if (root == null) return;
+            if (k == 1)
+            {
+                Console.WriteLine(root.data);
+                return;
+            }
+            PrintNodeAtKDistance(k - 1, root.leftChild);
+            PrintNodeAtKDistance(k - 1, root.rightChild);
+
+        }
+
+        public int MaximumWidthOfTree(BinaryTreeNodeSM root)
+        {
+            if (root == null) return int.MinValue;
+            int height = HeightSM(root);
+            int maxWidth = -1;
+            for (int i = 1; i <= height; i++)
+            {
+                int w = WidthSM(i, root);
+                if (w > maxWidth) maxWidth = w;
+            }
+            return maxWidth;
+        }
+
+        private int WidthSM(int i, BinaryTreeNodeSM root)
+        {
+            if (root == null) return 0;
+            if (i == 1) return 1;
+            return WidthSM(i - 1, root.leftChild) + WidthSM(i - 1, root.rightChild);
+        }
+
+        public int MaximumWidthOfTreeUsingQueue(BinaryTreeNodeSM root)
+        {
+            if (root == null) return 0;
+            Queue<BinaryTreeNodeSM> queu = new Queue<BinaryTreeNodeSM>();
+            queu.Enqueue(root);
+            int result = 0;
+            while (queu.Count > 0)
+            {
+                int s = queu.Count();
+                if (s > result)
+                {
+                    result = s;
+                }
+                while (s-- > 0)
+                {
+                    BinaryTreeNodeSM b = queu.Dequeue();
+                    if (b.leftChild != null)
+                    {
+                        queu.Enqueue(b.leftChild);
+                    }
+                    if (b.rightChild != null)
+                    {
+                        queu.Enqueue(b.rightChild);
+                    }
+                }
+            }
+            return result;
         }
     }
 
