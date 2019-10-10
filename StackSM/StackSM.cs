@@ -175,4 +175,18 @@ namespace StackSM
             }
         }
     }
+
+    public class StackNode
+    {
+        public int Data;
+        public StackNode Next;
+        public StackNode Prev;
+
+        public StackNode(int d)
+        {
+            Data = d;
+            Next = null;
+            Prev = null;
+        }
+    }
 }

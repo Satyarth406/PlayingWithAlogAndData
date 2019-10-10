@@ -109,6 +109,40 @@ namespace CircularLinkedList
             circularLinkedListNodeSM.Next = Head;
             Head = circularLinkedListNodeSM;
         }
+
+        public void SortedInsertInCircularList( int d)
+        {
+            if (Head == null)
+            {
+                AddToEnd(d);
+                return;
+            }
+
+            if (Head.Data > d)
+            {
+                AddAtStart(d);
+                return;
+            }
+
+            if (Last.Data < d)
+            {
+                AddToEnd(d);
+                return;
+            }
+
+            CircularLinkedListNodeSM dummy = Head;
+            CircularLinkedListNodeSM dummybefore = null;
+
+            while (dummy.Data < d)
+            {
+                dummybefore = Head;
+                dummy = dummy.Next;
+            }
+            CircularLinkedListNodeSM c = new CircularLinkedListNodeSM(d);
+            c.Next = dummy;
+            dummybefore.Next = c;
+
+        }
     }
 
     public class CircularLinkedListNodeSM

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -131,14 +132,26 @@ namespace StackSM
 
 
             ////Sort a stack using recursion
-            StackSM stackSM = new StackSM(5);
-            stackSM.PushSM(1);
-            stackSM.PushSM(4);
-            stackSM.PushSM(2);
-            stackSM.PushSM(3);
-            stackSM.PushSM(5);
-            stackSM.SortAStackUsingRecursion();
-            stackSM.PrintStackSM();
+            //StackSM stackSM = new StackSM(5);
+            //stackSM.PushSM(1);
+            //stackSM.PushSM(4);
+            //stackSM.PushSM(2);
+            //stackSM.PushSM(3);
+            //stackSM.PushSM(5);
+            //stackSM.SortAStackUsingRecursion();
+            //stackSM.PrintStackSM();
+
+
+            //The Stock Span Problem
+            //int[] price = { 10, 4, 5, 90, 120, 80 };
+            //int length = price.Length;
+            //int[] s = new int[length];
+            //StockSpan(price, length, s);
+
+
+            //Design a stack with operations on middle element
+
+
 
 
 
@@ -147,6 +160,22 @@ namespace StackSM
 
 
 
+        }
+
+        private static void StockSpan(int[] price, int length, int[] s)
+        {
+            Stack stack = new Stack();
+            stack.Push(0);
+            for (int i = 1; i < length; i++)
+            {
+                while (stack.Count > 0 && price[(int)stack.Pop()] < price[i])
+                {
+                    stack.Pop();
+                }
+
+                s[i] = (stack.Count == 0) ? i + 1 : i - (int) stack.Peek(); 
+                stack.Push(1);
+            }
         }
 
         private static bool DoTheyMatch(char popped, char v)
