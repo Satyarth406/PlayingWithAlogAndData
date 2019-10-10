@@ -15,6 +15,7 @@ namespace Algorithms
             Console.ReadLine();
         }
 
+        //The selection sort works by putting the smallest element at the beginning at each iteration
         private static void SortMe(int[] a)
         {
             for (int i = 0; i < a.Length-1; i++)

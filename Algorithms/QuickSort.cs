@@ -27,25 +27,24 @@ namespace Algorithms
                 SortMe(a, l, partiton - 1);
                 SortMe(a, partiton + 1, r);
             }
-           
+
         }
 
         private static int Partition(int[] a, int l, int r)
         {
-            
-                int i = l - 1;
-                int key = a[r];
-                for (int j = l; j < r; j++)
+            int i = l - 1;
+            int key = a[r];  //taking last element as the key for the partition
+            for (int j = l; j < r; j++)
+            {
+                if (a[j] < key)
                 {
-                    if (a[j] < key)
-                    {
-                        i++;
-                        swap(ref a[i], ref a[j]);
-                    }
+                    i++;
+                    swap(ref a[i], ref a[j]);
                 }
+            }
 
             swap(ref a[i + 1], ref a[r]);
-            
+
             return i + 1;
         }
 

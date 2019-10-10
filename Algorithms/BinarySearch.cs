@@ -22,6 +22,7 @@ namespace Algorithms
             Console.ReadLine();
         }
 
+        //Remember this works only for the sorted array.
         private static int Search(int[] a,int start, int end, int ele)
         {
             if (start > end)
