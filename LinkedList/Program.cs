@@ -50,7 +50,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(2);
             //linkedListSM.AddNodeAtLastSM(3);
             //linkedListSM.AddNodeAtLastSM(4);
-            ////linkedListSM.DeleNodeWithGivenData(3);
+            ////linkedListSM.DeleteNodeWithGivenData(3);
             ////Print The linked List
             //linkedListSM.PrintLinkedListSM();
 
@@ -238,7 +238,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(4);
             //linkedListSM.AddNodeAtLastSM(10);
             //linkedListSM.head.Next.Next.Next.Next.Next = linkedListSM.head.Next.Next;
-            //bool t = linkedListSM.DetectAndRemoveNode(linkedListSM);
+            //bool t = linkedListSM.DetectAndRemoveLoop(linkedListSM);
             //if (t == true)
             //{
             //    Console.WriteLine("Loop deteched and is removed");

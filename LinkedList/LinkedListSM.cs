@@ -2,10 +2,6 @@
 
 namespace LinkedList
 {
-
-    /// <summary>
-    //https://www.geeksforgeeks.org/linked-list-set-1-introduction/
-    /// </summary>
     public class LinkedListSM
     {
         public LinkedListNodeSM head;
@@ -50,7 +46,7 @@ namespace LinkedList
             return n;
         }
 
-        public void DeleNodeWithGivenData(int data)
+        public void DeleteNodeWithGivenData(int data)
         {
             LinkedListNodeSM dummy = head;
             LinkedListNodeSM dummyBefore = head; //node before the node to be deleted.
@@ -155,7 +151,6 @@ namespace LinkedList
                 dummyBeforeY.Next = dummyX;
             }
             LinkedListNodeSM dummyXNext = dummyX.Next;
-
             dummyX.Next = dummyY.Next;
             dummyY.Next = dummyXNext;
 
@@ -171,8 +166,7 @@ namespace LinkedList
             }
             if (linkedListNodeSM == null)
                 return int.MinValue;
-            else
-                return linkedListNodeSM.Data;
+            return linkedListNodeSM.Data;
         }
 
         public bool FindNodeWithDataRecursively(int v, LinkedListNodeSM head)
@@ -181,8 +175,7 @@ namespace LinkedList
                 return false;
             if (head.Data == v)
                 return true;
-            else
-                return FindNodeWithDataRecursively(v, head.Next);
+            return FindNodeWithDataRecursively(v, head.Next);
         }
 
         public bool FindNodeWithData(int v)
@@ -339,7 +332,7 @@ namespace LinkedList
 
         }
 
-        public bool DetectAndRemoveNode(LinkedListSM linkedListSM)
+        public bool DetectAndRemoveLoop(LinkedListSM linkedListSM)
         {
             LinkedListNodeSM slow = linkedListSM.head;
             LinkedListNodeSM fast = linkedListSM.head;
