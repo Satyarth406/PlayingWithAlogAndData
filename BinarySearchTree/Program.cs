@@ -49,6 +49,7 @@ namespace BinarySearchTree
 
 
 
+
             ////Inorder predecessor and successor for a given key in BST
             //BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
             //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 10);
@@ -59,6 +60,22 @@ namespace BinarySearchTree
             //BinarySearchTreeNodeSM pred = null, succ = null;
             //binarySearchTreeSm.FindInorderPredecessorAndSuccessorOfKey(binarySearchTreeSm.Root, 13, ref pred, ref succ);
             //Console.WriteLine("Predecessor is " + pred.Data + "  Successor is: " + succ.Data);
+
+
+
+
+            ////A program to check if a binary tree is BST or not
+            BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 10);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 3);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 5);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 15);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 12);
+            bool isBst = binarySearchTreeSm.CheckIfBstOrNot(binarySearchTreeSm.Root);
+            Console.WriteLine(isBst);
+
+
+
 
 
 

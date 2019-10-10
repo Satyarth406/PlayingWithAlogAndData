@@ -85,6 +85,35 @@ namespace BinarySearchTree
                 FindInorderPredecessorAndSuccessorOfKey(root.RightChild, i, ref pred, ref succ);
             }
         }
+
+        public bool CheckIfBstOrNot(BinarySearchTreeNodeSM node)
+        {
+            if (node == null) return true;
+            if (node.LeftChild != null && MaxNodeValue(node.LeftChild) > node.Data) return false;
+            if (node.RightChild != null && MinNodeValue(node.RightChild) < node.Data) return false;
+
+            return CheckIfBstOrNot(node.LeftChild) && CheckIfBstOrNot(node.RightChild);
+        }
+
+        private int MinNodeValue(BinarySearchTreeNodeSM nodeRightChild)
+        {
+            while (nodeRightChild.LeftChild != null)
+            {
+                nodeRightChild = nodeRightChild.LeftChild;
+            }
+
+            return nodeRightChild.Data;
+        }
+
+        private int MaxNodeValue(BinarySearchTreeNodeSM nodeLeftChild)
+        {
+            while (nodeLeftChild.RightChild != null)
+            {
+                nodeLeftChild = nodeLeftChild.RightChild;
+            }
+
+            return nodeLeftChild.Data;
+        }
     }
     public class BinarySearchTreeNodeSM
     {
