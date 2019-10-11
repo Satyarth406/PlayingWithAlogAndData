@@ -65,20 +65,55 @@ namespace BinarySearchTree
 
 
             ////A program to check if a binary tree is BST or not
-            BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
-            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 10);
-            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 3);
-            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 5);
-            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 15);
-            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 12);
-            bool isBst = binarySearchTreeSm.CheckIfBstOrNot(binarySearchTreeSm.Root);
-            Console.WriteLine(isBst);
+            //BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 10);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 3);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 5);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 15);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 12);
+            //bool isBst = binarySearchTreeSm.CheckIfBstOrNot(binarySearchTreeSm.Root);
+            //Console.WriteLine(isBst);
 
 
 
+            ////Lowest Common Ancestor in a Binary Search Tree
+            //BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 20);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 8);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 22);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 12);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 4);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 10);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 14);
+            //BinarySearchTreeNodeSM leastCommonAncestor = binarySearchTreeSm.GetLeastCommonAncestor(binarySearchTreeSm.Root,14,8);
+            //Console.WriteLine(leastCommonAncestor.Data);
+
+
+            ////Lowest Common Ancestor in a Binary Search Tree
+            //BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 20);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 8);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 22);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 12);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 4);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 10);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 14);
+            //BinarySearchTreeNodeSM inOrderSuccessor = binarySearchTreeSm.InOrderSuccessor(binarySearchTreeSm.Root, 10);
+            //Console.WriteLine(inOrderSuccessor.Data);
 
 
 
+            ////Two nodes of a BST are swapped, correct the BST
+            //BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 20);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 8);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 22);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 12);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 4);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 10);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 14);
+            //binarySearchTreeSm.CorrectSwappedNodes(binarySearchTreeSm.Root);
+            //binarySearchTreeSm.InOrderTransversal(binarySearchTreeSm.Root);
 
             Console.ReadLine();
         }

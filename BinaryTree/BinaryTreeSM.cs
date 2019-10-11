@@ -34,16 +34,26 @@ namespace BinaryTree
 
         }
 
-        public void LevelOrderTransversal(BinaryTreeNodeSM node)
+        public void PostOrderTransversal(BinaryTreeNodeSM node)
         {
             if (node == null)
             {
                 return;
             }
-            LevelOrderTransversal(node.leftChild);
-            LevelOrderTransversal(node.rightChild);
+            PostOrderTransversal(node.leftChild);
+            PostOrderTransversal(node.rightChild);
             Console.WriteLine(node.data);
 
+        }
+
+        public void LevelOrderTransversal(BinaryTreeNodeSM node)
+        {
+            if (node == null) return;
+            int height = HeightSM(node);
+            for (int i = 1; i <= height; i++)
+            {
+                PrintLevel(i, node);
+            }
         }
 
         public void LevelOrderTransversalMethod2(BinaryTreeNodeSM node)
@@ -113,7 +123,7 @@ namespace BinaryTree
             return Math.Max(1 + lheight + rheight, Math.Max(ldiameter, rDiameter));
         }
 
-        public void InOrderTreeTransversalWithRecursion(BinaryTreeNodeSM root)
+        public void InOrderTreeTransversalWithoutRecursion(BinaryTreeNodeSM root)
         {
             Stack<BinaryTreeNodeSM> s = new Stack<BinaryTreeNodeSM>();
             while (root != null || s.Count > 0)

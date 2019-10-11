@@ -55,7 +55,7 @@ namespace BinarySearchTree
 
         public void FindInorderPredecessorAndSuccessorOfKey(BinarySearchTreeNodeSM root, int i, ref BinarySearchTreeNodeSM pred, ref BinarySearchTreeNodeSM succ)
         {
-            if(root ==null) return;
+            if (root == null) return;
             if (root.Data == i)
             {
                 BinarySearchTreeNodeSM dummy = root.LeftChild;
@@ -113,6 +113,120 @@ namespace BinarySearchTree
             }
 
             return nodeLeftChild.Data;
+        }
+
+        public BinarySearchTreeNodeSM GetLeastCommonAncestor(BinarySearchTreeNodeSM node, int a, int b)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+            if (node.Data >= a && node.Data <= b)
+            {
+                return node;
+            }
+
+            if (node.Data > a && node.Data > b)
+            {
+                return GetLeastCommonAncestor(node.LeftChild, a, b);
+            }
+            return GetLeastCommonAncestor(node.RightChild, a, b);
+
+        }
+
+        public BinarySearchTreeNodeSM InOrderSuccessor(BinarySearchTreeNodeSM node, int i)
+        {
+            if (node == null)
+                return null;
+            BinarySearchTreeNodeSM successorOf = FindTheGivenData(node, i);
+            BinarySearchTreeNodeSM successorNode = InOrderSuccessorNode(node, successorOf);
+            return successorNode;
+        }
+
+        private BinarySearchTreeNodeSM InOrderSuccessorNode(BinarySearchTreeNodeSM node, BinarySearchTreeNodeSM successorOf)
+        {
+            if (successorOf.RightChild != null)
+            {
+                BinarySearchTreeNodeSM temp = successorOf.RightChild;
+                while (temp.LeftChild != null)
+                {
+                    temp = temp.LeftChild;
+                }
+
+                return temp;
+            }
+
+            BinarySearchTreeNodeSM temp2 = null;
+            while (node != null)
+            {
+                if (node.Data < successorOf.Data)
+                {
+                    node = node.RightChild;
+                }
+                else if (node.Data > successorOf.Data)
+                {
+                    temp2 = node;
+                    node = node.LeftChild;
+                }
+                else
+                {
+                    break;
+                }
+
+            }
+
+            return temp2;
+        }
+
+        public void CorrectSwappedNodes(BinarySearchTreeNodeSM root)
+        {
+            BinarySearchTreeNodeSM first = null, prev = null, last = null, middle = null;
+            CorrectSwappedNodesUtil(root, ref first, ref middle, ref last, ref prev);
+            if (first != null && last != null)
+            {
+                swap(ref first.Data, ref last.Data);
+            }
+            else if (first != null && middle != null)
+                swap(ref first.Data, ref middle.Data);
+        }
+
+        private void swap(ref int firstData, ref int lastData)
+        {
+            int temp = firstData;
+            firstData = lastData;
+            lastData = temp;
+        }
+
+        private void CorrectSwappedNodesUtil(BinarySearchTreeNodeSM root, ref BinarySearchTreeNodeSM first,
+            ref BinarySearchTreeNodeSM middle, ref BinarySearchTreeNodeSM last, ref BinarySearchTreeNodeSM prev)
+        {
+            if (root == null) return;
+            CorrectSwappedNodesUtil(root.LeftChild, ref first, ref middle, ref last, ref prev);
+            if (prev != null && root.Data < prev.Data)
+            {
+                if (first == null)
+                {
+                    first = prev;
+                    middle = root;
+                }
+                else
+                {
+                    last = root;
+                }
+            }
+
+            prev = root;
+            CorrectSwappedNodesUtil(root.RightChild, ref first, ref middle, ref last, ref prev);
+
+        }
+
+        public void InOrderTransversal(BinarySearchTreeNodeSM root)
+        {
+            if(root==null)return;
+            InOrderTransversal(root.LeftChild);
+            Console.WriteLine(root.Data);
+            InOrderTransversal(root.RightChild);
+
         }
     }
     public class BinarySearchTreeNodeSM
