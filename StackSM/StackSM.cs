@@ -8,104 +8,104 @@ namespace StackSM
 {
     public class StackSM
     {
-        int[] elements;
-        int top;
-        int max;
+        readonly int[] _elements;
+        int _top;
+        readonly int _max;
         public StackSM(int size)
         {
-            max = size;
-            top = -1;
-            elements = new int[size];
+            _max = size;
+            _top = -1;
+            _elements = new int[size];
         }
 
-        public void PushSM(int data)
+        public void PushSm(int data)
         {
-            if (top == max - 1)
+            if (_top == _max - 1)
             {
                 Console.WriteLine("The stack is full");
                 return;
             }
-            top = top + 1;
-            elements[top] = data;
+            _top = _top + 1;
+            _elements[_top] = data;
         }
 
-        public int PopSM()
+        public int PopSm()
         {
-            if (top == -1)
+            if (_top == -1)
             {
                 return int.MinValue;
             }
-            int val = elements[top];
-            top = top - 1;
+            int val = _elements[_top];
+            _top = _top - 1;
             return val;
         }
 
-        public int PeekSM()
+        public int PeekSm()
         {
-            if (top == -1)
+            if (_top == -1)
             {
                 return int.MinValue;
             }
-            int val = elements[top];
+            int val = _elements[_top];
             return val;
         }
 
-        public void PrintStackSM()
+        public void PrintStackSm()
         {
-            if (top == -1)
+            if (_top == -1)
             {
                 Console.WriteLine("The stack is empty");
             }
-            while (top != -1)
+            while (_top != -1)
             {
-                Console.WriteLine(elements[top]);
-                top = top - 1;
+                Console.WriteLine(_elements[_top]);
+                _top = _top - 1;
             }
         }
 
-        public void ReverseAStackUsingRecursion()
+        public void ReverseAStackUsingRecursionSm()
         {
-            if (PeekSM() == int.MinValue) return;
-            int t = PopSM();
-            ReverseAStackUsingRecursion();
-            InsertAtBottomOfStack(t);
+            if (PeekSm() == int.MinValue) return;
+            int t = PopSm();
+            ReverseAStackUsingRecursionSm();
+            InsertAtBottomOfStackSm(t);
         }
 
-        private void InsertAtBottomOfStack(int t)
+        private void InsertAtBottomOfStackSm(int t)
         {
-            if (PeekSM() == int.MinValue)
+            if (PeekSm() == int.MinValue)
             {
-                PushSM(t);
+                PushSm(t);
                 return;
             }
-            int z = PopSM();
-            InsertAtBottomOfStack(t);
-            PushSM(z);
+            int z = PopSm();
+            InsertAtBottomOfStackSm(t);
+            PushSm(z);
         }
 
-        public void SortAStackUsingRecursion()
+        public void SortAStackUsingRecursionSm()
         {
-            if (PeekSM() == int.MinValue) return;
-            int t = PopSM();
-            SortAStackUsingRecursion();
-            InsertSortedInTheStack(t);
+            if (PeekSm() == int.MinValue) return;
+            int t = PopSm();
+            SortAStackUsingRecursionSm();
+            InsertSortedInTheStackSm(t);
         }
 
-        private void InsertSortedInTheStack(int t)
+        private void InsertSortedInTheStackSm(int t)
         {
-            if (PeekSM() == int.MinValue)
+            if (PeekSm() == int.MinValue)
             {
-                PushSM(t);
+                PushSm(t);
                 return;
             }
-            if (PeekSM() < t)
+            if (PeekSm() < t)
             {
-                PushSM(t);
+                PushSm(t);
                 return;
             }
-            int z = PopSM();
-            InsertSortedInTheStack(t);
-            PushSM(z);
+            int z = PopSm();
+            InsertSortedInTheStackSm(t);
+            PushSm(z);
         }
     }
 

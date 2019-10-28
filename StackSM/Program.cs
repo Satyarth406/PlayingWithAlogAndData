@@ -13,11 +13,11 @@ namespace StackSM
         {
             ////Creating a new stack and populating it
             //StackSM stackSM = new StackSM(5);
-            //stackSM.PushSM(1);
-            //stackSM.PushSM(2);
-            //stackSM.PushSM(3);
-            //stackSM.PushSM(4);
-            //stackSM.PushSM(5);
+            //stackSM.PushSm(1);
+            //stackSM.PushSm(2);
+            //stackSM.PushSm(3);
+            //stackSM.PushSm(4);
+            //stackSM.PushSm(5);
             //stackSM.PrintStackSM();
 
 
@@ -28,13 +28,13 @@ namespace StackSM
             //StackSM stackSM = new StackSM(c.Length);
             //foreach (var item in c)
             //{
-            //    stackSM.PushSM((int)item);
+            //    stackSM.PushSm((int)item);
             //}
             //char[] reversed = new char[c.Length];
             //int i = 0;
             //while (stackSM.PeekSM() != int.MinValue)
             //{
-            //    reversed[i++] = (char)stackSM.PopSM() ;
+            //    reversed[i++] = (char)stackSM.PopSm() ;
             //}
             //Console.WriteLine(new string(reversed));
 
@@ -75,11 +75,11 @@ namespace StackSM
             //{
             //    if (c[i] == '[' || c[i] == '(' || c[i] == '{')
             //    {
-            //        stackSM.PushSM((int)c[i]);
+            //        stackSM.PushSm((int)c[i]);
             //    }
             //    else
             //    {
-            //        char popped = (char)stackSM.PopSM();
+            //        char popped = (char)stackSM.PopSm();
             //        bool t = DoTheyMatch(popped, c[i]);
             //        if (t == false)
             //        {
@@ -103,42 +103,42 @@ namespace StackSM
             //    int elementToPush = c[i];
             //    if (stackSM.PeekSM() == int.MinValue)
             //    {
-            //        stackSM.PushSM(elementToPush);
+            //        stackSM.PushSm(elementToPush);
             //        continue;
             //    }
             //    while(stackSM.PeekSM() < elementToPush && stackSM.PeekSM()!=int.MinValue)
             //    {
-            //        Console.WriteLine(stackSM.PopSM() + " -> " + elementToPush);
+            //        Console.WriteLine(stackSM.PopSm() + " -> " + elementToPush);
             //    }
-            //    stackSM.PushSM(elementToPush);
+            //    stackSM.PushSm(elementToPush);
             //}
             //while (stackSM.PeekSM() != int.MinValue)
             //{
-            //    Console.WriteLine(stackSM.PopSM() + " -> -1");
+            //    Console.WriteLine(stackSM.PopSm() + " -> -1");
             //}   
 
 
 
             ////Reverse a stack using recursion
             //StackSM stackSM = new StackSM(5);
-            //stackSM.PushSM(1);
-            //stackSM.PushSM(2);
-            //stackSM.PushSM(3);
-            //stackSM.PushSM(4);
-            //stackSM.PushSM(5);
-            //stackSM.ReverseAStackUsingRecursion();
+            //stackSM.PushSm(1);
+            //stackSM.PushSm(2);
+            //stackSM.PushSm(3);
+            //stackSM.PushSm(4);
+            //stackSM.PushSm(5);
+            //stackSM.ReverseAStackUsingRecursionSm();
             //stackSM.PrintStackSM();
 
 
 
             ////Sort a stack using recursion
             //StackSM stackSM = new StackSM(5);
-            //stackSM.PushSM(1);
-            //stackSM.PushSM(4);
-            //stackSM.PushSM(2);
-            //stackSM.PushSM(3);
-            //stackSM.PushSM(5);
-            //stackSM.SortAStackUsingRecursion();
+            //stackSM.PushSm(1);
+            //stackSM.PushSm(4);
+            //stackSM.PushSm(2);
+            //stackSM.PushSm(3);
+            //stackSM.PushSm(5);
+            //stackSM.SortAStackUsingRecursionSm();
             //stackSM.PrintStackSM();
 
 
