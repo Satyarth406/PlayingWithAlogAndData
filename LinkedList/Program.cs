@@ -50,7 +50,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(2);
             //linkedListSM.AddNodeAtLastSM(3);
             //linkedListSM.AddNodeAtLastSM(4);
-            ////linkedListSM.DeleteNodeWithGivenData(3);
+            ////linkedListSM.DeleteNodeWithGivenDataSm(3);
             ////Print The linked List
             //linkedListSM.PrintLinkedListSM();
 
@@ -62,7 +62,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(2);
             //linkedListSM.AddNodeAtLastSM(3);
             //linkedListSM.AddNodeAtLastSM(4);
-            //linkedListSM.DeleteNodeAtAGivenPosition(2);
+            //linkedListSM.DeleteNodeAtAGivenPositionSm(2);
             ////Print The linked List
             //linkedListSM.PrintLinkedListSM();
 
@@ -128,7 +128,7 @@ namespace LinkedList
             //linkedListSM2.AddNodeAtLastSM(5);
             //linkedListSM2.AddNodeAtLastSM(7);
             //linkedListSM2.AddNodeAtLastSM(8);
-            //LinkedListNodeSM mergeTwoSortedLinkedList = linkedListSM.MergeTwoSortedLinkedList(linkedListSM,linkedListSM2);
+            //LinkedListNodeSM mergeTwoSortedLinkedList = linkedListSM.MergeTwoSortedLinkedListSm(linkedListSM,linkedListSM2);
             //while (mergeTwoSortedLinkedList != null)
             //{
             //    Console.WriteLine(mergeTwoSortedLinkedList.Data);
@@ -148,7 +148,7 @@ namespace LinkedList
             //linkedListSM2.AddNodeAtLastSM(5);
             //linkedListSM2.AddNodeAtLastSM(7);
             //linkedListSM2.AddNodeAtLastSM(8);
-            //LinkedListNodeSM mergeTwoSortedLinkedListUsingRecursion = linkedListSM.MergeTwoSortedLinkedListUsingRecursion(linkedListSM.head, linkedListSM2.head);
+            //LinkedListNodeSM mergeTwoSortedLinkedListUsingRecursion = linkedListSM.MergeTwoSortedLinkedListUsingRecursionSm(linkedListSM.head, linkedListSM2.head);
             //while (mergeTwoSortedLinkedListUsingRecursion != null)
             //{
             //    Console.WriteLine(mergeTwoSortedLinkedListUsingRecursion.Data);
@@ -168,7 +168,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(7);
             //linkedListSM.AddNodeAtLastSM(8);
             //int gpSize = 3;
-            //LinkedListNodeSM node = linkedListSM.ReverseLinkedListInGroupsOfGivenSize(linkedListSM.head, gpSize);
+            //LinkedListNodeSM node = linkedListSM.ReverseLinkedListInGroupsOfGivenSizeSm(linkedListSM.head, gpSize);
             //while (node != null)
             //{
             //    Console.WriteLine(node.Data);
@@ -181,7 +181,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(2);
             //linkedListSM.AddNodeAtLastSM(3);
             //linkedListSM.AddNodeAtLastSM(4);
-            //bool found = linkedListSM.FindNodeWithData(3);
+            //bool found = linkedListSM.FindNodeWithDataSm(3);
             //Console.WriteLine(found);
 
 
@@ -192,7 +192,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(2);
             //linkedListSM.AddNodeAtLastSM(3);
             //linkedListSM.AddNodeAtLastSM(4);
-            //bool found = linkedListSM.FindNodeWithDataRecursively(5,linkedListSM.head);
+            //bool found = linkedListSM.FindNodeWithDataRecursivelySm(5,linkedListSM.head);
             //Console.WriteLine(found);
 
 
@@ -203,7 +203,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(2);
             //linkedListSM.AddNodeAtLastSM(3);
             //linkedListSM.AddNodeAtLastSM(4);
-            //int found = linkedListSM.FindNthNodeInLinkedList(2);
+            //int found = linkedListSM.FindNthNodeInLinkedListSm(2);
             //Console.WriteLine(found);
 
 
@@ -214,7 +214,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(2);
             //linkedListSM.AddNodeAtLastSM(3);
             //linkedListSM.AddNodeAtLastSM(4);
-            //int found = linkedListSM.FindNthNodeInLinkedList(2);
+            //int found = linkedListSM.FindNthNodeInLinkedListSm(2);
             //Console.WriteLine(found);
 
 
@@ -225,7 +225,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(2);
             //linkedListSM.AddNodeAtLastSM(3);
             //linkedListSM.AddNodeAtLastSM(4);
-            //int found = linkedListSM.FindNthNodeInLinkedListRecursively(2,linkedListSM.head);
+            //int found = linkedListSM.FindNthNodeInLinkedListRecursivelySm(2,linkedListSM.head);
             //Console.WriteLine(found);
 
 
@@ -238,7 +238,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(4);
             //linkedListSM.AddNodeAtLastSM(10);
             //linkedListSM.head.Next.Next.Next.Next.Next = linkedListSM.head.Next.Next;
-            //bool t = linkedListSM.DetectAndRemoveLoop(linkedListSM);
+            //bool t = linkedListSM.DetectAndRemoveLoopSm(linkedListSM);
             //if (t == true)
             //{
             //    Console.WriteLine("Loop deteched and is removed");

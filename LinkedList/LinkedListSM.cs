@@ -4,12 +4,12 @@ namespace LinkedList
 {
     public class LinkedListSM
     {
-        public LinkedListNodeSM head;
-        public LinkedListNodeSM last;
+        public LinkedListNodeSM Head;
+        public LinkedListNodeSM Last;
         public LinkedListSM()
         {
-            head = null;
-            last = null;
+            Head = null;
+            Last = null;
         }
 
 
@@ -18,38 +18,38 @@ namespace LinkedList
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public LinkedListNodeSM AddNodeAtFirstSM(int data)
+        public LinkedListNodeSM AddNodeAtFirstSm(int data)
         {
-            if (head == null)
-            {
-                head = new LinkedListNodeSM(data);
-                last = head;
-                return head;
-            }
             LinkedListNodeSM n = new LinkedListNodeSM(data);
-            n.Next = head;
-            head = n;
+            if (Head == null)
+            {
+                Head = n;
+                Last = Head;
+                return Head;
+            }
+            n.Next = Head;
+            Head = n;
+            return Head;
+        }
+
+        public LinkedListNodeSM AddNodeAtLastSm(int data)
+        {
+            LinkedListNodeSM n = new LinkedListNodeSM(data);
+            if (Head == null)
+            {
+                Head = n;
+                Last = Head;
+                return Head;
+            }
+            Last.Next = n;
+            Last = n;
             return n;
         }
 
-        public LinkedListNodeSM AddNodeAtLastSM(int data)
+        public void DeleteNodeWithGivenDataSm(int data)
         {
-            if (head == null)
-            {
-                head = new LinkedListNodeSM(data);
-                last = head;
-                return head;
-            }
-            LinkedListNodeSM n = new LinkedListNodeSM(data);
-            last.Next = n;
-            last = n;
-            return n;
-        }
-
-        public void DeleteNodeWithGivenData(int data)
-        {
-            LinkedListNodeSM dummy = head;
-            LinkedListNodeSM dummyBefore = head; //node before the node to be deleted.
+            LinkedListNodeSM dummy = Head;
+            LinkedListNodeSM dummyBefore = Head; //node before the node to be deleted.
 
             if (dummy == null)
             {
@@ -59,7 +59,7 @@ namespace LinkedList
 
             if (dummy.Data == data)
             {
-                head = head.Next;
+                Head = Head.Next;
                 return;
             }
 
@@ -77,10 +77,10 @@ namespace LinkedList
 
         }
 
-        public void DeleteNodeAtAGivenPosition(int position) //starting position is 0
+        public void DeleteNodeAtAGivenPositionSm(int position) //starting position is 0
         {
-            LinkedListNodeSM dummy = head;
-            LinkedListNodeSM dummyBefore = head; //node before the node to be deleted.
+            LinkedListNodeSM dummy = Head;
+            LinkedListNodeSM dummyBefore = Head; //node before the node to be deleted.
 
             if (dummy == null)
             {
@@ -90,7 +90,7 @@ namespace LinkedList
 
             if (position == 0)
             {
-                head = head.Next;
+                Head = Head.Next;
                 return;
             }
             int count = 0;
@@ -109,12 +109,12 @@ namespace LinkedList
 
         }
 
-        public void SwapNodesWithSwappingDataSM(int x, int y)
+        public void SwapNodesWithSwappingDataSm(int x, int y)
         {
             if (x == y) return;
-            LinkedListNodeSM dummyX = head;
+            LinkedListNodeSM dummyX = Head;
             LinkedListNodeSM dummyBeforeX = null;
-            LinkedListNodeSM dummyY = head;
+            LinkedListNodeSM dummyY = Head;
             LinkedListNodeSM dummyBeforeY = null;
 
             while (dummyX != null && dummyX.Data != x)
@@ -136,7 +136,7 @@ namespace LinkedList
 
             if (dummyBeforeX == null)
             {
-                head = dummyY;
+                Head = dummyY;
             }
             else
             {
@@ -144,7 +144,7 @@ namespace LinkedList
             }
             if (dummyBeforeY == null)
             {
-                head = dummyX;
+                Head = dummyX;
             }
             else
             {
@@ -156,10 +156,10 @@ namespace LinkedList
 
         }
 
-        public int FindNthNodeInLinkedList(int v)
+        public int FindNthNodeInLinkedListSm(int v)
         {
             int count = 0;
-            LinkedListNodeSM linkedListNodeSM = head;
+            LinkedListNodeSM linkedListNodeSM = Head;
             while (linkedListNodeSM != null && count != v)
             {
                 linkedListNodeSM = linkedListNodeSM.Next;
@@ -169,37 +169,37 @@ namespace LinkedList
             return linkedListNodeSM.Data;
         }
 
-        public bool FindNodeWithDataRecursively(int v, LinkedListNodeSM head)
+        public bool FindNodeWithDataRecursivelySm(int v, LinkedListNodeSM head)
         {
             if (head == null)
                 return false;
             if (head.Data == v)
                 return true;
-            return FindNodeWithDataRecursively(v, head.Next);
+            return FindNodeWithDataRecursivelySm(v, head.Next);
         }
 
-        public bool FindNodeWithData(int v)
+        public bool FindNodeWithDataSm(int v)
         {
-            LinkedListNodeSM linkedListNodeSM = head;
+            LinkedListNodeSM linkedListNodeSm = Head;
             bool a = false;
 
-            while (linkedListNodeSM != null)
+            while (linkedListNodeSm != null)
             {
-                if (linkedListNodeSM.Data == v)
+                if (linkedListNodeSm.Data == v)
                 {
                     a = true;
                     break;
                 }
-                linkedListNodeSM = linkedListNodeSM.Next;
+                linkedListNodeSm = linkedListNodeSm.Next;
             }
 
             return a;
         }
 
-        public int LengthOfLinkedListSM()
+        public int LengthOfLinkedListSm()
         {
             int count = 0;
-            LinkedListNodeSM dummy = head;
+            LinkedListNodeSM dummy = Head;
             while (dummy != null)
             {
                 count++;
@@ -208,21 +208,20 @@ namespace LinkedList
             return count;
         }
 
-        public void AddNodeAfterAGivenNodeSM(LinkedListNodeSM nodeToInsertAfter, int dataToInsert)
+        public void AddNodeAfterAGivenNodeSm(LinkedListNodeSM nodeToInsertAfter, int dataToInsert)
         {
-            LinkedListNodeSM newNode = new LinkedListNodeSM(dataToInsert);
-            newNode.Next = nodeToInsertAfter.Next;
+            LinkedListNodeSM newNode = new LinkedListNodeSM(dataToInsert) {Next = nodeToInsertAfter.Next};
             nodeToInsertAfter.Next = newNode;
         }
 
-        public void PrintLinkedListSM()
+        public void PrintLinkedListSm()
         {
-            if (head == null)
+            if (Head == null)
             {
                 Console.WriteLine("No items in the linked list");
                 return;
             }
-            LinkedListNodeSM nodeIterator = head;
+            LinkedListNodeSM nodeIterator = Head;
             while (nodeIterator != null)
             {
                 Console.WriteLine(nodeIterator.Data);
@@ -230,39 +229,37 @@ namespace LinkedList
             }
         }
 
-        public void ReverseLinkedListSM()
+        public void ReverseLinkedListSm()
         {
-            LinkedListNodeSM curr = head;
+            LinkedListNodeSM current = Head;
             LinkedListNodeSM prev = null;
-            LinkedListNodeSM next = null;
-            while (curr != null)
+            LinkedListNodeSM next;
+            while (current != null)
             {
-                next = curr.Next;
-                curr.Next = prev;
-                prev = curr;
-                curr = next;
+                next = current.Next;
+                current.Next = prev;
+                prev = current;
+                current = next;
             }
-
-            head = prev;
+            Head = prev;
         }
 
-        public LinkedListNodeSM ReverseLinkedListUsingRecursionSM(LinkedListNodeSM head)
+        public LinkedListNodeSM ReverseLinkedListUsingRecursionSm(LinkedListNodeSM linkedList)
         {
-            if (head == null || head.Next == null)
+            if (linkedList?.Next == null)
             {
-                return head;
+                return linkedList;
             }
-
-            LinkedListNodeSM rest = ReverseLinkedListUsingRecursionSM(head.Next);
-            head.Next.Next = head;
-            head.Next = null;
+            LinkedListNodeSM rest = ReverseLinkedListUsingRecursionSm(linkedList.Next);
+            linkedList.Next.Next = linkedList;
+            linkedList.Next = null;
             return rest;
         }
 
-        public LinkedListNodeSM MergeTwoSortedLinkedList(LinkedListSM linkedListSm, LinkedListSM linkedListSm2)
+        public LinkedListNodeSM MergeTwoSortedLinkedListSm(LinkedListSM linkedListSm, LinkedListSM linkedListSm2)
         {
-            LinkedListNodeSM headFirst = linkedListSm.head;
-            LinkedListNodeSM headSecond = linkedListSm2.head;
+            LinkedListNodeSM headFirst = linkedListSm.Head;
+            LinkedListNodeSM headSecond = linkedListSm2.Head;
             LinkedListNodeSM dummy = new LinkedListNodeSM(-1);
             LinkedListNodeSM dummyHead = dummy;
 
@@ -299,7 +296,7 @@ namespace LinkedList
             return dummyHead.Next;
         }
 
-        public LinkedListNodeSM MergeTwoSortedLinkedListUsingRecursion(LinkedListNodeSM linkedListSm, LinkedListNodeSM linkedListSm2)
+        public LinkedListNodeSM MergeTwoSortedLinkedListUsingRecursionSm(LinkedListNodeSM linkedListSm, LinkedListNodeSM linkedListSm2)
         {
             LinkedListNodeSM result = null;
             if (linkedListSm == null) return linkedListSm2;
@@ -308,18 +305,18 @@ namespace LinkedList
             if (linkedListSm.Data < linkedListSm2.Data)
             {
                 result = linkedListSm;
-                result.Next = MergeTwoSortedLinkedListUsingRecursion(linkedListSm.Next, linkedListSm2);
+                result.Next = MergeTwoSortedLinkedListUsingRecursionSm(linkedListSm.Next, linkedListSm2);
             }
             else
             {
                 result = linkedListSm2;
-                result.Next = MergeTwoSortedLinkedListUsingRecursion(linkedListSm, linkedListSm2.Next);
+                result.Next = MergeTwoSortedLinkedListUsingRecursionSm(linkedListSm, linkedListSm2.Next);
             }
 
             return result;
         }
 
-        public int FindNthNodeInLinkedListRecursively(int v, LinkedListNodeSM node)
+        public int FindNthNodeInLinkedListRecursivelySm(int v, LinkedListNodeSM node)
         {
             if (v == 0)
             {
@@ -328,21 +325,21 @@ namespace LinkedList
             if (node == null)
                 return int.MinValue;
             else
-                return FindNthNodeInLinkedListRecursively(--v, node.Next);
+                return FindNthNodeInLinkedListRecursivelySm(--v, node.Next);
 
         }
 
-        public bool DetectAndRemoveLoop(LinkedListSM linkedListSM)
+        public bool DetectAndRemoveLoopSm(LinkedListSM linkedListSM)
         {
-            LinkedListNodeSM slow = linkedListSM.head;
-            LinkedListNodeSM fast = linkedListSM.head;
+            LinkedListNodeSM slow = linkedListSM.Head;
+            LinkedListNodeSM fast = linkedListSM.Head;
             while (slow != null && fast != null && fast.Next != null)
             {
                 slow = slow.Next;
                 fast = fast.Next.Next;
                 if (slow == fast)
                 {
-                    removeLoop(slow, linkedListSM.head);
+                    removeLoop(slow, linkedListSM.Head);
                     return true;
                 }
             }
@@ -372,23 +369,23 @@ namespace LinkedList
 
         }
 
-        public LinkedListNodeSM AddTwoLinkedListTogetherSM(LinkedListSM linkedListSM, LinkedListSM linkedListSM2)
+        public LinkedListNodeSM AddTwoLinkedListTogetherSm(LinkedListSM linkedListSm, LinkedListSM linkedListSm2)
         {
             LinkedListNodeSM result = new LinkedListNodeSM(-1);
             LinkedListNodeSM resulthead = result;
 
             int carryOver = 0;
 
-            while (linkedListSM.head != null || linkedListSM2.head != null)
+            while (linkedListSm.Head != null || linkedListSm2.Head != null)
             {
-                int sum = (linkedListSM.head == null ? 0 : linkedListSM.head.Data) + (linkedListSM2.head == null ? 0 : linkedListSM2.head.Data) + carryOver;
+                int sum = (linkedListSm.Head?.Data ?? 0) + (linkedListSm2.Head?.Data ?? 0) + carryOver;
                 int d = sum % 10;
                 carryOver = sum / 10;
                 result.Next = new LinkedListNodeSM(d);
-                if (linkedListSM.head != null)
-                    linkedListSM.head = linkedListSM.head.Next;
-                if (linkedListSM2.head != null)
-                    linkedListSM2.head = linkedListSM2.head.Next;
+                if (linkedListSm.Head != null)
+                    linkedListSm.Head = linkedListSm.Head.Next;
+                if (linkedListSm2.Head != null)
+                    linkedListSm2.Head = linkedListSm2.Head.Next;
                 result = result.Next;
             }
             if (carryOver > 0)
@@ -398,26 +395,26 @@ namespace LinkedList
             return resulthead.Next;
         }
 
-        public LinkedListNodeSM ReverseLinkedListInGroupsOfGivenSize(LinkedListNodeSM linkedListSm, int size)
+        public LinkedListNodeSM ReverseLinkedListInGroupsOfGivenSizeSm(LinkedListNodeSM linkedListSm, int size)
         {
             int count = 0;
             LinkedListNodeSM prev = null;
-            LinkedListNodeSM curr = linkedListSm;
+            LinkedListNodeSM currrent = linkedListSm;
             LinkedListNodeSM next;
-            LinkedListNodeSM head = curr;
+            LinkedListNodeSM head = currrent;
 
-            while (count < size && curr != null)
+            while (count < size && currrent != null)
             {
-                next = curr.Next;
-                curr.Next = prev;
-                prev = curr;
-                curr = next;
+                next = currrent.Next;
+                currrent.Next = prev;
+                prev = currrent;
+                currrent = next;
                 count++;
             }
 
-            if (curr != null)
+            if (currrent != null)
             {
-                head.Next = ReverseLinkedListInGroupsOfGivenSize(curr, 3);
+                head.Next = ReverseLinkedListInGroupsOfGivenSizeSm(currrent, 3);
             }
 
             return prev;
