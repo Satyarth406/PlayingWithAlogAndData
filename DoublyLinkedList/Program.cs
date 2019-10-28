@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DoublyLinkedList
 {
@@ -12,47 +8,47 @@ namespace DoublyLinkedList
         {
             ////Add a node in the end
             //DoublyLinkedListSM doublyLinkedListSM = new DoublyLinkedListSM();
-            //doublyLinkedListSM.AddANodeInTheEnd(10);
-            //doublyLinkedListSM.AddANodeInTheEnd(20);
-            //doublyLinkedListSM.AddANodeInTheEnd(30);
-            //doublyLinkedListSM.AddANodeInTheEnd(40);
-            //doublyLinkedListSM.AddANodeInTheEnd(50);
-            //doublyLinkedListSM.PrintDoublyLinkedList();
+            //doublyLinkedListSM.AddANodeInTheEndSm(10);
+            //doublyLinkedListSM.AddANodeInTheEndSm(20);
+            //doublyLinkedListSM.AddANodeInTheEndSm(30);
+            //doublyLinkedListSM.AddANodeInTheEndSm(40);
+            //doublyLinkedListSM.AddANodeInTheEndSm(50);
+            //doublyLinkedListSM.PrintDoublyLinkedListSm();
 
 
 
             ////Add a node after a given node
             //DoublyLinkedListSM doublyLinkedListSM = new DoublyLinkedListSM();
-            //doublyLinkedListSM.AddANodeInTheEnd(10);
-            //doublyLinkedListSM.AddANodeInTheEnd(20);
-            //doublyLinkedListSM.AddANodeInTheEnd(30);
-            //doublyLinkedListSM.AddANodeInTheEnd(40);
-            //doublyLinkedListSM.AddANodeInTheEnd(50);
+            //doublyLinkedListSM.AddANodeInTheEndSm(10);
+            //doublyLinkedListSM.AddANodeInTheEndSm(20);
+            //doublyLinkedListSM.AddANodeInTheEndSm(30);
+            //doublyLinkedListSM.AddANodeInTheEndSm(40);
+            //doublyLinkedListSM.AddANodeInTheEndSm(50);
             //doublyLinkedListSM.AddANodeAfterAGivenData(30, 33);
-            //doublyLinkedListSM.PrintDoublyLinkedList();
+            //doublyLinkedListSM.PrintDoublyLinkedListSm();
 
 
 
             ////Delete a node in a Doubly Linked List
             //DoublyLinkedListSM doublyLinkedListSM = new DoublyLinkedListSM();
-            //doublyLinkedListSM.AddANodeInTheEnd(10);
-            //doublyLinkedListSM.AddANodeInTheEnd(20);
-            //doublyLinkedListSM.AddANodeInTheEnd(30);
-            //doublyLinkedListSM.AddANodeInTheEnd(40);
-            //doublyLinkedListSM.AddANodeInTheEnd(50);
-            //doublyLinkedListSM.DeleteANode(30);
-            //doublyLinkedListSM.PrintDoublyLinkedList();
+            //doublyLinkedListSM.AddANodeInTheEndSm(10);
+            //doublyLinkedListSM.AddANodeInTheEndSm(20);
+            //doublyLinkedListSM.AddANodeInTheEndSm(30);
+            //doublyLinkedListSM.AddANodeInTheEndSm(40);
+            //doublyLinkedListSM.AddANodeInTheEndSm(50);
+            //doublyLinkedListSM.DeleteANodeSm(30);
+            //doublyLinkedListSM.PrintDoublyLinkedListSm();
 
 
 
             ////Reverse a Doubly Linked List
             DoublyLinkedListSM doublyLinkedListSM = new DoublyLinkedListSM();
-            doublyLinkedListSM.AddANodeInTheEnd(10);
-            doublyLinkedListSM.AddANodeInTheEnd(20);
-            doublyLinkedListSM.AddANodeInTheEnd(30);
-            doublyLinkedListSM.AddANodeInTheEnd(40);
-            doublyLinkedListSM.AddANodeInTheEnd(50);
-            DoublyLinkedListNodeSM node = doublyLinkedListSM.ReverseTheDoublyLinkedListSM();
+            doublyLinkedListSM.AddANodeInTheEndSm(10);
+            doublyLinkedListSM.AddANodeInTheEndSm(20);
+            doublyLinkedListSM.AddANodeInTheEndSm(30);
+            doublyLinkedListSM.AddANodeInTheEndSm(40);
+            doublyLinkedListSM.AddANodeInTheEndSm(50);
+            DoublyLinkedListNodeSM node = doublyLinkedListSM.ReverseTheDoublyLinkedListSm();
             while (node != null)
             {
                 Console.WriteLine(node.Data);

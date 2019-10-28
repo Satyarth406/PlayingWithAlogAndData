@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DoublyLinkedList
 {
@@ -17,7 +13,7 @@ namespace DoublyLinkedList
             Last = null;
         }
 
-        public void AddANodeInTheEnd(int data)
+        public void AddANodeInTheEndSm(int data)
         {
             DoublyLinkedListNodeSM doublyLinkedListNodeSM = new DoublyLinkedListNodeSM(data);
             if (Head == null)
@@ -30,7 +26,8 @@ namespace DoublyLinkedList
             Last.Next = doublyLinkedListNodeSM;
             Last = doublyLinkedListNodeSM;
         }
-        public void AddANodeAtFirst(int data)
+
+        public void AddANodeAtFirstSm(int data)
         {
             DoublyLinkedListNodeSM doublyLinkedListNodeSM = new DoublyLinkedListNodeSM(data);
             if (Head == null)
@@ -44,7 +41,7 @@ namespace DoublyLinkedList
             Head = doublyLinkedListNodeSM;
         }
 
-        public void PrintDoublyLinkedList()
+        public void PrintDoublyLinkedListSm()
         {
             while (Head != null)
             {
@@ -79,7 +76,7 @@ namespace DoublyLinkedList
 
         }
 
-        public DoublyLinkedListNodeSM ReverseTheDoublyLinkedListSM()
+        public DoublyLinkedListNodeSM ReverseTheDoublyLinkedListSm()
         {
             DoublyLinkedListNodeSM prev = null;
             DoublyLinkedListNodeSM current = Head;
@@ -89,14 +86,14 @@ namespace DoublyLinkedList
                 next = current.Next;
                 current.Next = prev;
                 if(next!=null)
-                next.Prev = current;
+                    next.Prev = current;
                 prev = current;
                 current = next;
             }
             return prev;    
         }
 
-        public void DeleteANode(int d)
+        public void DeleteANodeSm(int d)
         {
             DoublyLinkedListNodeSM nodeToDelete = Head;
             
@@ -106,7 +103,7 @@ namespace DoublyLinkedList
             }
             if (nodeToDelete == null)
             {
-                Console.WriteLine("The given data isnt part of doubly linked list");
+                Console.WriteLine("The given data isn't part of doubly linked list");
                 return;
             }
             
