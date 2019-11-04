@@ -85,8 +85,7 @@ namespace DoublyLinkedList
             {
                 next = current.Next;
                 current.Next = prev;
-                if(next!=null)
-                    next.Prev = current;
+                current.Prev = next;
                 prev = current;
                 current = next;
             }
@@ -121,8 +120,6 @@ namespace DoublyLinkedList
         public DoublyLinkedListNodeSM(int d)
         {
             Data = d;
-            Next = null;
-            Prev = null;
         }
     }
 }
