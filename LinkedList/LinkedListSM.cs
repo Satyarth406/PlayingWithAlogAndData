@@ -74,7 +74,6 @@ namespace LinkedList
                 return;
             }
             dummyBefore.Next = dummy.Next;
-
         }
 
         public void DeleteNodeAtAGivenPositionSm(int position) //starting position is 0
@@ -106,7 +105,6 @@ namespace LinkedList
                 return;
             }
             dummyBefore.Next = dummy.Next;
-
         }
 
         public void SwapNodesWithSwappingDataSm(int x, int y)
