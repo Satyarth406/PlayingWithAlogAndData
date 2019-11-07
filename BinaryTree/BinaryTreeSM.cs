@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BinaryTree
 {
@@ -223,8 +221,6 @@ namespace BinaryTree
         public BinaryTreeNodeSM(int d)
         {
             data = d;
-            leftChild = null;
-            rightChild = null;
         }
     }
 }
