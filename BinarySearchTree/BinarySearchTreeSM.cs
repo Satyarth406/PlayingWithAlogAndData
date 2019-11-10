@@ -29,17 +29,17 @@ namespace BinarySearchTree
             return node;
         }
 
-        public BinarySearchTreeNodeSM FindTheGivenData(BinarySearchTreeNodeSM root, int d)
+        public BinarySearchTreeNodeSM FindTheGivenData(BinarySearchTreeNodeSM node, int d)
         {
-            if (root == null) return null;
-            if (root.Data == d) return root;
-            if (root.Data > d)
+            if (node == null) return null;
+            if (node.Data == d) return node;
+            if (node.Data > d)
             {
-                return FindTheGivenData(root.LeftChild, d);
+                return FindTheGivenData(node.LeftChild, d);
             }
             else
             {
-                return FindTheGivenData(root.RightChild, d);
+                return FindTheGivenData(node.RightChild, d);
             }
         }
 
@@ -222,11 +222,41 @@ namespace BinarySearchTree
 
         public void InOrderTransversal(BinarySearchTreeNodeSM root)
         {
-            if(root==null)return;
+            if (root == null) return;
             InOrderTransversal(root.LeftChild);
             Console.WriteLine(root.Data);
             InOrderTransversal(root.RightChild);
 
+        }
+
+        internal int FindCeilSm(BinarySearchTreeNodeSM root, BinarySearchTreeNodeSM temp,int key)
+        {
+            if (root == null)
+            {
+                if (temp != null)
+                {
+                    return temp.Data;
+                }
+                else
+                    return -1;
+            }
+            if (root.Data == key)
+                return root.Data;
+            if (root.Data > key)
+            {
+                temp = root;
+                return FindCeilSm(root.LeftChild, temp, key);
+            }
+            if (root.Data < key)
+            {
+                return FindCeilSm(root.RightChild, temp , key);
+            }
+            return -1;
+        }
+
+        internal void DeleteNodeWithData(BinarySearchTreeNodeSM root, int v)
+        {
+            
         }
     }
     public class BinarySearchTreeNodeSM
@@ -238,8 +268,6 @@ namespace BinarySearchTree
         public BinarySearchTreeNodeSM(int d)
         {
             Data = d;
-            LeftChild = null;
-            RightChild = null;
         }
     }
 }

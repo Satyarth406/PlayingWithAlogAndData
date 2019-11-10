@@ -115,6 +115,37 @@ namespace BinarySearchTree
             //binarySearchTreeSm.CorrectSwappedNodes(binarySearchTreeSm.Root);
             //binarySearchTreeSm.InOrderTransversal(binarySearchTreeSm.Root);
 
+
+            ////Floor and Ceil from a BST
+            //BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 8);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 4);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 2);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 6);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 12);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 10);
+            //binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 14);
+            //BinarySearchTreeNodeSM temp = null;
+            //for (int i = 1; i <= 15; i++)
+            //{
+            //    int t = binarySearchTreeSm.FindCeilSm(binarySearchTreeSm.Root,temp,i);
+            //    Console.WriteLine(t);
+            //}
+
+
+            ////Binary Search Tree | Set 2(Delete)
+            BinarySearchTreeSM binarySearchTreeSm = new BinarySearchTreeSM();
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 50);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root,30);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 20);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 40);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 70);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 60);
+            binarySearchTreeSm.Root = binarySearchTreeSm.AddNode(binarySearchTreeSm.Root, 80);
+            binarySearchTreeSm.DeleteNodeWithData(binarySearchTreeSm.Root, 20);
+
+
+
             Console.ReadLine();
         }
     }
