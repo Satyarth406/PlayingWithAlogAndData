@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BinaryTree
 {
@@ -147,6 +148,118 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.leftChild.leftChild = new BinaryTreeNodeSM(7);
             //binaryTreeSM.PrintAncestorsofGivenNode(binaryTreeSM.root, 7);
 
+
+
+            ////Populate Inorder Successor for all nodes
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.leftChild.leftChild.leftChild = new BinaryTreeNodeSM(7);
+            ////binaryTreeSM.PopulateNextInOrderSuccessorSM(binaryTreeSM.root);
+            //binaryTreeSM.PopulateNextInOrderSuccessorNonStaticSM(binaryTreeSM.root,null);
+
+            //BinaryTreeNodeSM temp = binaryTreeSM.root;
+            //while (temp.leftChild != null)
+            //{
+            //    temp = temp.leftChild;
+            //}
+            //while (temp != null)
+            //{
+            //    int d = temp.inorderSuccessorNext != null ? 
+            //        temp.inorderSuccessorNext.data : -1;
+            //    Console.WriteLine(d);
+            //    temp = temp.inorderSuccessorNext;
+            //}
+
+
+
+            ////Level order traversal line by line | Set 3 (Using One Queue)
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.LevelOrderTransversalLineByLineSM(binaryTreeSM.root);
+
+
+
+            ////Reverse Level Order Traversal
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.ReverseLevelOrderTransversalSM(binaryTreeSM.root);
+
+
+
+            ////Iterative Preorder Traversal
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
+            //binaryTreeSM.IterativePreorderTraversal(binaryTreeSM.root);
+
+
+
+            ////Iterative Postorder Traversal
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
+            //binaryTreeSM.IterativePostorderTraversalUsingTwoStack(binaryTreeSM.root);
+
+
+
+            ////Diagonal Traversal of Binary Tree
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
+            //Dictionary<int, List<int>> keyValuePairs = new Dictionary<int, List<int>>();
+
+            //binaryTreeSM.DiagonalTraversalofBinaryTree(binaryTreeSM.root,0, keyValuePairs);
+            //foreach (var item in keyValuePairs.Keys)
+            //{
+            //    Console.WriteLine(item);
+            //    for (int i = 0; i < keyValuePairs[item].Count; i++)
+            //    {
+            //        Console.Write(keyValuePairs[item][i]);
+            //    }
+            //    Console.WriteLine();
+            //}
+
+
+
+            ////Iterative diagonal traversal of binary tree
+            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
+            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
+
+            binaryTreeSM.IterativeDiagonaltraversalSM(binaryTreeSM.root);
+           
 
 
             Console.ReadLine();

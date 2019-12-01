@@ -8,7 +8,7 @@ namespace BinaryTree
     public class BinaryTreeSM
     {
         public BinaryTreeNodeSM root;
-
+        static BinaryTreeNodeSM nextInOrderSuccess = null;
         public void InOrderTransversal(BinaryTreeNodeSM node)
         {
             if (node == null)
@@ -211,16 +211,188 @@ namespace BinaryTree
             }
             return false;
         }
-    }
 
-    public class BinaryTreeNodeSM
-    {
-        public int data;
-        public BinaryTreeNodeSM leftChild;
-        public BinaryTreeNodeSM rightChild;
-        public BinaryTreeNodeSM(int d)
+        internal void PopulateNextInOrderSuccessorSM(BinaryTreeNodeSM root)
         {
-            data = d;
+            if (root == null) return;
+            PopulateNextInOrderSuccessorSM(root.rightChild);
+            root.inorderSuccessorNext = nextInOrderSuccess;
+            nextInOrderSuccess = root;
+            PopulateNextInOrderSuccessorSM(root.leftChild);
+        }
+
+        internal void PopulateNextInOrderSuccessorNonStaticSM(BinaryTreeNodeSM root, BinaryTreeNodeSM next)
+        {
+            if (root == null) return;
+            PopulateNextInOrderSuccessorNonStaticSM(root.rightChild, next);
+            root.inorderSuccessorNext = next;
+            next = root;
+            PopulateNextInOrderSuccessorNonStaticSM(root.leftChild, next);
+        }
+
+        internal void LevelOrderTransversalLineByLineSM(BinaryTreeNodeSM root)
+        {
+            Queue<BinaryTreeNodeSM> q = new Queue<BinaryTreeNodeSM>();
+            q.Enqueue(root);
+            while (q.Count > 0)
+            {
+                int count = q.Count;
+                while (count != 0)
+                {
+                    BinaryTreeNodeSM binaryTreeNodeSM = q.Dequeue();
+                    Console.Write(binaryTreeNodeSM.data);
+                    if (binaryTreeNodeSM.leftChild != null)
+                    {
+                        q.Enqueue(binaryTreeNodeSM.leftChild);
+                    }
+                    if (binaryTreeNodeSM.rightChild != null)
+                    {
+                        q.Enqueue(binaryTreeNodeSM.rightChild);
+                    }
+                    count--;
+                }
+                Console.WriteLine();
+            }
+        }
+
+        internal void ReverseLevelOrderTransversalSM(BinaryTreeNodeSM root)
+        {
+            Queue<BinaryTreeNodeSM> q = new Queue<BinaryTreeNodeSM>();
+            Stack<BinaryTreeNodeSM> s = new Stack<BinaryTreeNodeSM>();
+            q.Enqueue(root);
+            while (q.Count > 0)
+            {
+                BinaryTreeNodeSM binaryTreeNodeSM = q.Dequeue();
+                s.Push(binaryTreeNodeSM);
+                if (binaryTreeNodeSM.rightChild != null)
+                {
+                    q.Enqueue(binaryTreeNodeSM.rightChild);
+                }
+                if (binaryTreeNodeSM.leftChild != null)
+                {
+                    q.Enqueue(binaryTreeNodeSM.leftChild);
+                }
+            }
+            while (s.Count>0 )
+            {
+                Console.WriteLine(s.Pop().data);
+            }
+        }
+
+        internal void PerfectBinaryTreeSpecificLevelOrderTraversalSM(BinaryTreeNodeSM root)
+        {
+            
+        }
+
+        internal void IterativePreorderTraversal(BinaryTreeNodeSM root)
+        {
+            Stack<BinaryTreeNodeSM> s = new Stack<BinaryTreeNodeSM>();
+            s.Push(root);
+            while (s.Count > 0)
+            {
+                BinaryTreeNodeSM p = s.Pop();
+                Console.WriteLine(p.data);
+                if (p.rightChild != null)
+                {
+                    s.Push(p.rightChild);
+                }
+                if (p.leftChild != null)
+                {
+                    s.Push(p.leftChild);
+                }
+            }
+        }
+
+        internal void IterativePostorderTraversalUsingTwoStack(BinaryTreeNodeSM root)
+        {
+            Stack<BinaryTreeNodeSM> s1 = new Stack<BinaryTreeNodeSM>();
+            Stack<BinaryTreeNodeSM> s2 = new Stack<BinaryTreeNodeSM>();
+            s1.Push(root);
+            while (s1.Count > 0)
+            {
+                BinaryTreeNodeSM b = s1.Pop();
+                s2.Push(b);
+                if (b.leftChild != null)
+                {
+                    s1.Push(b.leftChild);
+                }
+                if (b.rightChild != null)
+                {
+                    s1.Push(b.rightChild);
+                }
+            }
+            while (s2.Count > 0)
+            {
+                Console.WriteLine(s2.Pop().data);
+            }
+        }
+
+        internal void DiagonalTraversalofBinaryTree(BinaryTreeNodeSM root, int v, Dictionary<int, List<int>> keyValuePairs)
+        {
+            if (root != null)
+            {
+                if (keyValuePairs.ContainsKey(v))
+                {
+                    keyValuePairs[v].Add(root.data);
+                }
+                else
+                {
+                    keyValuePairs.Add(v,new List<int>() { root.data });
+                }
+                if (root.leftChild != null)
+                {
+                    DiagonalTraversalofBinaryTree(root.leftChild, v+1,keyValuePairs);
+                }
+                if (root.rightChild != null)
+                {
+                    DiagonalTraversalofBinaryTree(root.rightChild, v,keyValuePairs);
+                }
+            }
+        }
+
+        internal void IterativeDiagonaltraversalSM(BinaryTreeNodeSM root)
+        {
+            if (root == null) return;
+            Queue q = new Queue();
+            q.Enqueue(root);
+            q.Enqueue(null);
+
+            while (q.Count > 0)
+            {
+                BinaryTreeNodeSM temp = (BinaryTreeNodeSM)q.Dequeue();
+                if (temp == null)
+                {
+                    if (q.Count == 0) return;
+                    Console.WriteLine();
+                    q.Enqueue(null);
+                }
+                else
+                {
+                    while (temp != null)
+                    {
+                        Console.Write(temp.data);
+                        if (temp.leftChild != null)
+                        {
+                            q.Enqueue(temp.leftChild);
+                        }
+                        temp = temp.rightChild;
+                    }
+                }
+            }
         }
     }
 }
+
+public class BinaryTreeNodeSM
+{
+    public int data;
+    public BinaryTreeNodeSM leftChild;
+    public BinaryTreeNodeSM rightChild;
+    public BinaryTreeNodeSM inorderSuccessorNext;
+
+    public BinaryTreeNodeSM(int d)
+    {
+        data = d;
+    }
+}
+
