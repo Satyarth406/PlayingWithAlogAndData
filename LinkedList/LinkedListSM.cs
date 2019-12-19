@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace LinkedList
 {
@@ -6,11 +7,6 @@ namespace LinkedList
     {
         public LinkedListNodeSM Head;
         public LinkedListNodeSM Last;
-        public LinkedListSM()
-        {
-            Head = null;
-            Last = null;
-        }
 
 
         /// <summary>
@@ -32,6 +28,7 @@ namespace LinkedList
             return Head;
         }
 
+        //adding a node in the end Q(1*c)  c== constant
         public LinkedListNodeSM AddNodeAtLastSm(int data)
         {
             LinkedListNodeSM n = new LinkedListNodeSM(data);
@@ -46,6 +43,7 @@ namespace LinkedList
             return n;
         }
 
+        //Deleting a node Q(n)
         public void DeleteNodeWithGivenDataSm(int data)
         {
             LinkedListNodeSM dummy = Head;
@@ -76,6 +74,8 @@ namespace LinkedList
             dummyBefore.Next = dummy.Next;
         }
 
+
+        //Delete a Linked List node at a given position  Q(n)
         public void DeleteNodeAtAGivenPositionSm(int position) //starting position is 0
         {
             LinkedListNodeSM dummy = Head;
@@ -154,6 +154,8 @@ namespace LinkedList
 
         }
 
+
+        //Write a function to get Nth node in a Linked List Q(n)
         public int FindNthNodeInLinkedListSm(int v)
         {
             int count = 0;
@@ -167,6 +169,8 @@ namespace LinkedList
             return linkedListNodeSM.Data;
         }
 
+
+        //Search an element in a Linked List Recusive  Q(n)
         public bool FindNodeWithDataRecursivelySm(int v, LinkedListNodeSM head)
         {
             if (head == null)
@@ -176,11 +180,12 @@ namespace LinkedList
             return FindNodeWithDataRecursivelySm(v, head.Next);
         }
 
+
+        //Search an element in a Linked List Q(n)
         public bool FindNodeWithDataSm(int v)
         {
             LinkedListNodeSM linkedListNodeSm = Head;
             bool a = false;
-
             while (linkedListNodeSm != null)
             {
                 if (linkedListNodeSm.Data == v)
@@ -190,10 +195,11 @@ namespace LinkedList
                 }
                 linkedListNodeSm = linkedListNodeSm.Next;
             }
-
             return a;
         }
 
+
+        //Find Length of a Linked List Q(n)
         public int LengthOfLinkedListSm()
         {
             int count = 0;
@@ -206,12 +212,24 @@ namespace LinkedList
             return count;
         }
 
+
+        //Find Length of a Linked List Recursive Q(n)
+        public int LengthOfLinkedListRecursiveSm(LinkedListNodeSM linkedListNodeSM)
+        {
+            if (linkedListNodeSM == null) return 0;
+            return 1 + LengthOfLinkedListRecursiveSm(linkedListNodeSM.Next);
+        }
+
+
+        //Add a node after a given node (Q(n))
         public void AddNodeAfterAGivenNodeSm(LinkedListNodeSM nodeToInsertAfter, int dataToInsert)
         {
-            LinkedListNodeSM newNode = new LinkedListNodeSM(dataToInsert) {Next = nodeToInsertAfter.Next};
+            LinkedListNodeSM newNode = new LinkedListNodeSM(dataToInsert) { Next = nodeToInsertAfter.Next };
             nodeToInsertAfter.Next = newNode;
         }
 
+
+        //Printing the Linked List (Q(n))
         public void PrintLinkedListSm()
         {
             if (Head == null)
@@ -314,17 +332,35 @@ namespace LinkedList
             return result;
         }
 
+
+        //Find the middle of a given linked list Q(n)
+        internal int FindTheMiddleOfLinkedListSm(LinkedListNodeSM head)
+        {
+            if (head == null) return int.MinValue;
+            LinkedListNodeSM slow = head;
+            LinkedListNodeSM fast = head;
+            while(fast!=null && fast.Next != null)
+            {
+                fast = fast.Next.Next;
+                slow = slow.Next;
+            }
+            return slow.Data;
+        }
+
+        internal int NumberOfTimesAGivenIntOccursRecursiveSm(LinkedListNodeSM head, int val)
+        {
+            if (head == null) return 0;
+            if (head.Data == val) return 1 + NumberOfTimesAGivenIntOccursRecursiveSm(head.Next, val);
+            return NumberOfTimesAGivenIntOccursRecursiveSm(head.Next, val);
+        }
+
+
+        //Write a function to get Nth node in a Linked List Recursive Q(n)
         public int FindNthNodeInLinkedListRecursivelySm(int v, LinkedListNodeSM node)
         {
-            if (v == 0)
-            {
-                return node.Data;
-            }
-            if (node == null)
-                return int.MinValue;
-            else
-                return FindNthNodeInLinkedListRecursivelySm(--v, node.Next);
-
+            if (node == null) return int.MinValue;
+            if (v == 0) return node.Data;
+            return FindNthNodeInLinkedListRecursivelySm(--v, node.Next);
         }
 
         public bool DetectAndRemoveLoopSm(LinkedListSM linkedListSM)
@@ -365,6 +401,45 @@ namespace LinkedList
             trialNode.Next = null;
 
 
+        }
+
+
+        //Function to check if a singly linked list is palindrome Q(n)
+        internal bool CheckIfLinkedListIsPalindromeSm(LinkedListNodeSM head)
+        {
+            LinkedListNodeSM dummy = head;
+            Stack stack = new Stack();
+            while (dummy != null)
+            {
+                stack.Push(dummy.Data);
+                dummy = dummy.Next;
+            }
+            while (stack.Count != 0)
+            {
+                int poppedItem = (int)stack.Pop();
+                if (poppedItem != head.Data) return false;
+                head = head.Next;
+            }
+            return true;
+        }
+
+
+
+        //Function to check if a singly linked list is palindrome recursive Q(n)
+        internal bool CheckIfLinkedListIsPalindromeRecursiveSm(LinkedListNodeSM head)
+        {
+            bool res = IsPalindrome(head, head);
+            return res; 
+        }
+
+        private bool IsPalindrome(LinkedListNodeSM left, LinkedListNodeSM right)
+        {
+            if (right == null) return true;
+            bool end = IsPalindrome(left, right.Next);
+            if (end == false) return false;
+            bool finalRes = left.Data == right.Data;
+            left = left.Next;
+            return finalRes;
         }
 
         public LinkedListNodeSM AddTwoLinkedListTogetherSm(LinkedListSM linkedListSm, LinkedListSM linkedListSm2)
@@ -418,6 +493,10 @@ namespace LinkedList
             return prev;
         }
     }
+
+    /// <summary>
+    /// class representing a node in the linked list
+    /// </summary>
     public class LinkedListNodeSM
     {
         public int Data { get; set; }
@@ -425,7 +504,6 @@ namespace LinkedList
         public LinkedListNodeSM(int d)
         {
             Data = d;
-            Next = null;
         }
     }
 

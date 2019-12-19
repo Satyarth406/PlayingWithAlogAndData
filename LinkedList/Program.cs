@@ -77,6 +77,16 @@ namespace LinkedList
 
 
 
+            ////Length of a linked list Recusive
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //Console.WriteLine(linkedListSM.LengthOfLinkedListSm());
+
+
+
             ////SwapNodesWithoutSwappingData
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
@@ -175,7 +185,9 @@ namespace LinkedList
             //    node = node.Next;
             //}
 
-            ////Search an element in a Linked List
+
+
+            ////Search an element in a Linked List Q(n)
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -197,18 +209,8 @@ namespace LinkedList
 
 
 
+
             //Write a function to get Nth node in a Linked List
-            //LinkedListSM linkedListSM = new LinkedListSM();
-            //linkedListSM.AddNodeAtLastSM(1);
-            //linkedListSM.AddNodeAtLastSM(2);
-            //linkedListSM.AddNodeAtLastSM(3);
-            //linkedListSM.AddNodeAtLastSM(4);
-            //int found = linkedListSM.FindNthNodeInLinkedListSm(2);
-            //Console.WriteLine(found);
-
-
-
-            ////Write a function to get Nth node in a Linked List
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -230,6 +232,37 @@ namespace LinkedList
 
 
 
+
+            ////Find the middle of a given linked list
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //int middle = linkedListSM.FindTheMiddleOfLinkedListSm(linkedListSM.Head);
+            //Console.WriteLine(middle);
+
+
+
+            ////Write a function that counts the number of times a given int occurs in a Linked List
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //int val = 1;
+            //int count = linkedListSM.NumberOfTimesAGivenIntOccursRecursiveSm(linkedListSM.Head,val);
+            //Console.WriteLine(count);
+
+
+
+
             ////Detect and Remove Loop in a Linked List
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(50);
@@ -248,6 +281,21 @@ namespace LinkedList
             //{
             //    Console.WriteLine("No loop present");
             //}
+
+
+
+
+            ////Function to check if a singly linked list is palindrome
+            LinkedListSM linkedListSM = new LinkedListSM();
+            linkedListSM.AddNodeAtLastSm(1);
+            linkedListSM.AddNodeAtLastSm(2);
+            linkedListSM.AddNodeAtLastSm(3);
+            linkedListSM.AddNodeAtLastSm(4);
+            linkedListSM.AddNodeAtLastSm(3);
+            linkedListSM.AddNodeAtLastSm(2);
+            linkedListSM.AddNodeAtLastSm(1);
+            bool isPalindrome = linkedListSM.CheckIfLinkedListIsPalindromeSm(linkedListSM.Head);
+            Console.WriteLine(isPalindrome);
 
 
 
