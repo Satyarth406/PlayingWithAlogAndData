@@ -111,6 +111,15 @@ namespace BinaryTree
                 return 1 + rightHeight;
         }
 
+        internal int FindHeightSm(BinaryTreeNodeSM root)
+        {
+            if (root == null) return 0;
+            int lHeight = FindHeightSm(root.leftChild);
+            int rHeight = FindHeightSm(root.rightChild);
+           
+            return 1 + Math.Max(lHeight, rHeight);
+        }
+
         public int DiameterOfBinaryTree(BinaryTreeNodeSM node)
         {
             if (node == null) return 0;

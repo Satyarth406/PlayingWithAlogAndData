@@ -245,6 +245,7 @@ namespace LinkedList
             }
         }
 
+        //Reverse a linked list
         public void ReverseLinkedListSm()
         {
             LinkedListNodeSM current = Head;
@@ -260,18 +261,18 @@ namespace LinkedList
             Head = prev;
         }
 
-        public LinkedListNodeSM ReverseLinkedListUsingRecursionSm(LinkedListNodeSM linkedList)
+        public LinkedListNodeSM ReverseLinkedListUsingRecursionSm(LinkedListNodeSM nodeSm)
         {
-            if (linkedList?.Next == null)
-            {
-                return linkedList;
-            }
-            LinkedListNodeSM rest = ReverseLinkedListUsingRecursionSm(linkedList.Next);
-            linkedList.Next.Next = linkedList;
-            linkedList.Next = null;
+            if (nodeSm?.Next == null) return nodeSm;
+            LinkedListNodeSM first = nodeSm;
+            LinkedListNodeSM rest = ReverseLinkedListUsingRecursionSm(nodeSm.Next);
+            first.Next.Next = first;
+            first.Next = null;
             return rest;
+
         }
 
+        
         public LinkedListNodeSM MergeTwoSortedLinkedListSm(LinkedListSM linkedListSm, LinkedListSM linkedListSm2)
         {
             LinkedListNodeSM headFirst = linkedListSm.Head;
@@ -339,7 +340,7 @@ namespace LinkedList
             if (head == null) return int.MinValue;
             LinkedListNodeSM slow = head;
             LinkedListNodeSM fast = head;
-            while(fast!=null && fast.Next != null)
+            while (fast != null && fast.Next != null)
             {
                 fast = fast.Next.Next;
                 slow = slow.Next;
@@ -429,7 +430,21 @@ namespace LinkedList
         internal bool CheckIfLinkedListIsPalindromeRecursiveSm(LinkedListNodeSM head)
         {
             bool res = IsPalindrome(head, head);
-            return res; 
+            return res;
+        }
+
+        internal void PairwiseSwapElementsSm(LinkedListNodeSM head)
+        {
+            LinkedListNodeSM dummy = head;
+            while (dummy?.Next != null)
+            {
+                LinkedListNodeSM first = dummy;
+                LinkedListNodeSM second = dummy.Next;
+                int temp = first.Data;
+                first.Data = second.Data;
+                second.Data = temp;
+                dummy = dummy.Next.Next;
+            }
         }
 
         private bool IsPalindrome(LinkedListNodeSM left, LinkedListNodeSM right)
@@ -440,6 +455,17 @@ namespace LinkedList
             bool finalRes = left.Data == right.Data;
             left = left.Next;
             return finalRes;
+        }
+
+        internal void PairwiseSwapElementsRecursiveSm(LinkedListNodeSM head)
+        {
+            if (head == null || head.Next == null) return;
+            LinkedListNodeSM first = head;
+            LinkedListNodeSM second = head.Next;
+            int temp = first.Data;
+            first.Data = second.Data;
+            second.Data = temp;
+            PairwiseSwapElementsRecursiveSm(head.Next.Next);
         }
 
         public LinkedListNodeSM AddTwoLinkedListTogetherSm(LinkedListSM linkedListSm, LinkedListSM linkedListSm2)
@@ -467,6 +493,51 @@ namespace LinkedList
             }
             return resulthead.Next;
         }
+
+        internal LinkedListNodeSM IntersectionoftwoSortedLinkedLists(LinkedListNodeSM head1, LinkedListNodeSM head2)
+        {
+            LinkedListNodeSM dummy = new LinkedListNodeSM(-10);
+            LinkedListNodeSM dummyStart = dummy;
+
+            while (head1 != null && head2 != null)
+            {
+                if (head1.Data == head2.Data)
+                {
+                    dummy.Next = new LinkedListNodeSM(head1.Data);
+                    head2 = head2.Next;
+                    head1 = head1.Next;
+                    dummy = dummy.Next;
+                }
+                else if (head1.Data > head2.Data)
+                {
+                    head2 = head2.Next;
+                }
+                else
+                {
+                    head1 = head1.Next;
+                }
+            }
+            return dummyStart.Next;
+        }
+
+        internal void IntersectionoftwoSortedRecursiveSm(LinkedListNodeSM head1, LinkedListNodeSM head2, LinkedListNodeSM dummy)
+        {
+            if (head1 == null || head2 == null) return;
+            if (head2.Data == head1.Data)
+            {
+                dummy.Next = new LinkedListNodeSM(head1.Data);
+                IntersectionoftwoSortedRecursiveSm(head1.Next, head2.Next, dummy.Next);
+            }
+            else if (head2.Data > head1.Data)
+            {
+                IntersectionoftwoSortedRecursiveSm(head1.Next, head2, dummy);
+            }
+            else
+            {
+                IntersectionoftwoSortedRecursiveSm(head1, head2.Next, dummy);
+            }
+        }
+
 
         public LinkedListNodeSM ReverseLinkedListInGroupsOfGivenSizeSm(LinkedListNodeSM linkedListSm, int size)
         {

@@ -7,6 +7,9 @@ namespace BinaryTree
     {
         static void Main(string[] args)
         {
+
+            #region Populating a binary tree 
+
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             //binaryTreeSM.root = new BinaryTreeNodeSM(1);
             //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
@@ -14,9 +17,11 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
             //binaryTreeSM.root.leftChild.rightChild= new BinaryTreeNodeSM(5);
 
+            #endregion
 
 
-            ////InOrder transversal
+            #region InOrder transversal Q(n)
+
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             //binaryTreeSM.root = new BinaryTreeNodeSM(1);
             //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
@@ -25,8 +30,10 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
             //binaryTreeSM.InOrderTransversal(binaryTreeSM.root);
 
+            #endregion
 
 
+            #region PreOrder transversal Q(n)
 
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             //binaryTreeSM.root = new BinaryTreeNodeSM(1);
@@ -36,6 +43,10 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
             //binaryTreeSM.PreOrderTransversal(binaryTreeSM.root);
 
+            #endregion
+
+
+            #region PostOrder transversal Q(n)
 
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             //binaryTreeSM.root = new BinaryTreeNodeSM(1);
@@ -45,7 +56,26 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
             //binaryTreeSM.PostOrderTransversal(binaryTreeSM.root);
 
+            #endregion
 
+
+            #region Write a Program to Find the Maximum Depth or Height of a Tree Recursive
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.leftChild.rightChild.leftChild = new BinaryTreeNodeSM(7);
+            //binaryTreeSM.root.leftChild.rightChild.leftChild.leftChild = new BinaryTreeNodeSM(8);
+            //int height = binaryTreeSM.FindHeightSm(binaryTreeSM.root);
+            //Console.WriteLine(height);
+
+            #endregion
+
+
+            #region LevelOrder transversal Q(n)
 
             ////Breadth-First transversal
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
@@ -55,6 +85,8 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
             //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
             //binaryTreeSM.LevelOrderTransversal(binaryTreeSM.root);
+
+            #endregion
 
 
 
@@ -86,7 +118,8 @@ namespace BinaryTree
             // TO BE DONE
 
 
-            ////Inorder Tree Traversal without Recursion
+            #region Inorder Tree Traversal without Recursion
+
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             //binaryTreeSM.root = new BinaryTreeNodeSM(1);
             //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
@@ -95,7 +128,7 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
             //binaryTreeSM.InOrderTreeTransversalWithoutRecursion(binaryTreeSM.root);
 
-
+            #endregion
 
 
             ////Print nodes at k distance from root
@@ -150,30 +183,32 @@ namespace BinaryTree
 
 
 
-            ////Populate Inorder Successor for all nodes
-            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
-            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
-            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
-            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
-            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
-            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
-            //binaryTreeSM.root.leftChild.leftChild.leftChild = new BinaryTreeNodeSM(7);
-            ////binaryTreeSM.PopulateNextInOrderSuccessorSM(binaryTreeSM.root);
-            //binaryTreeSM.PopulateNextInOrderSuccessorNonStaticSM(binaryTreeSM.root,null);
+            # region Populate Inorder Successor for all nodes
+            
+            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            binaryTreeSM.root.leftChild.leftChild.leftChild = new BinaryTreeNodeSM(7);
+            //binaryTreeSM.PopulateNextInOrderSuccessorSM(binaryTreeSM.root);
+            binaryTreeSM.PopulateNextInOrderSuccessorNonStaticSM(binaryTreeSM.root, null);
 
-            //BinaryTreeNodeSM temp = binaryTreeSM.root;
-            //while (temp.leftChild != null)
-            //{
-            //    temp = temp.leftChild;
-            //}
-            //while (temp != null)
-            //{
-            //    int d = temp.inorderSuccessorNext != null ? 
-            //        temp.inorderSuccessorNext.data : -1;
-            //    Console.WriteLine(d);
-            //    temp = temp.inorderSuccessorNext;
-            //}
+            BinaryTreeNodeSM temp = binaryTreeSM.root;
+            while (temp.leftChild != null)
+            {
+                temp = temp.leftChild;
+            }
+            while (temp != null)
+            {
+                int d = temp.inorderSuccessorNext != null ?
+                    temp.inorderSuccessorNext.data : -1;
+                Console.WriteLine(d);
+                temp = temp.inorderSuccessorNext;
+            }
 
+            #endregion
 
 
             ////Level order traversal line by line | Set 3 (Using One Queue)
@@ -249,17 +284,17 @@ namespace BinaryTree
 
 
             ////Iterative diagonal traversal of binary tree
-            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
-            binaryTreeSM.root = new BinaryTreeNodeSM(1);
-            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
-            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
-            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
-            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
-            binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
-            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
 
-            binaryTreeSM.IterativeDiagonaltraversalSM(binaryTreeSM.root);
-           
+            //binaryTreeSM.IterativeDiagonaltraversalSM(binaryTreeSM.root);
+
 
 
             Console.ReadLine();

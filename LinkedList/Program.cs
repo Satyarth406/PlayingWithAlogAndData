@@ -89,42 +89,46 @@ namespace LinkedList
 
             ////SwapNodesWithoutSwappingData
             //LinkedListSM linkedListSM = new LinkedListSM();
-            //linkedListSM.AddNodeAtLastSM(1);
-            //linkedListSM.AddNodeAtLastSM(2);
-            //linkedListSM.AddNodeAtLastSM(3);
-            //linkedListSM.AddNodeAtLastSM(4);
-            //linkedListSM.SwapNodesWithSwappingDataSM(1,2);
-            //linkedListSM.PrintLinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.SwapNodesWithSwappingDataSm(1, 2);
+            //linkedListSM.PrintLinkedListSm();
 
 
 
-            ////Reversing the linked list
+
+            #region Reverse a linked list
+
             //// Time Complexity: O(n)
             ////Space Complexity: O(1)
             //LinkedListSM linkedListSM = new LinkedListSM();
-            //linkedListSM.AddNodeAtLastSM(1);
-            //linkedListSM.AddNodeAtLastSM(2);
-            //linkedListSM.AddNodeAtLastSM(3);
-            //linkedListSM.AddNodeAtLastSM(4);
-            //linkedListSM.ReverseLinkedListSM();
-            //linkedListSM.PrintLinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.ReverseLinkedListSm();
+            //linkedListSM.PrintLinkedListSm();
+
+            #endregion
 
 
-            ////Reversing the linked list using Recursion
-            //// Time Complexity: O(n)
-            ////Space Complexity: O(1)
+            #region Reverse a linked list Recursive
+
             //LinkedListSM linkedListSM = new LinkedListSM();
-            //linkedListSM.AddNodeAtLastSM(1);
-            //linkedListSM.AddNodeAtLastSM(2);
-            //linkedListSM.AddNodeAtLastSM(3);
-            //linkedListSM.AddNodeAtLastSM(4);
-            //LinkedListNodeSM linkedListUsingRecursionSm = linkedListSM.ReverseLinkedListUsingRecursionSM(linkedListSM.head);
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //LinkedListNodeSM linkedListUsingRecursionSm = linkedListSM.ReverseLinkedListUsingRecursionSm(linkedListSM.Head);
             //while (linkedListUsingRecursionSm != null)
             //{
             //    Console.WriteLine(linkedListUsingRecursionSm.Data);
             //    linkedListUsingRecursionSm = linkedListUsingRecursionSm.Next;
             //}
 
+            #endregion
 
 
             ////Merge two sorted linked lists
@@ -286,20 +290,21 @@ namespace LinkedList
 
 
             ////Function to check if a singly linked list is palindrome
-            LinkedListSM linkedListSM = new LinkedListSM();
-            linkedListSM.AddNodeAtLastSm(1);
-            linkedListSM.AddNodeAtLastSm(2);
-            linkedListSM.AddNodeAtLastSm(3);
-            linkedListSM.AddNodeAtLastSm(4);
-            linkedListSM.AddNodeAtLastSm(3);
-            linkedListSM.AddNodeAtLastSm(2);
-            linkedListSM.AddNodeAtLastSm(1);
-            bool isPalindrome = linkedListSM.CheckIfLinkedListIsPalindromeSm(linkedListSM.Head);
-            Console.WriteLine(isPalindrome);
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(1);
+            //bool isPalindrome = linkedListSM.CheckIfLinkedListIsPalindromeSm(linkedListSM.Head);
+            //Console.WriteLine(isPalindrome);
 
 
 
-            ////Add two numbers represented by linked lists
+            #region Add two numbers represented by linked lists
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -316,6 +321,95 @@ namespace LinkedList
             //    Console.WriteLine(result.Data);
             //    result = result.Next;
             //}
+
+            #endregion
+
+
+            #region Pairwise swap elements of a given linked list
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+            //linkedListSM.PairwiseSwapElementsSm(linkedListSM.Head);
+            //linkedListSM.PrintLinkedListSm();
+
+            #endregion
+
+
+            #region Pairwise swap elements of a given linked list recursive
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+            //linkedListSM.PairwiseSwapElementsRecursiveSm(linkedListSM.Head);
+            //linkedListSM.PrintLinkedListSm();
+
+            #endregion
+
+
+            #region Intersection of two Sorted Linked Lists
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+
+            //LinkedListSM linkedListSM2 = new LinkedListSM();
+            //linkedListSM2.AddNodeAtLastSm(2);
+            //linkedListSM2.AddNodeAtLastSm(4);
+            //linkedListSM2.AddNodeAtLastSm(5);
+            //linkedListSM2.AddNodeAtLastSm(6);
+
+
+            //LinkedListNodeSM intersected = linkedListSM.IntersectionoftwoSortedLinkedLists(linkedListSM.Head,linkedListSM2.Head);
+            //while (intersected != null)
+            //{
+            //    Console.WriteLine(intersected.Data);
+            //    intersected = intersected.Next; 
+            //}
+
+            #endregion
+
+
+            #region Intersection of two Sorted Linked Lists Recursive
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+
+            //LinkedListSM linkedListSM2 = new LinkedListSM();
+            //linkedListSM2.AddNodeAtLastSm(2);
+            //linkedListSM2.AddNodeAtLastSm(4);
+            //linkedListSM2.AddNodeAtLastSm(5);
+            //linkedListSM2.AddNodeAtLastSm(6);
+
+            //LinkedListNodeSM dummy = new LinkedListNodeSM(-10);
+
+            //linkedListSM.IntersectionoftwoSortedRecursiveSm(linkedListSM.Head, linkedListSM2.Head, dummy);
+            //dummy = dummy.Next;
+            //while (dummy != null)
+            //{
+            //    Console.WriteLine(dummy.Data);
+            //    dummy = dummy.Next;
+            //}
+
+            #endregion
+
 
 
             Console.ReadLine();
