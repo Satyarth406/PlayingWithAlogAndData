@@ -116,7 +116,7 @@ namespace BinaryTree
             if (root == null) return 0;
             int lHeight = FindHeightSm(root.leftChild);
             int rHeight = FindHeightSm(root.rightChild);
-           
+
             return 1 + Math.Max(lHeight, rHeight);
         }
 
@@ -128,6 +128,39 @@ namespace BinaryTree
             int ldiameter = DiameterOfBinaryTree(node.leftChild);
             int rDiameter = DiameterOfBinaryTree(node.rightChild);
             return Math.Max(1 + lheight + rheight, Math.Max(ldiameter, rDiameter));
+        }
+
+        internal int FindHeightIterativelySm(BinaryTreeNodeSM root)
+        {
+            int height = 0;
+            Queue queue = new Queue();
+            queue.Enqueue(root);
+            while (true)
+            {
+                int queueSize = queue.Count;
+                if (queueSize > 0)
+                {
+                    height += 1;
+                }
+                else
+                {
+                    break;
+                }
+                while (queueSize > 0)
+                {
+                    BinaryTreeNodeSM binaryTreeNodeSM = (BinaryTreeNodeSM)queue.Dequeue();
+                    if (binaryTreeNodeSM.leftChild != null)
+                    {
+                        queue.Enqueue(binaryTreeNodeSM.leftChild);
+                    }
+                    if (binaryTreeNodeSM.rightChild != null)
+                    {
+                        queue.Enqueue(binaryTreeNodeSM.rightChild);
+                    }
+                    queueSize--;
+                }
+            }
+            return height;
         }
 
         public void InOrderTreeTransversalWithoutRecursion(BinaryTreeNodeSM root)
@@ -282,7 +315,7 @@ namespace BinaryTree
                     q.Enqueue(binaryTreeNodeSM.leftChild);
                 }
             }
-            while (s.Count>0 )
+            while (s.Count > 0)
             {
                 Console.WriteLine(s.Pop().data);
             }
@@ -290,7 +323,7 @@ namespace BinaryTree
 
         internal void PerfectBinaryTreeSpecificLevelOrderTraversalSM(BinaryTreeNodeSM root)
         {
-            
+
         }
 
         internal void IterativePreorderTraversal(BinaryTreeNodeSM root)
@@ -346,15 +379,15 @@ namespace BinaryTree
                 }
                 else
                 {
-                    keyValuePairs.Add(v,new List<int>() { root.data });
+                    keyValuePairs.Add(v, new List<int>() { root.data });
                 }
                 if (root.leftChild != null)
                 {
-                    DiagonalTraversalofBinaryTree(root.leftChild, v+1,keyValuePairs);
+                    DiagonalTraversalofBinaryTree(root.leftChild, v + 1, keyValuePairs);
                 }
                 if (root.rightChild != null)
                 {
-                    DiagonalTraversalofBinaryTree(root.rightChild, v,keyValuePairs);
+                    DiagonalTraversalofBinaryTree(root.rightChild, v, keyValuePairs);
                 }
             }
         }
