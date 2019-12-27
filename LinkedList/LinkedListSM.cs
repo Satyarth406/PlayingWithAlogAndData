@@ -154,6 +154,50 @@ namespace LinkedList
 
         }
 
+        internal bool DetectLoop(LinkedListNodeSM head)
+        {
+            LinkedListNodeSM slow = head;
+            LinkedListNodeSM fast = head.Next;
+            while (slow != null && fast != null)
+            {
+                if(slow == fast)
+                {
+                    return true;
+                }
+                slow = slow.Next;
+                fast = fast.Next.Next;
+            }
+            return false;
+        }
+
+
+        internal int FindLengthOfTheLoop(LinkedListNodeSM head)
+        {
+            LinkedListNodeSM slow = head;
+            LinkedListNodeSM fast = head.Next;
+            while (slow != null && fast != null)
+            {
+                if (slow == fast)
+                {
+                    return CountNodesInLoop(slow);
+                }
+                slow = slow.Next;
+                fast = fast.Next.Next;
+            }
+            return 0;
+        }
+
+        private int CountNodesInLoop(LinkedListNodeSM slow)
+        {
+            LinkedListNodeSM temp = slow;
+            int count = 1;
+            while (temp.Next != slow)
+            {
+                temp = temp.Next;
+                count++;
+            }
+            return count;
+        }
 
         //Write a function to get Nth node in a Linked List Q(n)
         public int FindNthNodeInLinkedListSm(int v)
@@ -272,7 +316,7 @@ namespace LinkedList
 
         }
 
-        
+
         public LinkedListNodeSM MergeTwoSortedLinkedListSm(LinkedListSM linkedListSm, LinkedListSM linkedListSm2)
         {
             LinkedListNodeSM headFirst = linkedListSm.Head;

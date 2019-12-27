@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -10,7 +6,8 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            ////Add Node at the start and print it
+            #region Add Node at the start and print it
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtFirstSM(1);
             //linkedListSM.AddNodeAtFirstSM(2);
@@ -19,9 +16,11 @@ namespace LinkedList
             ////Print The linked List
             //linkedListSM.PrintLinkedListSM();
 
+            #endregion
 
 
-            ////add node at the end and print it
+            #region add node at the end and print it
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -30,8 +29,11 @@ namespace LinkedList
             ////Print The linked List
             //linkedListSM.PrintLinkedListSM();
 
+            #endregion
 
-            ////add node after a given node and print it
+
+            #region add node after a given node and print it
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //LinkedListNodeSM node1 = linkedListSM.AddNodeAtLastSM(2);
@@ -42,6 +44,7 @@ namespace LinkedList
             ////Print The linked List
             //linkedListSM.PrintLinkedListSM();
 
+            #endregion
 
 
             ////Delete a node with the given data
@@ -77,7 +80,9 @@ namespace LinkedList
 
 
 
-            ////Length of a linked list Recusive
+
+            #region Length of a linked list Recusive
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSm(1);
             //linkedListSM.AddNodeAtLastSm(2);
@@ -85,9 +90,11 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSm(4);
             //Console.WriteLine(linkedListSM.LengthOfLinkedListSm());
 
+            #endregion
 
 
-            ////SwapNodesWithoutSwappingData
+            #region SwapNodesWithoutSwappingData
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSm(1);
             //linkedListSM.AddNodeAtLastSm(2);
@@ -96,7 +103,46 @@ namespace LinkedList
             //linkedListSM.SwapNodesWithSwappingDataSm(1, 2);
             //linkedListSM.PrintLinkedListSm();
 
+            #endregion
 
+
+            #region  Program for n’th node from the end of a Linked List
+
+            // find the length of the linked list then length-n+1 would be the nth element from the end.
+            //second approach is to take 2 pointers(both point to head) move one to nth node -> 
+            //then simultaneoulsy move both until the first one reaches the end
+
+            #endregion
+
+
+            #region Detect loop in a linked list
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.Head.Next.Next.Next.Next.Next = linkedListSM.Head.Next;
+            //bool loopDeteched = linkedListSM.DetectLoop(linkedListSM.Head);
+            //Console.WriteLine(loopDeteched ? "yes" : "no");
+
+            #endregion
+
+
+            #region Find length of loop in linked list
+
+            LinkedListSM linkedListSM = new LinkedListSM();
+            linkedListSM.AddNodeAtLastSm(1);
+            linkedListSM.AddNodeAtLastSm(2);
+            linkedListSM.AddNodeAtLastSm(3);
+            linkedListSM.AddNodeAtLastSm(4);
+            linkedListSM.AddNodeAtLastSm(5);
+            linkedListSM.Head.Next.Next.Next.Next.Next = linkedListSM.Head.Next;
+            int loopNodeCount = linkedListSM.FindLengthOfTheLoop(linkedListSM.Head);
+            Console.WriteLine(loopNodeCount);
+
+            #endregion
 
 
             #region Reverse a linked list
@@ -129,6 +175,8 @@ namespace LinkedList
             //}
 
             #endregion
+
+
 
 
             ////Merge two sorted linked lists
