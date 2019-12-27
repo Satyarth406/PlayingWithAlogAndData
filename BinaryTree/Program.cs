@@ -59,6 +59,49 @@ namespace BinaryTree
             #endregion
 
 
+            #region Inorder Tree Traversal without Recursion
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.InOrderTransversalWithoutRecursion(binaryTreeSM.root);
+
+            #endregion
+
+
+            #region Find n-th node of inorder traversal
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //int n = int.Parse(Console.ReadLine());
+            //binaryTreeSM.FindNthNodeInorderTransversal(binaryTreeSM.root,ref n);
+
+
+            #endregion
+
+
+            #region Find n-th node of PostOrder traversal
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //int n = int.Parse(Console.ReadLine());
+            //binaryTreeSM.FindNthNodeInpostTransversal(binaryTreeSM.root, ref n);
+
+
+            #endregion
+
+
             #region Write a Program to Find the Maximum Depth or Height of a Tree Recursive
 
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
@@ -73,8 +116,6 @@ namespace BinaryTree
             //Console.WriteLine(height);
 
             #endregion
-
-
 
 
             #region Iterative Method to find Height of Binary Tree
@@ -237,13 +278,16 @@ namespace BinaryTree
             //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
             //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
             //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
             //binaryTreeSM.LevelOrderTransversalLineByLineSM(binaryTreeSM.root);
 
 
             #endregion
 
 
-            ////Reverse Level Order Traversal
+            #region Reverse Level Order Traversal
+
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             //binaryTreeSM.root = new BinaryTreeNodeSM(1);
             //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
@@ -252,6 +296,7 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
             //binaryTreeSM.ReverseLevelOrderTransversalSM(binaryTreeSM.root);
 
+            #endregion
 
 
             ////Iterative Preorder Traversal
@@ -280,7 +325,9 @@ namespace BinaryTree
 
 
 
-            ////Diagonal Traversal of Binary Tree
+
+            #region Diagonal Traversal of Binary Tree
+
             //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             //binaryTreeSM.root = new BinaryTreeNodeSM(1);
             //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
@@ -289,32 +336,34 @@ namespace BinaryTree
             //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
             //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
             //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
-            //Dictionary<int, List<int>> keyValuePairs = new Dictionary<int, List<int>>();
-
-            //binaryTreeSM.DiagonalTraversalofBinaryTree(binaryTreeSM.root,0, keyValuePairs);
+            //Dictionary<int, HashSet<int>> keyValuePairs = new Dictionary<int, HashSet<int>>();
+            //binaryTreeSM.DiagonalTraversalofBinaryTree(binaryTreeSM.root, 0, keyValuePairs);
             //foreach (var item in keyValuePairs.Keys)
             //{
             //    Console.WriteLine(item);
-            //    for (int i = 0; i < keyValuePairs[item].Count; i++)
+            //    foreach (var it in keyValuePairs[item])
             //    {
-            //        Console.Write(keyValuePairs[item][i]);
+            //        Console.Write(it);
             //    }
             //    Console.WriteLine();
             //}
 
+            #endregion
 
 
-            ////Iterative diagonal traversal of binary tree
-            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
-            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
-            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
-            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
-            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
-            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
-            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
-            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
+            #region Iterative diagonal traversal of binary tree
 
-            //binaryTreeSM.IterativeDiagonaltraversalSM(binaryTreeSM.root);
+            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
+            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
+            binaryTreeSM.IterativeDiagonaltraversalSM(binaryTreeSM.root);
+
+            #endregion
 
 
 

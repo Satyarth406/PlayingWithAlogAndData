@@ -111,6 +111,55 @@ namespace BinaryTree
                 return 1 + rightHeight;
         }
 
+        internal void InOrderTransversalWithoutRecursion(BinaryTreeNodeSM root)
+        {
+            Stack stack = new Stack();
+            while (true)
+            {
+                while (root != null)
+                {
+                    stack.Push(root);
+                    root = root.leftChild;
+                }
+                if (stack.Count > 0)
+                {
+                    root = (BinaryTreeNodeSM)stack.Pop();
+                    Console.WriteLine(root.data);
+                    root = root.rightChild;
+                }
+                else
+                    break;
+            }
+        }
+
+        internal void FindNthNodeInorderTransversal(BinaryTreeNodeSM root, ref int n)
+        {
+            if (root == null) return;
+
+            FindNthNodeInorderTransversal(root.leftChild, ref n);
+            n--;
+            if (n == 0)
+            {
+                Console.WriteLine(root.data);
+                return;
+            }
+            FindNthNodeInorderTransversal(root.rightChild, ref n);
+
+
+        }
+
+        internal void FindNthNodeInpostTransversal(BinaryTreeNodeSM root, ref int n)
+        {
+            if (root == null) return;
+            FindNthNodeInpostTransversal(root.leftChild, ref n);
+            FindNthNodeInpostTransversal(root.rightChild, ref n);
+            n--;
+            if (n == 0)
+            {
+                Console.WriteLine(root.data);
+            }
+        }
+
         internal int FindHeightSm(BinaryTreeNodeSM root)
         {
             if (root == null) return 0;
@@ -369,17 +418,17 @@ namespace BinaryTree
             }
         }
 
-        internal void DiagonalTraversalofBinaryTree(BinaryTreeNodeSM root, int v, Dictionary<int, List<int>> keyValuePairs)
+        internal void DiagonalTraversalofBinaryTree(BinaryTreeNodeSM root, int v, Dictionary<int, HashSet<int>> keyValuePairs)
         {
             if (root != null)
             {
-                if (keyValuePairs.ContainsKey(v))
+                if (keyValuePairs.ContainsKey(v) )
                 {
                     keyValuePairs[v].Add(root.data);
                 }
                 else
                 {
-                    keyValuePairs.Add(v, new List<int>() { root.data });
+                    keyValuePairs.Add(v, new HashSet<int>() { root.data });
                 }
                 if (root.leftChild != null)
                 {
