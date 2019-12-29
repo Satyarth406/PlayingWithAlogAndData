@@ -471,6 +471,72 @@ namespace BinaryTree
                 }
             }
         }
+
+        internal bool ChildrenSumProperty(BinaryTreeNodeSM root)
+        {
+            if (root == null) return true;
+            if (root.leftChild == null && root.rightChild == null) return true;
+            int leftData = root.leftChild != null ? root.leftChild.data : 0;
+            int rightData = root.rightChild != null ? root.rightChild.data : 0;
+            return root.data == leftData+rightData
+                && ChildrenSumProperty(root.rightChild) && ChildrenSumProperty(root.leftChild);
+        }
+
+        internal bool IsBinaryTreeSumTree(BinaryTreeNodeSM root)
+        {
+            if (root == null) return true;
+            if (root.leftChild == null && root.rightChild == null) return true;
+            int leftSum = FindSum(root.leftChild);
+            int rightSum = FindSum(root.rightChild);
+            return root.data == leftSum + rightSum && IsBinaryTreeSumTree(root.leftChild) &&
+                IsBinaryTreeSumTree(root.rightChild);
+
+        }
+
+        private int FindSum(BinaryTreeNodeSM root)
+        {
+            if (root == null) return 0;
+            return root.data + FindSum(root.leftChild) + FindSum(root.rightChild);
+        }
+
+        internal bool IsBinaryTreeSumTreeFaster(BinaryTreeNodeSM root)
+        {
+            if (root == null) return true;
+            if (root.leftChild == null && root.rightChild == null) return true;
+
+            if(IsBinaryTreeSumTreeFaster(root.leftChild) && IsBinaryTreeSumTreeFaster(root.rightChild))
+            {
+                int leftData = 0;
+                int rightChild = 0;
+                if (root.leftChild == null) leftData = 0;
+                else if (isLeaf(root.leftChild))
+                {
+                    leftData = root.leftChild.data;
+                }
+                else
+                {
+                    leftData = root.leftChild.data * 2;
+                }
+
+                if (root.rightChild == null) rightChild = 0;
+                else if (isLeaf(root.rightChild))
+                {
+                    rightChild = root.rightChild.data;
+                }
+                else
+                {
+                    rightChild = root.rightChild.data * 2;
+                }
+                if (root.data == leftData + rightChild) return true;
+                else return false;
+            }
+            return false;
+        }
+
+        private bool isLeaf(BinaryTreeNodeSM node)
+        {
+            return node.leftChild == null && node.rightChild == null;
+        }
     }
 }
 

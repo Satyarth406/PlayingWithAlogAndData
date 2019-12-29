@@ -353,18 +353,64 @@ namespace BinaryTree
 
             #region Iterative diagonal traversal of binary tree
 
-            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
-            binaryTreeSM.root = new BinaryTreeNodeSM(1);
-            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
-            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
-            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
-            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
-            binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
-            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
-            binaryTreeSM.IterativeDiagonaltraversalSM(binaryTreeSM.root);
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(7);
+            //binaryTreeSM.IterativeDiagonaltraversalSM(binaryTreeSM.root);
 
             #endregion
 
+
+            #region Check for Children Sum Property in a Binary Tree
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(10);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(8);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(2);
+            //bool t  = binaryTreeSM.ChildrenSumProperty(binaryTreeSM.root);
+            //Console.WriteLine(t) ;
+
+            #endregion
+
+
+
+            #region Check if a given Binary Tree is SumTree Q(n*2)
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(26);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(10);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(3);
+            //bool t = binaryTreeSM.IsBinaryTreeSumTree(binaryTreeSM.root);
+            //Console.WriteLine(t);
+
+            #endregion
+
+
+
+            #region Check if a given Binary Tree is SumTree Q(n)
+
+            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            binaryTreeSM.root = new BinaryTreeNodeSM(26);
+            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(10);
+            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(6);
+            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(3);
+            bool t = binaryTreeSM.IsBinaryTreeSumTreeFaster(binaryTreeSM.root);
+            Console.WriteLine(t);
+
+            #endregion
 
 
             Console.ReadLine();
