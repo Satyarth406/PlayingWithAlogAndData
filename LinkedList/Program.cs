@@ -132,15 +132,15 @@ namespace LinkedList
 
             #region Find length of loop in linked list
 
-            LinkedListSM linkedListSM = new LinkedListSM();
-            linkedListSM.AddNodeAtLastSm(1);
-            linkedListSM.AddNodeAtLastSm(2);
-            linkedListSM.AddNodeAtLastSm(3);
-            linkedListSM.AddNodeAtLastSm(4);
-            linkedListSM.AddNodeAtLastSm(5);
-            linkedListSM.Head.Next.Next.Next.Next.Next = linkedListSM.Head.Next;
-            int loopNodeCount = linkedListSM.FindLengthOfTheLoop(linkedListSM.Head);
-            Console.WriteLine(loopNodeCount);
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.Head.Next.Next.Next.Next.Next = linkedListSM.Head.Next;
+            //int loopNodeCount = linkedListSM.FindLengthOfTheLoop(linkedListSM.Head);
+            //Console.WriteLine(loopNodeCount);
 
             #endregion
 
@@ -177,6 +177,17 @@ namespace LinkedList
             #endregion
 
 
+            #region Print reverse of a Linked List without actually reversing
+
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.PrintReverse(linkedListSM.Head);
+
+            #endregion
 
 
             ////Merge two sorted linked lists
@@ -219,24 +230,105 @@ namespace LinkedList
 
 
 
-            ////Reverse a LinkedList in groups of given size
+            #region Reverse a LinkedList in groups of given size
+
             //LinkedListSM linkedListSM = new LinkedListSM();
-            //linkedListSM.AddNodeAtLastSM(1);
-            //linkedListSM.AddNodeAtLastSM(2);
-            //linkedListSM.AddNodeAtLastSM(3);
-            //linkedListSM.AddNodeAtLastSM(4);
-            //linkedListSM.AddNodeAtLastSM(5);
-            //linkedListSM.AddNodeAtLastSM(6);
-            //linkedListSM.AddNodeAtLastSM(7);
-            //linkedListSM.AddNodeAtLastSM(8);
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+            //linkedListSM.AddNodeAtLastSm(7);
+            //linkedListSM.AddNodeAtLastSm(8);
             //int gpSize = 3;
-            //LinkedListNodeSM node = linkedListSM.ReverseLinkedListInGroupsOfGivenSizeSm(linkedListSM.head, gpSize);
+            //LinkedListNodeSM node = linkedListSM.ReverseLinkedListInGroupsOfGivenSizeSm(linkedListSM.Head, gpSize);
             //while (node != null)
             //{
             //    Console.WriteLine(node.Data);
             //    node = node.Next;
             //}
 
+            #endregion
+
+
+            #region Reverse alternate K nodes in a Singly Linked List
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+            //int gpSize = 2;
+            //LinkedListNodeSM node = linkedListSM.ReverseAlternateKnodesSm(linkedListSM.Head, gpSize,true);
+            //while (node != null)
+            //{
+            //    Console.WriteLine(node.Data);
+            //    node = node.Next;
+            //}
+
+            #endregion
+
+
+            #region Delete alternate nodes of a Linked List
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+            //LinkedListNodeSM node = linkedListSM.DeleteAlternateNodes(linkedListSM.Head);
+            //while (node != null)
+            //{
+            //    Console.WriteLine(node.Data);
+            //    node = node.Next;
+            //}
+
+            #endregion
+
+
+            #region Delete alternate nodes of a Linked List Recursively
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(1);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(4);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+            //LinkedListNodeSM node = linkedListSM.DeleteAlternateNodesRecursively(linkedListSM.Head);
+            //while (node != null)
+            //{
+            //    Console.WriteLine(node.Data);
+            //    node = node.Next;
+            //}
+
+            #endregion
+
+
+            #region Delete nodes which have a greater value on right side
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(12);
+            //linkedListSM.AddNodeAtLastSm(15);
+            //linkedListSM.AddNodeAtLastSm(10);
+            //linkedListSM.AddNodeAtLastSm(11);
+            //linkedListSM.AddNodeAtLastSm(5);
+            //linkedListSM.AddNodeAtLastSm(6);
+            //linkedListSM.AddNodeAtLastSm(2);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //LinkedListNodeSM node = linkedListSM.DeleteNodesWithGreaterValueRightSide(linkedListSM.Head);
+            //while (node != null)
+            //{
+            //    Console.WriteLine(node.Data);
+            //    node = node.Next;
+            //}
+
+            #endregion
 
 
             ////Search an element in a Linked List Q(n)
@@ -315,7 +407,7 @@ namespace LinkedList
 
 
 
-            ////Detect and Remove Loop in a Linked List
+            #region Detect and Remove Loop in a Linked List
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(50);
             //linkedListSM.AddNodeAtLastSM(20);
@@ -334,10 +426,11 @@ namespace LinkedList
             //    Console.WriteLine("No loop present");
             //}
 
+            #endregion
 
 
+            #region Function to check if a singly linked list is palindrome
 
-            ////Function to check if a singly linked list is palindrome
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSm(1);
             //linkedListSM.AddNodeAtLastSm(2);
@@ -349,6 +442,7 @@ namespace LinkedList
             //bool isPalindrome = linkedListSM.CheckIfLinkedListIsPalindromeSm(linkedListSM.Head);
             //Console.WriteLine(isPalindrome);
 
+            #endregion
 
 
             #region Add two numbers represented by linked lists
@@ -459,6 +553,22 @@ namespace LinkedList
             #endregion
 
 
+            #region Segregate even and odd nodes in a Linked List
+
+            //LinkedListSM linkedListSM = new LinkedListSM();
+            //linkedListSM.AddNodeAtLastSm(50);
+            //linkedListSM.AddNodeAtLastSm(20);
+            //linkedListSM.AddNodeAtLastSm(15);
+            //linkedListSM.AddNodeAtLastSm(3);
+            //linkedListSM.AddNodeAtLastSm(10);
+            //LinkedListNodeSM node = linkedListSM.SegregateEvenOddNodes(linkedListSM.Head);
+            //while (node != null)
+            //{
+            //    Console.WriteLine(node.Data);
+            //    node = node.Next;
+            //}
+
+            #endregion
 
             Console.ReadLine();
         }

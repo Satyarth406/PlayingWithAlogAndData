@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Algorithms
 {
@@ -17,15 +13,15 @@ namespace Algorithms
 
         private static void SortMe(int[] a)
         {
-            int s = a[0];
             for (int i = 1; i < a.Length; i++)
             {
                 int j = i - 1;
-                while(j>=0 && a[j] > a[j+1])
+                int key = a[i];
+                while(j>=0 && a[j] > key)
                 {
-                    swap(ref a[j], ref a[j+1]);
-                    j--;
+                    a[j+1] = a[j];
                 }
+                a[j + 1] = key;
             }
             for (int i = 0; i < a.Length; i++)
             {

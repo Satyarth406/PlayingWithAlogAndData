@@ -160,7 +160,7 @@ namespace LinkedList
             LinkedListNodeSM fast = head.Next;
             while (slow != null && fast != null)
             {
-                if(slow == fast)
+                if (slow == fast)
                 {
                     return true;
                 }
@@ -242,6 +242,13 @@ namespace LinkedList
             return a;
         }
 
+        internal void PrintReverse(LinkedListNodeSM head)
+        {
+            if (head == null) return;
+            PrintReverse(head.Next);
+            Console.WriteLine(head.Data);
+        }
+
 
         //Find Length of a Linked List Q(n)
         public int LengthOfLinkedListSm()
@@ -305,6 +312,7 @@ namespace LinkedList
             Head = prev;
         }
 
+
         public LinkedListNodeSM ReverseLinkedListUsingRecursionSm(LinkedListNodeSM nodeSm)
         {
             if (nodeSm?.Next == null) return nodeSm;
@@ -355,6 +363,88 @@ namespace LinkedList
             }
 
             return dummyHead.Next;
+        }
+
+        internal LinkedListNodeSM ReverseAlternateKnodesSm(LinkedListNodeSM head, int gpSize, bool alternate)
+        {
+            LinkedListNodeSM prev = null;
+            LinkedListNodeSM curr = head;
+            LinkedListNodeSM next = null;
+
+            int count = 0;
+            if (alternate)
+            {
+                while (curr != null && count < gpSize)
+                {
+                    next = curr.Next;
+                    curr.Next = prev;
+                    prev = curr;
+                    curr = next;
+                    count++;
+                }
+                if (curr != null)
+                {
+                    head.Next = ReverseAlternateKnodesSm(curr, gpSize, !alternate);
+                }
+            }
+            else
+            {
+                while (count < gpSize)
+                {
+                    prev = curr;
+                    count++;
+                    curr = curr.Next;
+                }
+                if (curr != null)
+                {
+                    prev.Next = ReverseAlternateKnodesSm(curr, gpSize, !alternate);
+                }
+                return head;
+
+            }
+            return prev;
+
+        }
+
+        internal LinkedListNodeSM DeleteAlternateNodesRecursively(LinkedListNodeSM head)
+        {
+            if (head == null) return null;
+            head.Next = DeleteAlternateNodesRecursively(head.Next.Next);
+            return head;
+
+        }
+
+        internal LinkedListNodeSM DeleteAlternateNodes(LinkedListNodeSM head)
+        {
+            LinkedListNodeSM dummy = head;
+            while (dummy != null && dummy.Next != null)
+            {
+                dummy.Next = dummy.Next.Next;
+                dummy = dummy.Next;
+            }
+            return head;
+        }
+
+        internal LinkedListNodeSM DeleteNodesWithGreaterValueRightSide(LinkedListNodeSM head)
+        {
+            LinkedListNodeSM reversed = ReverseLinkedListUsingRecursionSm(head);
+            LinkedListNodeSM reversedHead = reversed;
+            int currMax = 0;
+            LinkedListNodeSM prev = null;
+            while (reversed != null)
+            {
+                if (reversed.Data > currMax)
+                {
+                    currMax = reversed.Data;
+                }
+                else
+                {
+                    prev.Next = reversed.Next;
+                }
+                prev = reversed;
+                reversed = reversed.Next;
+            }
+            return ReverseLinkedListUsingRecursionSm(reversedHead);
         }
 
         public LinkedListNodeSM MergeTwoSortedLinkedListUsingRecursionSm(LinkedListNodeSM linkedListSm, LinkedListNodeSM linkedListSm2)
@@ -582,6 +672,49 @@ namespace LinkedList
             }
         }
 
+        internal LinkedListNodeSM SegregateEvenOddNodes(LinkedListNodeSM head)
+        {
+            LinkedListNodeSM oddStart = null;
+            LinkedListNodeSM oddend = null;
+            LinkedListNodeSM evenStart = null;
+            LinkedListNodeSM evenEnd = null;
+            LinkedListNodeSM dummy = head;
+            while (dummy != null)
+            {
+                if (dummy.Data % 2 == 0)
+                {
+                    if (evenStart == null)
+                    {
+                        evenStart = dummy;
+                        evenEnd = dummy;
+                    }
+                    else
+                    {
+                        evenEnd.Next = dummy;
+                        evenEnd = evenEnd.Next;
+
+                    }
+                }
+                else
+                {
+                    if (oddStart == null)
+                    {
+                        oddStart = dummy;
+                        oddend = dummy;
+                    }
+                    else
+                    {
+                        oddend.Next = dummy;
+                        oddend = oddend.Next;
+                    }
+                }
+                dummy = dummy.Next;
+            }
+            oddend.Next = null;
+            evenEnd.Next = oddStart;
+            return evenStart;
+
+        }
 
         public LinkedListNodeSM ReverseLinkedListInGroupsOfGivenSizeSm(LinkedListNodeSM linkedListSm, int size)
         {
