@@ -229,7 +229,8 @@ namespace BinarySearchTree
 
         }
 
-        internal int FindCeilSm(BinarySearchTreeNodeSM root, BinarySearchTreeNodeSM temp,int key)
+
+        internal int FindCeilSm(BinarySearchTreeNodeSM root, BinarySearchTreeNodeSM temp, int key)
         {
             if (root == null)
             {
@@ -249,14 +250,14 @@ namespace BinarySearchTree
             }
             if (root.Data < key)
             {
-                return FindCeilSm(root.RightChild, temp , key);
+                return FindCeilSm(root.RightChild, temp, key);
             }
             return -1;
         }
 
         internal void DeleteNodeWithData(BinarySearchTreeNodeSM root, int v)
         {
-            
+
         }
     }
     public class BinarySearchTreeNodeSM

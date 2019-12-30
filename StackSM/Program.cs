@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StackSM
 {
@@ -11,7 +7,8 @@ namespace StackSM
     {
         static void Main(string[] args)
         {
-            ////Creating a new stack and populating it
+            #region Creating a new stack and populating it
+
             //StackSM stackSM = new StackSM(5);
             //stackSM.PushSm(1);
             //stackSM.PushSm(2);
@@ -20,9 +17,11 @@ namespace StackSM
             //stackSM.PushSm(5);
             //stackSM.PrintStackSM();
 
+            #endregion
 
 
-            ////reverse string using stack
+            #region reverse string using stack
+
             //string s = "Hello world";
             //char[] c = s.ToCharArray();
             //StackSM stackSM = new StackSM(c.Length);
@@ -38,10 +37,11 @@ namespace StackSM
             //}
             //Console.WriteLine(new string(reversed));
 
+            #endregion
 
 
+            #region Reverse string using loop
 
-            ////reverse string using loop
             //string s = "Hello world";
             //char[] c = s.ToCharArray();
             //for (int i = 0; i < c.Length/2; i++)
@@ -50,9 +50,11 @@ namespace StackSM
             //}
             //Console.WriteLine(new String(c));
 
+            #endregion
 
 
-            ////Implement two stacks in an array
+            #region Implement two stacks in an array
+
             //TwoStackSM twoStackSM = new TwoStackSM(7);
             //twoStackSM.Push1SM(1);
             //twoStackSM.Push1SM(2);
@@ -64,7 +66,7 @@ namespace StackSM
             //twoStackSM.PrintStack1SM();
             //twoStackSM.PrintStack2SM();
 
-
+            #endregion
 
 
             ////Check for balanced parentheses in an expression
