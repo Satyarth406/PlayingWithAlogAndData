@@ -171,7 +171,89 @@ namespace BinarySearchTree
 
             #endregion
 
+
+            #region Check if the given array can represent Level Order Traversal of Binary Search Tree
+
+            //int[] arr = { 7, 4, 12, 3, 6, 8, 1, 5, 10 };
+            //bool t = IsGivenArrayBst(arr, arr.Length);
+            //Console.WriteLine(t);
+
+            #endregion
+
+
+            #region Check if a given array can represent Preorder Traversal of Binary Search Tree
+
+            //int[] arr = { 40, 30, 35, 80, 100 };
+            //bool t = IfPreorderBstSm(arr, arr.Length);
+            //Console.WriteLine(t);
+
+            #endregion
+
+
             Console.ReadLine();
+        }
+
+        private static bool IfPreorderBstSm(int[] arr, int length)
+        {
+            Stack<int> s = new Stack<int>();
+            int root = int.MinValue;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < root)
+                {
+                    return false;
+                }
+                while (s.Count > 0 && s.Peek() < arr[i])
+                {
+                    root = s.Pop();
+                }
+                s.Push(arr[i]);
+            }
+            return true;
+        }
+
+        private static bool IsGivenArrayBst(int[] arr, int n)
+        {
+            Queue<NodeDetails> nodeDetailsQueue = new Queue<NodeDetails>();
+            NodeDetails nodeDetails = new NodeDetails();
+            int i = 0;
+
+            nodeDetails.min = int.MinValue;
+            nodeDetails.max = int.MaxValue;
+            nodeDetails.data = arr[i++];
+            nodeDetailsQueue.Enqueue(nodeDetails);
+            while (i < n && nodeDetailsQueue.Count > 0)
+            {
+                NodeDetails nodeDetails1 = nodeDetailsQueue.Dequeue();
+                nodeDetails = new NodeDetails();
+                if (i < n && arr[i] < nodeDetails1.data && arr[i] > nodeDetails1.min)
+                {
+                    nodeDetails.min = nodeDetails1.min;
+                    nodeDetails.max = nodeDetails1.data;
+                    nodeDetails.data = arr[i++];
+                    nodeDetailsQueue.Enqueue(nodeDetails);
+                }
+                nodeDetails = new NodeDetails();
+
+                if (i < n && arr[i] > nodeDetails1.data && arr[i] < nodeDetails1.max)
+                {
+                    nodeDetails.min = nodeDetails1.data;
+                    nodeDetails.max = nodeDetails1.max;
+                    nodeDetails.data = arr[i++];
+                    nodeDetailsQueue.Enqueue(nodeDetails);
+
+                }
+            }
+            if (n == i)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         private static void SortedOrderPrinting(int[] arr, int start, int end)
@@ -181,5 +263,9 @@ namespace BinarySearchTree
             Console.WriteLine(arr[start]);
             SortedOrderPrinting(arr, 2 * start + 2, end);
         }
+    }
+    class NodeDetails
+    {
+        public int data, min, max;
     }
 }
