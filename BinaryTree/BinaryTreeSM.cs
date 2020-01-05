@@ -422,7 +422,7 @@ namespace BinaryTree
         {
             if (root != null)
             {
-                if (keyValuePairs.ContainsKey(v) )
+                if (keyValuePairs.ContainsKey(v))
                 {
                     keyValuePairs[v].Add(root.data);
                 }
@@ -478,7 +478,7 @@ namespace BinaryTree
             if (root.leftChild == null && root.rightChild == null) return true;
             int leftData = root.leftChild != null ? root.leftChild.data : 0;
             int rightData = root.rightChild != null ? root.rightChild.data : 0;
-            return root.data == leftData+rightData
+            return root.data == leftData + rightData
                 && ChildrenSumProperty(root.rightChild) && ChildrenSumProperty(root.leftChild);
         }
 
@@ -504,7 +504,7 @@ namespace BinaryTree
             if (root == null) return true;
             if (root.leftChild == null && root.rightChild == null) return true;
 
-            if(IsBinaryTreeSumTreeFaster(root.leftChild) && IsBinaryTreeSumTreeFaster(root.rightChild))
+            if (IsBinaryTreeSumTreeFaster(root.leftChild) && IsBinaryTreeSumTreeFaster(root.rightChild))
             {
                 int leftData = 0;
                 int rightChild = 0;
@@ -536,6 +536,126 @@ namespace BinaryTree
         private bool isLeaf(BinaryTreeNodeSM node)
         {
             return node.leftChild == null && node.rightChild == null;
+        }
+
+        internal void BoundaryTraversal(BinaryTreeNodeSM root)
+        {
+            if (root == null) return;
+            PrintLeftSide(root);
+            PrintLeaves(root.leftChild);
+            PrintLeaves(root.rightChild);
+
+            PrintRightSide(root.rightChild);
+
+        }
+
+        private void PrintRightSide(BinaryTreeNodeSM root)
+        {
+            if (root == null) return;
+            if (root.rightChild != null)
+            {
+                PrintRightSide(root.rightChild);
+                Console.WriteLine(root.data);
+            }
+            if (root.leftChild != null)
+            {
+                PrintRightSide(root.leftChild);
+                Console.WriteLine(root.data);
+            }
+        }
+
+        private void PrintLeaves(BinaryTreeNodeSM node)
+        {
+            if (node == null) return;
+            PrintLeaves(node.leftChild);
+            if (node.leftChild == null && node.rightChild == null)
+            {
+                Console.WriteLine(node.data);
+            }
+
+            PrintLeaves(node.rightChild);
+
+        }
+
+        private void PrintLeftSide(BinaryTreeNodeSM root)
+        {
+            if (root == null) return;
+            if (root.leftChild != null)
+            {
+                Console.WriteLine(root.data);
+                PrintLeftSide(root.leftChild);
+            }
+            else if (root.rightChild != null)
+            {
+                Console.WriteLine(root.data);
+                PrintLeftSide(root.rightChild);
+
+
+            }
+        }
+
+        internal bool CheckSumofCoveredUncoveredNodes(BinaryTreeNodeSM root)
+        {
+            int sumUc = GetUncoveredSum(root);
+            int total = GetSum(root);
+            return (sumUc == (total - sumUc));
+        }
+
+        private int GetSum(BinaryTreeNodeSM root)
+        {
+            if (root == null) return 0;
+            return root.data + GetSum(root.leftChild) + GetSum(root.rightChild);
+        }
+
+        private int GetUncoveredSum(BinaryTreeNodeSM root)
+        {
+            if (root == null) return 0;
+            int leftSum = 0;
+            int rightSum = 0;
+            GetLeftUncovered(root.leftChild, ref leftSum);
+            GetRightUncovered(root.rightChild,ref rightSum);
+            return root.data + leftSum + rightSum;
+
+        }
+
+        private void GetRightUncovered(BinaryTreeNodeSM node, ref int sum)
+        {
+            if (node == null) return;
+            if (node.leftChild == null && node.rightChild == null)
+            {
+                sum = sum + node.data;
+                return;
+            }
+            if (node.leftChild != null)
+            {
+                sum = sum + node.data;
+                GetRightUncovered(node.leftChild, ref sum);
+            }
+            else if (node.rightChild != null)
+            {
+                sum = sum + node.data;
+                GetRightUncovered(node.rightChild, ref sum);
+            }
+        }
+
+        private void GetLeftUncovered(BinaryTreeNodeSM node, ref int sum)
+        {
+            if (node == null) return;
+            if (node.leftChild == null && node.rightChild == null)
+            {
+                sum = sum + node.data;
+                return;
+            }
+            if (node.leftChild != null)
+            {
+                sum = sum + node.data;
+                GetLeftUncovered(node.leftChild, ref sum);
+            }
+            else if (node.rightChild != null)
+            {
+                sum = sum + node.data;
+                GetLeftUncovered(node.rightChild, ref sum);
+            }
         }
     }
 }

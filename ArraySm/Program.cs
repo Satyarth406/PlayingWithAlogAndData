@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArraySm
 {
@@ -60,7 +57,15 @@ namespace ArraySm
             #endregion
 
 
-            #region Program for array rotation Q(n*d) d no. of rotations
+            #region Find all triplets with zero sum using hashing
+
+            int[] arr = { 0, -1, 2, -3, 1 };
+            FindtripletsZeroSumUsingHashing(arr);
+
+            #endregion
+
+
+            #region Program for array rotation Q(n*d) d no. of rotations one by one
 
             //int[] arr = { 1, 2, 3, 4, 5 };
             //LeftRotateArray(arr, 2);
@@ -68,12 +73,63 @@ namespace ArraySm
             #endregion
 
 
-            #region Program for array rotation Q(n) space Q(d) d no. of rotations
+            #region Program for array rotation Q(n) space Q(d) d no. of rotations using temp array
 
-            int[] arr = { 1, 2, 3, 4, 5 };
-            LeftRotateArrayFaster(arr, 2);
+            //int[] arr = { 1, 2, 3, 4, 5 };
+            //LeftRotateArrayFaster(arr, 2);
 
             #endregion
+
+
+            #region Program for array rotation Q(n) space Q(d) d no. of rotations using juggling algorithm
+
+            //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+            //LeftRotateArrayJuggling(arr, 2);
+
+            #endregion
+
+
+            #region Program to cyclically rotate an array by one
+
+            //int[] arr = { 1, 2, 3, 4, 5 };
+            //CyclicallyRotateAnArrayByOne(arr);
+
+            #endregion
+
+
+            #region Search an element in a sorted and rotated array
+
+            //int[] arr = { 30, 40, 50, 10, 20 };
+            //int n = arr.Length;
+            //int e = 10;
+            //int index = SearchElementInSortedAndRotatedArray(arr, n, e);
+            //if (index == int.MinValue) Console.WriteLine("Not Found");
+            //else Console.WriteLine(index);
+
+            #endregion
+
+
+            #region Given a sorted and rotated array, find if there is a pair with a given sum
+
+            //int[] arr = { 11, 15, 6, 8, 9, 10 };
+            //int n = arr.Length;
+            //int e = 16;
+            //PairWithSumInSortedAndRotatedArray(arr, n, e);
+
+            #endregion
+
+
+            #region Ceiling in a sorted array
+
+            //int[] arr = { 1, 2, 8, 10, 10, 12, 19 };
+            //int n = arr.Length;
+            //int e = 20;
+            //int ceil = CeilingInSortedArray(arr, n, e);
+            //Console.WriteLine(ceil);
+
+            #endregion
+
+
 
 
             ////Largest Sum Contiguous Subarray
@@ -85,6 +141,180 @@ namespace ArraySm
 
         }
 
+        private static void FindtripletsZeroSumUsingHashing(int[] arr)
+        {
+            HashSet<int> hashset = new HashSet<int>();
+            hashset.Add(arr[0]);
+            for (int i = 0; i < arr.Length-1; i++)
+            {
+                int temp = arr[i];
+                for (int j = i+1; j < arr.Length; j++)
+                {
+                    if (hashset.Contains(-(temp + arr[j])))
+                    {
+                        Console.WriteLine($"{temp} {arr[j]}  {-(temp+arr[j])}");
+                    }
+                    else
+                    {
+                        hashset.Add(arr[j]);
+                    }
+                 }
+                hashset = new HashSet<int>();
+            }
+            
+        }
+
+        private static int CeilingInSortedArray(int[] arr, int n, int e)
+        {
+            return FindCeil(arr, 0, arr.Length - 1, e);
+        }
+
+        private static int FindCeil(int[] arr, int start, int end, int e)
+        {
+            if (start > end) return int.MaxValue;
+            if (e < arr[start]) return arr[start];
+            if (e > arr[end]) return int.MaxValue;
+            int mid = (start + end) / 2;
+            if (arr[mid] == e)
+            {
+                return e;
+            }
+            else if (arr[mid] < e)
+            {
+                if (mid + 1 <= end && arr[mid + 1] >= e)
+                    return arr[mid + 1];
+                else
+                {
+                    return FindCeil(arr, mid + 1, end, e);
+                }
+            }
+            else
+            {
+                if (mid - 1 >= 0 && e >= arr[mid - 1]) return arr[mid - 1];
+                else
+                {
+                    return FindCeil(arr, start, mid - 1, e);
+
+                }
+            }
+        }
+
+        private static void PairWithSumInSortedAndRotatedArray(int[] arr, int n, int e)
+        {
+            int findStart = FindPairUsingBinary(arr, 0, n - 1);
+            int count = 0;
+
+            int end = (findStart - 1 + n) % n;
+            while (findStart != end)
+            {
+                if (arr[findStart] + arr[end] == e)
+                {
+                    count++;
+                    Console.WriteLine($"{arr[findStart]}  {arr[end]}");
+                    if (findStart == (end - 1 + n) % n)
+                    {
+                        break;
+                    }
+                    findStart = (findStart + 1) % n;
+                    end = (end - 1 + n) % n;
+                }
+                else if (arr[findStart] + arr[end] > e)
+                {
+                    end = (end - 1 + n) % n;
+
+                }
+                else
+                {
+                    findStart = (findStart + 1) % n;
+                }
+            }
+        }
+
+        private static int FindPairUsingBinary(int[] arr, int start, int end)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (arr[i] > arr[i + 1])
+                {
+                    return i + 1;
+                }
+            }
+            return int.MinValue;
+        }
+
+        private static int SearchElementInSortedAndRotatedArray(int[] arr, int n, int e)
+        {
+            int index = FindElementUsingBinary(arr, 0, n - 1, e);
+            return index;
+        }
+
+        private static int FindElementUsingBinary(int[] arr, int start, int end, int e)
+        {
+            if (start > end) return int.MinValue;
+            int mid = (start + end) / 2;
+            if (arr[mid] == e) return mid;
+            else if (arr[mid] > e && arr[start] < e)
+            {
+                return FindElementUsingBinary(arr, start, mid - 1, e);
+            }
+            else
+            {
+                return FindElementUsingBinary(arr, mid + 1, end, e);
+            }
+        }
+
+        private static void CyclicallyRotateAnArrayByOne(int[] arr)
+        {
+            int temp = arr[arr.Length - 1];
+            for (int i = arr.Length - 1; i > 0; i--)
+            {
+                arr[i] = arr[i - 1];
+            }
+            arr[0] = temp;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }
+        }
+
+        private static void LeftRotateArrayJuggling(int[] arr, int d)
+        {
+            int n = arr.Length;
+            int gcd = FindGcd(n, d);
+            int temp, j, k;
+            for (int i = 0; i < gcd; i++)
+            {
+                temp = arr[i];
+                j = i;
+                while (true)
+                {
+                    k = j + d;
+                    if (k >= n)
+                    {
+                        k = k - n;
+                    }
+                    if (k == i) break;
+                    arr[j] = arr[k];
+                    j = k;
+                }
+                arr[j] = temp;
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }
+        }
+
+        private static int FindGcd(int n, int d)
+        {
+            if (d == 0) return n;
+            else
+            {
+                return FindGcd(d, n % d);
+            }
+        }
+
         private static void LeftRotateArrayFaster(int[] arr, int v)
         {
             int[] temp = new int[v];
@@ -93,12 +323,12 @@ namespace ArraySm
                 temp[i] = arr[i];
             }
 
-            for (int i = 0; i < arr.Length - v ; i++)
+            for (int i = 0; i < arr.Length - v; i++)
             {
-                 arr[i]= arr[i + v];
+                arr[i] = arr[i + v];
             }
             int l = 0;
-            for (int i = arr.Length-v; i < arr.Length; i++)
+            for (int i = arr.Length - v; i < arr.Length; i++)
             {
                 arr[i] = temp[l++];
             }
@@ -106,7 +336,7 @@ namespace ArraySm
             {
                 Console.WriteLine(arr[i]);
             }
-            
+
         }
 
         private static void LeftRotateArray(int[] arr, int v)
@@ -126,7 +356,7 @@ namespace ArraySm
             int start = arr[0];
             for (int i = 0; i < arr.Length - 1; i++)
             {
-                 arr[i] = arr[i + 1];
+                arr[i] = arr[i + 1];
             }
             arr[arr.Length - 1] = start;
         }

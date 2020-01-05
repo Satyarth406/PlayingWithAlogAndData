@@ -398,7 +398,24 @@ namespace BinaryTree
 
 
 
-            #region Check if a given Binary Tree is SumTree Q(n)
+            #region Boundary Traversal of binary tree
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(26);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(10);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.leftChild.rightChild.leftChild = new BinaryTreeNodeSM(20);
+            //binaryTreeSM.root.leftChild.rightChild.rightChild = new BinaryTreeNodeSM(28);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(33);
+            //binaryTreeSM.BoundaryTraversal(binaryTreeSM.root);
+
+            #endregion
+
+
+
+            #region Check sum of Covered and Uncovered nodes of Binary Tree
 
             BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             binaryTreeSM.root = new BinaryTreeNodeSM(26);
@@ -406,8 +423,10 @@ namespace BinaryTree
             binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
             binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
             binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(6);
-            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(3);
-            bool t = binaryTreeSM.IsBinaryTreeSumTreeFaster(binaryTreeSM.root);
+            binaryTreeSM.root.leftChild.rightChild.leftChild = new BinaryTreeNodeSM(20);
+            binaryTreeSM.root.leftChild.rightChild.rightChild = new BinaryTreeNodeSM(28);
+            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(33);
+            bool t =binaryTreeSM.CheckSumofCoveredUncoveredNodes(binaryTreeSM.root);
             Console.WriteLine(t);
 
             #endregion
