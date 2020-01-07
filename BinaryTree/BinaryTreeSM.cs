@@ -657,6 +657,11 @@ namespace BinaryTree
                 GetLeftUncovered(node.rightChild, ref sum);
             }
         }
+
+        internal void ReplaceSumInorderSuccessorPredecessor(BinaryTreeNodeSM root)
+        {
+            
+        }
     }
 }
 

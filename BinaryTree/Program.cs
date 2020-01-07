@@ -417,6 +417,23 @@ namespace BinaryTree
 
             #region Check sum of Covered and Uncovered nodes of Binary Tree
 
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(26);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(10);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.leftChild.rightChild.leftChild = new BinaryTreeNodeSM(20);
+            //binaryTreeSM.root.leftChild.rightChild.rightChild = new BinaryTreeNodeSM(28);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(33);
+            //bool t =binaryTreeSM.CheckSumofCoveredUncoveredNodes(binaryTreeSM.root);
+            //Console.WriteLine(t);
+
+            #endregion
+
+
+            #region Replace each node in binary tree with the sum of its inorder predecessor and successor
+
             BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             binaryTreeSM.root = new BinaryTreeNodeSM(26);
             binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(10);
@@ -426,10 +443,11 @@ namespace BinaryTree
             binaryTreeSM.root.leftChild.rightChild.leftChild = new BinaryTreeNodeSM(20);
             binaryTreeSM.root.leftChild.rightChild.rightChild = new BinaryTreeNodeSM(28);
             binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(33);
-            bool t =binaryTreeSM.CheckSumofCoveredUncoveredNodes(binaryTreeSM.root);
-            Console.WriteLine(t);
+            binaryTreeSM.ReplaceSumInorderSuccessorPredecessor(binaryTreeSM.root);
+            
 
             #endregion
+
 
 
             Console.ReadLine();
