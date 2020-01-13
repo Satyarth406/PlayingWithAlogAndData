@@ -46,6 +46,11 @@ namespace StackSM
             return val;
         }
 
+        public bool IsEmpty()
+        {
+            return _top == -1;
+        }
+
         public void PrintStackSm()
         {
             if (_top == -1)
@@ -103,6 +108,26 @@ namespace StackSM
             InsertSortedInTheStackSm(t);
             PushSm(z);
         }
+
+        internal StackSM SortUsingTemp()
+        {
+            StackSM temp = new StackSM(_max);
+            while (!IsEmpty())
+            {
+                int t = PopSm();
+                if (temp.IsEmpty())
+                {
+                    temp.PushSm(t);
+                    continue;
+                }
+                while (!temp.IsEmpty() && temp.PeekSm() < t)
+                {
+                    PushSm(temp.PopSm());
+                }
+                temp.PushSm(t);
+            }
+            return temp;
+        }
     }
 
     public class TwoStackSM
@@ -139,7 +164,7 @@ namespace StackSM
 
         public int Pop1SM()
         {
-            if (top1  > -1)
+            if (top1 > -1)
             {
                 return elements[top1--];
             }
@@ -156,7 +181,7 @@ namespace StackSM
         }
         public void PrintStack1SM()
         {
-            while (top2 - top1 > 0 && top1>-1)
+            while (top2 - top1 > 0 && top1 > -1)
             {
                 Console.WriteLine(Pop1SM());
             }

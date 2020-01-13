@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace StackSM
 {
@@ -20,7 +21,7 @@ namespace StackSM
             #endregion
 
 
-            #region reverse string using stack
+            #region Reverse string using stack
 
             //string s = "Hello world";
             //char[] c = s.ToCharArray();
@@ -69,7 +70,8 @@ namespace StackSM
             #endregion
 
 
-            ////Check for balanced parentheses in an expression
+            #region Check for balanced parentheses in an expression
+
             //string s = Console.ReadLine();
             //char[] c = s.ToCharArray();
             //StackSM stackSM = new StackSM(c.Length);
@@ -93,10 +95,11 @@ namespace StackSM
             //}
             //Console.WriteLine("Balanced");
 
+            #endregion
 
 
+            #region Next Greater Element
 
-            ////Next Greater Element
             //string s = Console.ReadLine();
             //int[] c = Array.ConvertAll(s.Split(' ').ToArray(), int.Parse);
             //StackSM stackSM = new StackSM(c.Length);
@@ -119,9 +122,11 @@ namespace StackSM
             //    Console.WriteLine(stackSM.PopSm() + " -> -1");
             //}   
 
+            #endregion
 
 
-            ////Reverse a stack using recursion
+            #region Reverse a stack using recursion
+
             //StackSM stackSM = new StackSM(5);
             //stackSM.PushSm(1);
             //stackSM.PushSm(2);
@@ -131,9 +136,11 @@ namespace StackSM
             //stackSM.ReverseAStackUsingRecursionSm();
             //stackSM.PrintStackSM();
 
+            #endregion
 
 
-            ////Sort a stack using recursion
+            #region Sort a stack using recursion
+
             //StackSM stackSM = new StackSM(5);
             //stackSM.PushSm(1);
             //stackSM.PushSm(4);
@@ -143,19 +150,71 @@ namespace StackSM
             //stackSM.SortAStackUsingRecursionSm();
             //stackSM.PrintStackSM();
 
+            #endregion
 
-            //The Stock Span Problem
+
+            #region The Stock Span Problem
+
             //int[] price = { 10, 4, 5, 90, 120, 80 };
             //int length = price.Length;
             //int[] s = new int[length];
             //StockSpan(price, length, s);
 
-
-            //Design a stack with operations on middle element
-
+            #endregion
 
 
+            #region Sort a stack using a temporary stack
 
+            //StackSM stackSM = new StackSM(4);
+            //stackSM.PushSm(1);
+            //stackSM.PushSm(4);
+            //stackSM.PushSm(2);
+            //stackSM.PushSm(3);
+            //StackSM tempStack = stackSM.SortUsingTemp();
+            //while (!tempStack.IsEmpty())
+            //{
+            //    Console.WriteLine(tempStack.PopSm());
+            //}
+
+            #endregion
+
+
+            #region Delete array elements which are smaller than next or become smaller
+
+            //int n = 5, k = 2;
+            //int[] arr = { 20, 10, 25, 30, 40 };
+            //DeleteElements(arr, n, k);
+
+
+
+            #endregion
+
+
+            #region Number of NGEs to the right
+
+            //int[] a = { 3, 4, 2, 7, 5, 8, 10, 6 };
+            //int t = CountNextContinuousGreater(a, 3);
+            //int t1 = CountNextContinuousGreater(a, 6);
+            //int t2 = CountNextContinuousGreater(a, 1);
+            //Console.WriteLine(t);
+            //Console.WriteLine(t1);
+            //Console.WriteLine(t2);
+
+            #endregion
+
+
+            #region Delete middle element of a stack
+
+            Stack<int> stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+            DeleteMidElement(stack, stack.Count / 2);
+            Console.WriteLine();
+
+            #endregion
 
 
             Console.ReadLine();
@@ -163,6 +222,59 @@ namespace StackSM
 
 
         }
+
+        private static void DeleteMidElement(Stack<int> stack, int mid)
+        {
+            if (mid == 0)
+            {
+                stack.Pop();
+                return;
+            }
+            int t = stack.Pop();
+            DeleteMidElement(stack, --mid);
+            stack.Push(t);
+        }
+
+        private static int CountNextContinuousGreater(int[] a, int index)
+        {
+            int elementAtIndex = a[index];
+            if (index == a.Length - 1) return 0;
+            Stack<int> stack = new Stack<int>();
+            for (int i = index + 1; i < a.Length; i++)
+            {
+                if (stack.Count == 0 && elementAtIndex < a[i])
+                    stack.Push(a[i]);
+                else if (stack.Count > 0 && stack.Peek() < a[i])
+                {
+                    stack.Push(a[i]);
+                }
+            }
+            return stack.Count;
+        }
+
+        private static void DeleteElements(int[] arr, int n, int k)
+        {
+            Stack<int> stack = new Stack<int>();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (stack.Count == 0)
+                {
+                    stack.Push(arr[i]);
+                    continue;
+                }
+                while (stack.Count > 0 && stack.Peek() < arr[i] && k-- > 0)
+                {
+                    stack.Pop();
+                }
+                stack.Push(arr[i]);
+            }
+            while (stack.Count > 0)
+            {
+                Console.WriteLine(stack.Pop());
+            }
+        }
+
+
 
         private static void StockSpan(int[] price, int length, int[] s)
         {
@@ -175,7 +287,7 @@ namespace StackSM
                     stack.Pop();
                 }
 
-                s[i] = (stack.Count == 0) ? i + 1 : i - (int) stack.Peek(); 
+                s[i] = (stack.Count == 0) ? i + 1 : i - (int)stack.Peek();
                 stack.Push(1);
             }
         }
