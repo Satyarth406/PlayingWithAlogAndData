@@ -205,23 +205,78 @@ namespace StackSM
 
             #region Delete middle element of a stack
 
-            Stack<int> stack = new Stack<int>();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(4);
-            stack.Push(5);
-            DeleteMidElement(stack, stack.Count / 2);
-            Console.WriteLine();
+            //Stack<int> stack = new Stack<int>();
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+            //stack.Push(4);
+            //stack.Push(5);
+            //DeleteMidElement(stack, stack.Count / 2);
+            //Console.WriteLine();
 
             #endregion
 
+
+            #region Find if an expression has duplicate parenthesis or not
+
+            string str = "((a+b)+((c+d)))";
+
+            if (!findDuplicateparenthesis(str))
+            {
+                Console.WriteLine("Duplicate Found ");
+            }
+            else
+            {
+                Console.WriteLine("No Duplicates Found ");
+            }
+
+            #endregion
 
             Console.ReadLine();
 
 
 
         }
+
+        private static bool findDuplicateparenthesis(string str)
+        {
+            Stack stack = new Stack();
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == '(' || str[i] == '{' || str[i] == '[')
+                {
+                    stack.Push(str[i]);
+                }
+                else if(str[i] == ')' || str[i] == '}' || str[i] == ']')
+                {
+                    char c = (char)stack.Peek();
+                    if ( c == '(' || c == '{' || c == '[')
+                    {
+                        return false;
+                    }
+                    
+                    while(stack.Count>0 && c != '(' && c != '{' && c != '[')
+                    {
+                        c = (char)stack.Pop();
+                    }
+                    if (!DoTheyMatch(c, str[i]))
+                    {
+                        return false;
+                    }
+                   
+                    
+
+                }
+                else
+                {
+                    stack.Push(str[i]);
+
+                }
+            }
+            return true;
+        }
+
+       
 
         private static void DeleteMidElement(Stack<int> stack, int mid)
         {
