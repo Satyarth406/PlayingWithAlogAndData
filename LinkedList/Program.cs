@@ -47,7 +47,8 @@ namespace LinkedList
             #endregion
 
 
-            ////Delete a node with the given data
+            #region  Delete a node with the given data
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -57,9 +58,11 @@ namespace LinkedList
             ////Print The linked List
             //linkedListSM.PrintLinkedListSM();
 
+            #endregion
 
 
-            ////Delete a node at a given position
+            #region Delete a node at a given position
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -69,8 +72,11 @@ namespace LinkedList
             ////Print The linked List
             //linkedListSM.PrintLinkedListSM();
 
+            #endregion
 
-            ////Length of a linked list
+
+            #region Length of a linked list
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -78,7 +84,7 @@ namespace LinkedList
             //linkedListSM.AddNodeAtLastSM(4);
             //Console.WriteLine(linkedListSM.LengthOfLinkedListSM());
 
-
+            #endregion
 
 
             #region Length of a linked list Recusive
@@ -190,7 +196,8 @@ namespace LinkedList
             #endregion
 
 
-            ////Merge two sorted linked lists
+            #region Merge two sorted linked lists
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -207,8 +214,8 @@ namespace LinkedList
             //    Console.WriteLine(mergeTwoSortedLinkedList.Data);
             //    mergeTwoSortedLinkedList = mergeTwoSortedLinkedList.Next;
             //}
-
-
+            
+            #endregion
 
             ////Merge two sorted linked lists using recursion
             //LinkedListSM linkedListSM = new LinkedListSM();

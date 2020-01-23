@@ -720,22 +720,22 @@ namespace LinkedList
         {
             int count = 0;
             LinkedListNodeSM prev = null;
-            LinkedListNodeSM currrent = linkedListSm;
+            LinkedListNodeSM current = linkedListSm;
             LinkedListNodeSM next;
-            LinkedListNodeSM head = currrent;
+            LinkedListNodeSM head = current;
 
-            while (count < size && currrent != null)
+            while (count < size && current != null)
             {
-                next = currrent.Next;
-                currrent.Next = prev;
-                prev = currrent;
-                currrent = next;
+                next = current.Next;
+                current.Next = prev;
+                prev = current;
+                current = next;
                 count++;
             }
 
-            if (currrent != null)
+            if (current != null)
             {
-                head.Next = ReverseLinkedListInGroupsOfGivenSizeSm(currrent, 3);
+                head.Next = ReverseLinkedListInGroupsOfGivenSizeSm(current, 3);
             }
 
             return prev;
