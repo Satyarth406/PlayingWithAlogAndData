@@ -434,20 +434,50 @@ namespace BinaryTree
 
             #region Replace each node in binary tree with the sum of its inorder predecessor and successor
 
-            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
-            binaryTreeSM.root = new BinaryTreeNodeSM(26);
-            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(10);
-            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
-            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
-            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(6);
-            binaryTreeSM.root.leftChild.rightChild.leftChild = new BinaryTreeNodeSM(20);
-            binaryTreeSM.root.leftChild.rightChild.rightChild = new BinaryTreeNodeSM(28);
-            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(33);
-            binaryTreeSM.ReplaceSumInorderSuccessorPredecessor(binaryTreeSM.root);
-            
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(26);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(10);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.leftChild.rightChild.leftChild = new BinaryTreeNodeSM(20);
+            //binaryTreeSM.root.leftChild.rightChild.rightChild = new BinaryTreeNodeSM(28);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(33);
+            //binaryTreeSM.ReplaceSumInorderSuccessorPredecessor(binaryTreeSM.root);
+
 
             #endregion
 
+
+            #region Find sum of all left leaves in a given Binary Tree
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(9);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(8);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(6);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild.leftChild= new BinaryTreeNodeSM(1);
+            //int sum = binaryTreeSM.SumOfLeftLeaves(binaryTreeSM.root);
+
+            #endregion
+
+
+            #region Sum of all the parent nodes having child node x
+
+            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            binaryTreeSM.root = new BinaryTreeNodeSM(4);
+            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(5);
+            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(7);
+            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(3);
+
+            int sum = 0;
+            binaryTreeSM.SumOfParentNodes(binaryTreeSM.root,2, ref sum);
+
+            #endregion
 
 
             Console.ReadLine();

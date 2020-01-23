@@ -50,10 +50,10 @@ namespace HeapDsSm
         public void DeleteKey(int i)
         {
             DecreaseKey(i, int.MinValue);
-            ExtractMin(i);
+            ExtractMin();
         }
 
-        private int ExtractMin(int i)
+        public int ExtractMin()
         {
             if (size <= 0) return int.MinValue;
             if (size == 1)
@@ -74,11 +74,11 @@ namespace HeapDsSm
             int smallest = rootKey;
             int left = Left(rootKey);
             int right = Right(rootKey);
-            if (smallest < size && a[smallest] > a[left])
+            if (left < size && a[smallest] > a[left])
             {
                 smallest = Left(rootKey);
             }
-            if (smallest < size && a[smallest] > a[right])
+            if (right < size && a[smallest] > a[right])
             {
                 smallest = right;
             }
@@ -86,6 +86,28 @@ namespace HeapDsSm
             {
                 swap(ref a[smallest], ref a[rootKey]);
                 MinHeapify(smallest);
+            }
+
+        }
+
+
+        private void MinHeapify(int[] ar, int n, int rootKey)
+        {
+            int smallest = rootKey;
+            int left = Left(rootKey);
+            int right = Right(rootKey);
+            if (left < n && ar[smallest] > ar[left])
+            {
+                smallest = Left(rootKey);
+            }
+            if (right < n && ar[smallest] > ar[right])
+            {
+                smallest = right;
+            }
+            if (smallest != rootKey)
+            {
+                swap(ref ar[smallest], ref ar[rootKey]);
+                MinHeapify(ar,n,smallest);
             }
 
         }
@@ -105,6 +127,26 @@ namespace HeapDsSm
             int temp = v1;
             v1 = v2;
             v2 = temp;
+        }
+
+
+
+        public void HeapSort(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = arr.Length / 2 - 1; i >= 0; i--)
+            {
+                MinHeapify(arr, n, i);
+
+            }
+            for (int i = n-1; i >=0 ; i--)
+            {
+                int temp = a[i];
+                a[i] = a[0];
+                a[0] = temp;
+                
+                MinHeapify(arr,0,i);
+            }
         }
     }
 }

@@ -613,7 +613,7 @@ namespace BinaryTree
             int leftSum = 0;
             int rightSum = 0;
             GetLeftUncovered(root.leftChild, ref leftSum);
-            GetRightUncovered(root.rightChild,ref rightSum);
+            GetRightUncovered(root.rightChild, ref rightSum);
             return root.data + leftSum + rightSum;
 
         }
@@ -660,7 +660,38 @@ namespace BinaryTree
 
         internal void ReplaceSumInorderSuccessorPredecessor(BinaryTreeNodeSM root)
         {
-            
+
+        }
+
+        internal int SumOfLeftLeaves(BinaryTreeNodeSM root)
+        {
+            if (root == null) return 0;
+            int sum = 0;
+            sum = SumOfLeftLeavesUtil(root, false);
+            return sum;
+        }
+
+        private int SumOfLeftLeavesUtil(BinaryTreeNodeSM root, bool isLeft)
+        {
+            if (root == null) return 0;
+            if (isLeft && root.leftChild == null && root.rightChild == null)
+            {
+                return root.data;
+            }
+            return SumOfLeftLeavesUtil(root.leftChild, true) + SumOfLeftLeavesUtil(root.rightChild, false);
+
+        }
+
+        internal void SumOfParentNodes(BinaryTreeNodeSM root, int data, ref int sum)
+        {
+            if (root == null) return;
+            if (root.leftChild == null && root.rightChild == null) return;
+            if (root.leftChild.data == data || root.rightChild.data == data)
+            {
+                sum = sum + root.data;
+            }
+            SumOfParentNodes(root.leftChild, data, ref sum);
+            SumOfParentNodes(root.rightChild, data, ref sum);
         }
     }
 }
