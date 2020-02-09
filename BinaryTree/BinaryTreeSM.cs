@@ -693,6 +693,50 @@ namespace BinaryTree
             SumOfParentNodes(root.leftChild, data, ref sum);
             SumOfParentNodes(root.rightChild, data, ref sum);
         }
+
+        internal bool CheckForFullBinaryTree(BinaryTreeNodeSM root)
+        {
+            if (root == null) return true;
+            if (root.leftChild == null && root.rightChild == null) return true;
+            if (root.leftChild == null || root.rightChild == null) return false;
+            return CheckForFullBinaryTree(root.leftChild) && CheckForFullBinaryTree(root.rightChild);
+        }
+
+        internal bool CheckMirrorTrees(BinaryTreeNodeSM root1, BinaryTreeNodeSM root2)
+        {
+            if (root1 == null && root2 == null)
+            {
+                return true;
+            }
+            if (root1 == null || root2 == null)
+            {
+                return false;
+            }
+            if (root1.data == root2.data)
+            {
+                return CheckMirrorTrees(root1.leftChild, root2.rightChild) && CheckMirrorTrees(root1.rightChild, root2.leftChild);
+            }
+            else
+                return false;
+        }
+
+        internal bool CheckIdenticalTrees(BinaryTreeNodeSM root1, BinaryTreeNodeSM root2)
+        {
+            if (root1 == null && root2 == null)
+            {
+                return true;
+            }
+            if (root1 == null || root2 == null)
+            {
+                return false;
+            }
+            if (root1.data == root2.data)
+            {
+                return CheckIdenticalTrees(root1.leftChild, root2.leftChild) && CheckMirrorTrees(root1.rightChild, root2.rightChild);
+            }
+            else
+                return false;
+        }
     }
 }
 

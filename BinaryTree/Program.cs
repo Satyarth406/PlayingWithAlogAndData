@@ -465,19 +465,106 @@ namespace BinaryTree
 
             #region Sum of all the parent nodes having child node x
 
-            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
-            binaryTreeSM.root = new BinaryTreeNodeSM(4);
-            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
-            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(5);
-            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(7);
-            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(2);
-            binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(2);
-            binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(3);
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(7);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(3);
 
-            int sum = 0;
-            binaryTreeSM.SumOfParentNodes(binaryTreeSM.root,2, ref sum);
+            //int sum = 0;
+            //binaryTreeSM.SumOfParentNodes(binaryTreeSM.root,2, ref sum);
 
             #endregion
+
+
+            #region Check whether a binary tree is a full binary tree or not
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(7);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild.rightChild = new BinaryTreeNodeSM(3);
+
+
+            //bool isFull = binaryTreeSM.CheckForFullBinaryTree(binaryTreeSM.root);
+            //Console.WriteLine(isFull);
+
+            #endregion
+
+
+            #region Check if two trees are Mirror
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+
+            //BinaryTreeSM binaryTreeSM2 = new BinaryTreeSM();
+            //binaryTreeSM2.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM2.root.leftChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM2.root.rightChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM2.root.rightChild.leftChild = new BinaryTreeNodeSM(5);
+            //binaryTreeSM2.root.rightChild.rightChild = new BinaryTreeNodeSM(4);
+
+            //bool isMirror = binaryTreeSM.CheckMirrorTrees(binaryTreeSM.root, binaryTreeSM2.root);
+            //Console.WriteLine(isMirror);
+
+            #endregion
+
+
+            #region Write Code to Determine if Two Trees are Identical
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+
+
+            //BinaryTreeSM binaryTreeSM2 = new BinaryTreeSM();
+            //binaryTreeSM2.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM2.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM2.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM2.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM2.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+
+            //bool isIdentical = binaryTreeSM.CheckIdenticalTrees(binaryTreeSM.root, binaryTreeSM2.root);
+            //Console.WriteLine(isIdentical);
+
+            #endregion
+
+
+            #region Write Code to Determine if Two Trees are Identical
+
+            BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+
+
+            BinaryTreeSM binaryTreeSM2 = new BinaryTreeSM();
+            binaryTreeSM2.root = new BinaryTreeNodeSM(1);
+            binaryTreeSM2.root.leftChild = new BinaryTreeNodeSM(2);
+            binaryTreeSM2.root.rightChild = new BinaryTreeNodeSM(3);
+            binaryTreeSM2.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            binaryTreeSM2.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+
+            bool isIdentical = binaryTreeSM.CheckIdenticalTrees(binaryTreeSM.root, binaryTreeSM2.root);
+            Console.WriteLine(isIdentical);
+
+            #endregion
+
 
 
             Console.ReadLine();

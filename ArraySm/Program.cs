@@ -8,6 +8,8 @@ namespace ArraySm
         static void Main(string[] args)
         {
 
+            #region List of Searching Algos
+
             #region Search, insert and delete in an unsorted array
 
             //int[] arr = { 11, 12, 5, 30, 61, 80 };
@@ -61,6 +63,9 @@ namespace ArraySm
 
             int[] arr = { 0, -1, 2, -3, 1 };
             FindtripletsZeroSumUsingHashing(arr);
+
+            #endregion
+
 
             #endregion
 
