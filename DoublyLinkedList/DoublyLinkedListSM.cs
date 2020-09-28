@@ -13,6 +13,10 @@ namespace DoublyLinkedList
             Last = null;
         }
 
+        /// <summary>
+        /// Add a node at the end
+        /// </summary>
+        /// <param name="data"></param>
         public void AddANodeInTheEndSm(int data)
         {
             DoublyLinkedListNodeSM doublyLinkedListNodeSM = new DoublyLinkedListNodeSM(data);
@@ -27,6 +31,10 @@ namespace DoublyLinkedList
             Last = doublyLinkedListNodeSM;
         }
 
+        /// <summary>
+        /// add a node at the start
+        /// </summary>
+        /// <param name="data"></param>
         public void AddANodeAtFirstSm(int data)
         {
             DoublyLinkedListNodeSM doublyLinkedListNodeSM = new DoublyLinkedListNodeSM(data);
@@ -41,6 +49,9 @@ namespace DoublyLinkedList
             Head = doublyLinkedListNodeSM;
         }
 
+        /// <summary>
+        /// print the dll
+        /// </summary>
         public void PrintDoublyLinkedListSm()
         {
             while (Head != null)
@@ -50,6 +61,11 @@ namespace DoublyLinkedList
             }
         }
 
+        /// <summary>
+        /// Add a node after a given node
+        /// </summary>
+        /// <param name="d">given node data</param>
+        /// <param name="a">node data to be added</param>
         public void AddANodeAfterAGivenData(int d, int a)
         {
             DoublyLinkedListNodeSM doublyLinkedListNodeSM = null;
@@ -73,7 +89,66 @@ namespace DoublyLinkedList
             nodeToAdd.Prev = dummyHead;
             dummyHead.Next.Prev = nodeToAdd;
             dummyHead.Next = nodeToAdd;
+        }
 
+        /// <summary>
+        /// Find a pair with given sum in sorted dll 
+        /// </summary>
+        /// <param name="sum">given sum</param>
+        public void FindPairWithGivenSumInDll(int sum)
+        {
+            DoublyLinkedListNodeSM start = Head;
+            DoublyLinkedListNodeSM end = Last;
+            while (start != end)
+            {
+                if (start.Data + end.Data == sum)
+                {
+                    Console.WriteLine($"The pair with sum {sum} is {start.Data}:{end.Data}");
+                    break;
+                }
+                else if(start.Data + end.Data < sum)
+                {
+                    start = start.Next;
+                }
+                else
+                {
+                    end = end.Prev;
+                }
+            }
+            if(start == end)
+            {
+                Console.WriteLine($"The given pair is not present");
+            }
+
+        }
+
+        internal void DeleteAllOccurencesOfGivenKey(int v)
+        {
+            DoublyLinkedListNodeSM temp = Head;
+            while (temp != null)
+            {
+                if(temp.Data == v)
+                {
+                    if (temp.Prev != null)
+                    {
+                        temp.Prev.Next = temp.Next;
+                    }
+                    else
+                    {
+                        Head = temp.Next; 
+                    }
+                    if (temp.Next != null)
+                    {
+                        temp.Next.Prev = temp.Prev;
+                    }
+                    else
+                    {
+                        Last = temp.Prev;
+                    }
+                }
+                temp = temp.Next;
+            }
+            PrintDoublyLinkedListSm();
         }
 
         public DoublyLinkedListNodeSM ReverseTheDoublyLinkedListSm()
@@ -89,13 +164,17 @@ namespace DoublyLinkedList
                 prev = current;
                 current = next;
             }
-            return prev;    
+            return prev;
         }
 
+        /// <summary>
+        /// Delete a given data node 
+        /// </summary>
+        /// <param name="d">node data to be deleted</param>
         public void DeleteANodeSm(int d)
         {
             DoublyLinkedListNodeSM nodeToDelete = Head;
-            
+
             while (nodeToDelete != null && nodeToDelete.Data != d)
             {
                 nodeToDelete = nodeToDelete.Next;
@@ -105,9 +184,17 @@ namespace DoublyLinkedList
                 Console.WriteLine("The given data isn't part of doubly linked list");
                 return;
             }
-            
-            nodeToDelete.Prev.Next = nodeToDelete.Next;
-            nodeToDelete.Next.Prev = nodeToDelete.Prev;
+            if (nodeToDelete.Prev != null)
+            {
+                nodeToDelete.Prev.Next = nodeToDelete.Next;
+                Head = nodeToDelete.Next;
+            }
+            if (nodeToDelete.Next != null)
+            {
+                nodeToDelete.Next.Prev = nodeToDelete.Prev;
+                Last = nodeToDelete.Prev;
+            }
+            nodeToDelete = null;
         }
     }
 

@@ -9,17 +9,17 @@ namespace LinkedList
             #region Add Node at the start and print it
 
             //LinkedListSM linkedListSM = new LinkedListSM();
-            //linkedListSM.AddNodeAtFirstSM(1);
-            //linkedListSM.AddNodeAtFirstSM(2);
-            //linkedListSM.AddNodeAtFirstSM(3);
-            //linkedListSM.AddNodeAtFirstSM(4);
+            //linkedListSM.AddNodeAtFirstSm(1);
+            //linkedListSM.AddNodeAtFirstSm(2);
+            //linkedListSM.AddNodeAtFirstSm(3);
+            //linkedListSM.AddNodeAtFirstSm(4);
             ////Print The linked List
-            //linkedListSM.PrintLinkedListSM();
+            //linkedListSM.PrintLinkedListSm();
 
             #endregion
 
 
-            #region add node at the end and print it
+            #region Add node at the end and print it
 
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
@@ -214,7 +214,7 @@ namespace LinkedList
             //    Console.WriteLine(mergeTwoSortedLinkedList.Data);
             //    mergeTwoSortedLinkedList = mergeTwoSortedLinkedList.Next;
             //}
-            
+
             #endregion
 
             ////Merge two sorted linked lists using recursion
@@ -338,7 +338,8 @@ namespace LinkedList
             #endregion
 
 
-            ////Search an element in a Linked List Q(n)
+            #region Search an element in a Linked List Q(n)
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -347,9 +348,11 @@ namespace LinkedList
             //bool found = linkedListSM.FindNodeWithDataSm(3);
             //Console.WriteLine(found);
 
+            #endregion
 
 
-            ////Search an element in a Linked List recursively
+            #region Search an element in a Linked List recursively
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -358,10 +361,11 @@ namespace LinkedList
             //bool found = linkedListSM.FindNodeWithDataRecursivelySm(5,linkedListSM.head);
             //Console.WriteLine(found);
 
+            #endregion
 
 
+            #region Write a function to get Nth node in a Linked List
 
-            //Write a function to get Nth node in a Linked List
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -370,9 +374,11 @@ namespace LinkedList
             //int found = linkedListSM.FindNthNodeInLinkedListSm(2);
             //Console.WriteLine(found);
 
+            #endregion
 
 
-            ////Write a function to get Nth node in a Linked List
+            #region Write a function to get Nth node in a Linked List recursively
+
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSM(1);
             //linkedListSM.AddNodeAtLastSM(2);
@@ -381,10 +387,11 @@ namespace LinkedList
             //int found = linkedListSM.FindNthNodeInLinkedListRecursivelySm(2,linkedListSM.head);
             //Console.WriteLine(found);
 
+            #endregion
 
 
+            #region Find the middle of a given linked list
 
-            ////Find the middle of a given linked list
             //LinkedListSM linkedListSM = new LinkedListSM();
             //linkedListSM.AddNodeAtLastSm(1);
             //linkedListSM.AddNodeAtLastSm(2);
@@ -393,6 +400,7 @@ namespace LinkedList
             //int middle = linkedListSM.FindTheMiddleOfLinkedListSm(linkedListSM.Head);
             //Console.WriteLine(middle);
 
+            #endregion
 
 
             ////Write a function that counts the number of times a given int occurs in a Linked List

@@ -545,27 +545,53 @@ namespace BinaryTree
 
             #region Write Code to Determine if Two Trees are Identical
 
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+
+
+            //BinaryTreeSM binaryTreeSM2 = new BinaryTreeSM();
+            //binaryTreeSM2.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM2.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM2.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM2.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM2.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+
+            //bool isIdentical = binaryTreeSM.CheckIdenticalTrees(binaryTreeSM.root, binaryTreeSM2.root);
+            //Console.WriteLine(isIdentical);
+
+            #endregion
+
+
+            #region Given a binary tree, print out all of its root-to-leaf paths one per line
+
+            //BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
+            //binaryTreeSM.root = new BinaryTreeNodeSM(1);
+            //binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
+            //binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
+            //binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
+            //binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
+            //int[] a = new int[500];
+            //binaryTreeSM.PrintRootToLeafRecursively(binaryTreeSM.root,a,0);
+
+            #endregion
+
+
+            #region Print root to leaf paths without using recursion
+
             BinaryTreeSM binaryTreeSM = new BinaryTreeSM();
             binaryTreeSM.root = new BinaryTreeNodeSM(1);
             binaryTreeSM.root.leftChild = new BinaryTreeNodeSM(2);
             binaryTreeSM.root.rightChild = new BinaryTreeNodeSM(3);
             binaryTreeSM.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
             binaryTreeSM.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
-
-
-            BinaryTreeSM binaryTreeSM2 = new BinaryTreeSM();
-            binaryTreeSM2.root = new BinaryTreeNodeSM(1);
-            binaryTreeSM2.root.leftChild = new BinaryTreeNodeSM(2);
-            binaryTreeSM2.root.rightChild = new BinaryTreeNodeSM(3);
-            binaryTreeSM2.root.leftChild.leftChild = new BinaryTreeNodeSM(4);
-            binaryTreeSM2.root.leftChild.rightChild = new BinaryTreeNodeSM(5);
-
-            bool isIdentical = binaryTreeSM.CheckIdenticalTrees(binaryTreeSM.root, binaryTreeSM2.root);
-            Console.WriteLine(isIdentical);
+            Stack<int> s = new Stack<int>();
+            binaryTreeSM.PrintRootToLeafWithoutRecursion(binaryTreeSM.root, s);
 
             #endregion
-
-
 
             Console.ReadLine();
         }

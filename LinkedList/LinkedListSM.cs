@@ -408,7 +408,7 @@ namespace LinkedList
 
         internal LinkedListNodeSM DeleteAlternateNodesRecursively(LinkedListNodeSM head)
         {
-            if (head == null) return null;
+            if (head == null || head.Next == null) return head;
             head.Next = DeleteAlternateNodesRecursively(head.Next.Next);
             return head;
 
@@ -433,6 +433,12 @@ namespace LinkedList
             LinkedListNodeSM prev = null;
             while (reversed != null)
             {
+                if (prev == null)
+                {
+                    prev = reversed;
+                    currMax = prev.Data;
+                    continue;
+                }
                 if (reversed.Data > currMax)
                 {
                     currMax = reversed.Data;

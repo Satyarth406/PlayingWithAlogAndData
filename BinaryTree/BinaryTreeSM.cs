@@ -737,6 +737,37 @@ namespace BinaryTree
             else
                 return false;
         }
+
+        internal void PrintRootToLeafRecursively(BinaryTreeNodeSM root, int[] a, int len)
+        {
+            if (root == null) return;
+            a[len] = root.data;
+            len++;
+            if (root.leftChild == null && root.rightChild == null)
+            {
+                PrintArray(a, len);
+            }
+            else
+            {
+                PrintRootToLeafRecursively(root.leftChild, a, len);
+                PrintRootToLeafRecursively(root.rightChild, a, len);
+            }
+        }
+
+        private void PrintArray(int[] a, int len)
+        {
+            for (int i = 0; i < len; i++)
+            {
+                Console.Write(a[i]+"   ");
+            }
+            Console.WriteLine();
+        }
+
+        internal void PrintRootToLeafWithoutRecursion(BinaryTreeNodeSM root, Stack<int> s)
+        {
+            if (root == null) return;
+            s.Push(root.data);
+        }
     }
 }
 
